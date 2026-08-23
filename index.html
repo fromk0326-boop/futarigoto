@@ -73,7 +73,16 @@ section.block+section.block{border-top:1px solid var(--line)}
 .radar .shape{fill:var(--accent-soft);stroke:var(--accent);stroke-width:2}
 .radar .dot{fill:var(--accent)}
 .radar .lbl{font-size:14px;fill:var(--fg2)}
-.person-body{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:22px;padding-top:22px;border-top:1px solid var(--line)}
+.person-more{margin-top:18px;border-top:1px solid var(--line)}
+.person-more summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:12px 0;font-weight:700;color:var(--accent);user-select:none}
+.person-more summary::-webkit-details-marker{display:none}
+.person-more summary::before{content:"▸";font-size:14px;transition:transform .15s}
+.person-more[open] summary::before{transform:rotate(90deg)}
+.person-more summary .sum-close,.person-more[open] summary .sum-open{display:none}
+.person-more[open] summary .sum-close{display:inline}
+.person-more summary .sum-sub{font-weight:400;font-size:14px;color:var(--fg2)}
+.person-more[open] summary .sum-sub{display:none}
+.person-body{display:grid;grid-template-columns:1fr 1fr;gap:22px;padding-top:6px}
 .person-body section.params{grid-column:1/-1}
 .person h4{font-size:16px;color:var(--accent);margin-bottom:8px}
 .person p{margin:0}
@@ -176,6 +185,8 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
   .trend-wrap,.stat{border:1px solid #999;box-shadow:none}
   .trend{min-width:0}
   .person{page-break-inside:avoid;page-break-after:always;border:1px solid #999;box-shadow:none}
+  .person-more summary{display:none}
+  .person-body{display:grid}
   .episode{page-break-inside:avoid;border:1px solid #999;box-shadow:none}
   .chapters{display:none}
   section.block{padding:20pt 0}
@@ -246,6 +257,8 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
     </div>
     <div class="radar-wrap"><svg class="radar" viewBox="0 0 320 220" role="img" aria-label="5角形パラメータ"><polygon points="160.0,99.2 174.1,109.4 168.7,126.0 151.3,126.0 145.9,109.4" class="grid"/><polygon points="160.0,84.4 188.2,104.9 177.4,137.9 142.6,137.9 131.8,104.9" class="grid"/><polygon points="160.0,69.6 202.2,100.3 186.1,149.9 133.9,149.9 117.8,100.3" class="grid"/><polygon points="160.0,54.8 216.3,95.7 194.8,161.9 125.2,161.9 103.7,95.7" class="grid"/><polygon points="160.0,40.0 230.4,91.1 203.5,173.9 116.5,173.9 89.6,91.1" class="grid grid-outer"/><line x1="160.0" y1="114.0" x2="160.0" y2="40.0" class="grid"/><line x1="160.0" y1="114.0" x2="230.4" y2="91.1" class="grid"/><line x1="160.0" y1="114.0" x2="203.5" y2="173.9" class="grid"/><line x1="160.0" y1="114.0" x2="116.5" y2="173.9" class="grid"/><line x1="160.0" y1="114.0" x2="89.6" y2="91.1" class="grid"/><polygon points="160.0,54.8 209.3,98.0 190.4,155.9 133.9,149.9 117.8,100.3" class="shape"/><circle cx="160.0" cy="54.8" r="3.5" class="dot"/><circle cx="209.3" cy="98.0" r="3.5" class="dot"/><circle cx="190.4" cy="155.9" r="3.5" class="dot"/><circle cx="133.9" cy="149.9" r="3.5" class="dot"/><circle cx="117.8" cy="100.3" r="3.5" class="dot"/><text x="160.0" y="20.2" text-anchor="middle" class="lbl">自動化の深さ</text><text x="247.3" y="83.6" text-anchor="start" class="lbl">AIとの距離</text><text x="213.9" y="202.2" text-anchor="start" class="lbl">業務の幅</text><text x="106.1" y="202.2" text-anchor="end" class="lbl">工夫・設計</text><text x="72.7" y="83.6" text-anchor="end" class="lbl">オリジナリティ</text></svg></div>
   </div>
+  <details class="person-more">
+  <summary><span class="sum-open">くわしく見る</span><span class="sum-close">閉じる</span><span class="sum-sub">キャラクター・AIとの距離感・頼んでいる業務・5角形の根拠</span></summary>
   <div class="person-body">
     <section>
       <h4>キャラクター</h4>
@@ -277,6 +290,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
       </table></div>
     </section>
   </div>
+  </details>
 </article>
 <article class="person theme-orange" id="person-sato">
   <div class="person-head">
@@ -292,6 +306,8 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
     </div>
     <div class="radar-wrap"><svg class="radar" viewBox="0 0 320 220" role="img" aria-label="5角形パラメータ"><polygon points="160.0,99.2 174.1,109.4 168.7,126.0 151.3,126.0 145.9,109.4" class="grid"/><polygon points="160.0,84.4 188.2,104.9 177.4,137.9 142.6,137.9 131.8,104.9" class="grid"/><polygon points="160.0,69.6 202.2,100.3 186.1,149.9 133.9,149.9 117.8,100.3" class="grid"/><polygon points="160.0,54.8 216.3,95.7 194.8,161.9 125.2,161.9 103.7,95.7" class="grid"/><polygon points="160.0,40.0 230.4,91.1 203.5,173.9 116.5,173.9 89.6,91.1" class="grid grid-outer"/><line x1="160.0" y1="114.0" x2="160.0" y2="40.0" class="grid"/><line x1="160.0" y1="114.0" x2="230.4" y2="91.1" class="grid"/><line x1="160.0" y1="114.0" x2="203.5" y2="173.9" class="grid"/><line x1="160.0" y1="114.0" x2="116.5" y2="173.9" class="grid"/><line x1="160.0" y1="114.0" x2="89.6" y2="91.1" class="grid"/><polygon points="160.0,47.4 209.3,98.0 190.4,155.9 125.2,161.9 103.7,95.7" class="shape"/><circle cx="160.0" cy="47.4" r="3.5" class="dot"/><circle cx="209.3" cy="98.0" r="3.5" class="dot"/><circle cx="190.4" cy="155.9" r="3.5" class="dot"/><circle cx="125.2" cy="161.9" r="3.5" class="dot"/><circle cx="103.7" cy="95.7" r="3.5" class="dot"/><text x="160.0" y="20.2" text-anchor="middle" class="lbl">自動化の深さ</text><text x="247.3" y="83.6" text-anchor="start" class="lbl">AIとの距離</text><text x="213.9" y="202.2" text-anchor="start" class="lbl">業務の幅</text><text x="106.1" y="202.2" text-anchor="end" class="lbl">工夫・設計</text><text x="72.7" y="83.6" text-anchor="end" class="lbl">オリジナリティ</text></svg></div>
   </div>
+  <details class="person-more">
+  <summary><span class="sum-open">くわしく見る</span><span class="sum-close">閉じる</span><span class="sum-sub">キャラクター・AIとの距離感・頼んでいる業務・5角形の根拠</span></summary>
   <div class="person-body">
     <section>
       <h4>キャラクター</h4>
@@ -323,6 +339,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
       </table></div>
     </section>
   </div>
+  </details>
 </article>
   <h2 style="margin-top:20px">ゲスト</h2>
   <p class="lead">登場順。</p>
@@ -341,6 +358,8 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
     </div>
     <div class="radar-wrap"><svg class="radar" viewBox="0 0 320 220" role="img" aria-label="5角形パラメータ"><polygon points="160.0,99.2 174.1,109.4 168.7,126.0 151.3,126.0 145.9,109.4" class="grid"/><polygon points="160.0,84.4 188.2,104.9 177.4,137.9 142.6,137.9 131.8,104.9" class="grid"/><polygon points="160.0,69.6 202.2,100.3 186.1,149.9 133.9,149.9 117.8,100.3" class="grid"/><polygon points="160.0,54.8 216.3,95.7 194.8,161.9 125.2,161.9 103.7,95.7" class="grid"/><polygon points="160.0,40.0 230.4,91.1 203.5,173.9 116.5,173.9 89.6,91.1" class="grid grid-outer"/><line x1="160.0" y1="114.0" x2="160.0" y2="40.0" class="grid"/><line x1="160.0" y1="114.0" x2="230.4" y2="91.1" class="grid"/><line x1="160.0" y1="114.0" x2="203.5" y2="173.9" class="grid"/><line x1="160.0" y1="114.0" x2="116.5" y2="173.9" class="grid"/><line x1="160.0" y1="114.0" x2="89.6" y2="91.1" class="grid"/><polygon points="160.0,77.0 209.3,98.0 194.8,161.9 138.3,143.9 117.8,100.3" class="shape"/><circle cx="160.0" cy="77.0" r="3.5" class="dot"/><circle cx="209.3" cy="98.0" r="3.5" class="dot"/><circle cx="194.8" cy="161.9" r="3.5" class="dot"/><circle cx="138.3" cy="143.9" r="3.5" class="dot"/><circle cx="117.8" cy="100.3" r="3.5" class="dot"/><text x="160.0" y="20.2" text-anchor="middle" class="lbl">自動化の深さ</text><text x="247.3" y="83.6" text-anchor="start" class="lbl">AIとの距離</text><text x="213.9" y="202.2" text-anchor="start" class="lbl">業務の幅</text><text x="106.1" y="202.2" text-anchor="end" class="lbl">工夫・設計</text><text x="72.7" y="83.6" text-anchor="end" class="lbl">オリジナリティ</text></svg></div>
   </div>
+  <details class="person-more">
+  <summary><span class="sum-open">くわしく見る</span><span class="sum-close">閉じる</span><span class="sum-sub">キャラクター・AIとの距離感・頼んでいる業務・5角形の根拠</span></summary>
   <div class="person-body">
     <section>
       <h4>キャラクター</h4>
@@ -372,6 +391,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
       </table></div>
     </section>
   </div>
+  </details>
 </article>
 <article class="person" id="person-amano">
   <div class="person-head">
@@ -387,6 +407,8 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
     </div>
     <div class="radar-wrap"><svg class="radar" viewBox="0 0 320 220" role="img" aria-label="5角形パラメータ"><polygon points="160.0,99.2 174.1,109.4 168.7,126.0 151.3,126.0 145.9,109.4" class="grid"/><polygon points="160.0,84.4 188.2,104.9 177.4,137.9 142.6,137.9 131.8,104.9" class="grid"/><polygon points="160.0,69.6 202.2,100.3 186.1,149.9 133.9,149.9 117.8,100.3" class="grid"/><polygon points="160.0,54.8 216.3,95.7 194.8,161.9 125.2,161.9 103.7,95.7" class="grid"/><polygon points="160.0,40.0 230.4,91.1 203.5,173.9 116.5,173.9 89.6,91.1" class="grid grid-outer"/><line x1="160.0" y1="114.0" x2="160.0" y2="40.0" class="grid"/><line x1="160.0" y1="114.0" x2="230.4" y2="91.1" class="grid"/><line x1="160.0" y1="114.0" x2="203.5" y2="173.9" class="grid"/><line x1="160.0" y1="114.0" x2="116.5" y2="173.9" class="grid"/><line x1="160.0" y1="114.0" x2="89.6" y2="91.1" class="grid"/><polygon points="160.0,77.0 195.2,102.6 186.1,149.9 138.3,143.9 96.7,93.4" class="shape"/><circle cx="160.0" cy="77.0" r="3.5" class="dot"/><circle cx="195.2" cy="102.6" r="3.5" class="dot"/><circle cx="186.1" cy="149.9" r="3.5" class="dot"/><circle cx="138.3" cy="143.9" r="3.5" class="dot"/><circle cx="96.7" cy="93.4" r="3.5" class="dot"/><text x="160.0" y="20.2" text-anchor="middle" class="lbl">自動化の深さ</text><text x="247.3" y="83.6" text-anchor="start" class="lbl">AIとの距離</text><text x="213.9" y="202.2" text-anchor="start" class="lbl">業務の幅</text><text x="106.1" y="202.2" text-anchor="end" class="lbl">工夫・設計</text><text x="72.7" y="83.6" text-anchor="end" class="lbl">オリジナリティ</text></svg></div>
   </div>
+  <details class="person-more">
+  <summary><span class="sum-open">くわしく見る</span><span class="sum-close">閉じる</span><span class="sum-sub">キャラクター・AIとの距離感・頼んでいる業務・5角形の根拠</span></summary>
   <div class="person-body">
     <section>
       <h4>キャラクター</h4>
@@ -418,6 +440,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
       </table></div>
     </section>
   </div>
+  </details>
 </article>
 <article class="person" id="person-arai">
   <div class="person-head">
@@ -433,6 +456,8 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
     </div>
     <div class="radar-wrap"><svg class="radar" viewBox="0 0 320 220" role="img" aria-label="5角形パラメータ"><polygon points="160.0,99.2 174.1,109.4 168.7,126.0 151.3,126.0 145.9,109.4" class="grid"/><polygon points="160.0,84.4 188.2,104.9 177.4,137.9 142.6,137.9 131.8,104.9" class="grid"/><polygon points="160.0,69.6 202.2,100.3 186.1,149.9 133.9,149.9 117.8,100.3" class="grid"/><polygon points="160.0,54.8 216.3,95.7 194.8,161.9 125.2,161.9 103.7,95.7" class="grid"/><polygon points="160.0,40.0 230.4,91.1 203.5,173.9 116.5,173.9 89.6,91.1" class="grid grid-outer"/><line x1="160.0" y1="114.0" x2="160.0" y2="40.0" class="grid"/><line x1="160.0" y1="114.0" x2="230.4" y2="91.1" class="grid"/><line x1="160.0" y1="114.0" x2="203.5" y2="173.9" class="grid"/><line x1="160.0" y1="114.0" x2="116.5" y2="173.9" class="grid"/><line x1="160.0" y1="114.0" x2="89.6" y2="91.1" class="grid"/><polygon points="160.0,77.0 223.3,93.4 199.1,167.9 133.9,149.9 117.8,100.3" class="shape"/><circle cx="160.0" cy="77.0" r="3.5" class="dot"/><circle cx="223.3" cy="93.4" r="3.5" class="dot"/><circle cx="199.1" cy="167.9" r="3.5" class="dot"/><circle cx="133.9" cy="149.9" r="3.5" class="dot"/><circle cx="117.8" cy="100.3" r="3.5" class="dot"/><text x="160.0" y="20.2" text-anchor="middle" class="lbl">自動化の深さ</text><text x="247.3" y="83.6" text-anchor="start" class="lbl">AIとの距離</text><text x="213.9" y="202.2" text-anchor="start" class="lbl">業務の幅</text><text x="106.1" y="202.2" text-anchor="end" class="lbl">工夫・設計</text><text x="72.7" y="83.6" text-anchor="end" class="lbl">オリジナリティ</text></svg></div>
   </div>
+  <details class="person-more">
+  <summary><span class="sum-open">くわしく見る</span><span class="sum-close">閉じる</span><span class="sum-sub">キャラクター・AIとの距離感・頼んでいる業務・5角形の根拠</span></summary>
   <div class="person-body">
     <section>
       <h4>キャラクター</h4>
@@ -464,6 +489,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
       </table></div>
     </section>
   </div>
+  </details>
 </article>
 <article class="person" id="person-ichibe">
   <div class="person-head">
@@ -479,6 +505,8 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
     </div>
     <div class="radar-wrap"><svg class="radar" viewBox="0 0 320 220" role="img" aria-label="5角形パラメータ"><polygon points="160.0,99.2 174.1,109.4 168.7,126.0 151.3,126.0 145.9,109.4" class="grid"/><polygon points="160.0,84.4 188.2,104.9 177.4,137.9 142.6,137.9 131.8,104.9" class="grid"/><polygon points="160.0,69.6 202.2,100.3 186.1,149.9 133.9,149.9 117.8,100.3" class="grid"/><polygon points="160.0,54.8 216.3,95.7 194.8,161.9 125.2,161.9 103.7,95.7" class="grid"/><polygon points="160.0,40.0 230.4,91.1 203.5,173.9 116.5,173.9 89.6,91.1" class="grid grid-outer"/><line x1="160.0" y1="114.0" x2="160.0" y2="40.0" class="grid"/><line x1="160.0" y1="114.0" x2="230.4" y2="91.1" class="grid"/><line x1="160.0" y1="114.0" x2="203.5" y2="173.9" class="grid"/><line x1="160.0" y1="114.0" x2="116.5" y2="173.9" class="grid"/><line x1="160.0" y1="114.0" x2="89.6" y2="91.1" class="grid"/><polygon points="160.0,62.2 202.2,100.3 173.0,132.0 120.9,167.9 124.8,102.6" class="shape"/><circle cx="160.0" cy="62.2" r="3.5" class="dot"/><circle cx="202.2" cy="100.3" r="3.5" class="dot"/><circle cx="173.0" cy="132.0" r="3.5" class="dot"/><circle cx="120.9" cy="167.9" r="3.5" class="dot"/><circle cx="124.8" cy="102.6" r="3.5" class="dot"/><text x="160.0" y="20.2" text-anchor="middle" class="lbl">自動化の深さ</text><text x="247.3" y="83.6" text-anchor="start" class="lbl">AIとの距離</text><text x="213.9" y="202.2" text-anchor="start" class="lbl">業務の幅</text><text x="106.1" y="202.2" text-anchor="end" class="lbl">工夫・設計</text><text x="72.7" y="83.6" text-anchor="end" class="lbl">オリジナリティ</text></svg></div>
   </div>
+  <details class="person-more">
+  <summary><span class="sum-open">くわしく見る</span><span class="sum-close">閉じる</span><span class="sum-sub">キャラクター・AIとの距離感・頼んでいる業務・5角形の根拠</span></summary>
   <div class="person-body">
     <section>
       <h4>キャラクター</h4>
@@ -510,6 +538,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
       </table></div>
     </section>
   </div>
+  </details>
 </article>
 </div></section>
 
@@ -724,6 +753,8 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
 document.addEventListener('DOMContentLoaded',function(){
   var w=document.querySelector('.trend-wrap');if(w&&w.scrollWidth>w.clientWidth){w.scrollLeft=w.scrollWidth;}
 });
+window.addEventListener('beforeprint',function(){document.querySelectorAll('details.person-more').forEach(function(d){d.open=true;});});
+document.querySelectorAll('.chips a, .guest a').forEach(function(a){a.addEventListener('click',function(){var h=a.getAttribute('href');var t=h&&document.querySelector(h);var d=t&&t.closest&&t.closest('details');if(d)d.open=true;});});
 function loadEmbed(btn){
   var card=btn.closest('.episode');var box=card.querySelector('.embed');
   if(!box.hidden){box.hidden=true;box.innerHTML='';btn.textContent='ここで再生';return;}
