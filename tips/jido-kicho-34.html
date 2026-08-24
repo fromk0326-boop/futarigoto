@@ -241,6 +241,20 @@ section.block+section.block{border-top:1px solid var(--line)}
 .dm-cta h3{font-size:20px;margin:0 0 8px}
 .dm-cta p{margin:0 0 14px}
 .dm-btns{display:flex;flex-wrap:wrap;gap:10px}
+.dm-btns+.dm-btns{margin-top:10px}
+/* voice（お便りフォーム） */
+.vf .dq legend{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.vf-req{font-size:14px;color:#fff;background:var(--accent);border-radius:6px;padding:0 8px}
+.vf-opt{font-size:14px;font-weight:400;color:var(--fg2);border:1px solid var(--line);border-radius:6px;padding:0 8px}
+.vf input[type=text],.vf select,.vf textarea{width:100%;font-family:inherit;font-size:14px;line-height:1.6;color:var(--fg);background:var(--bg2);border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin-top:8px}
+.vf textarea{min-height:110px;resize:vertical}
+.vf select{cursor:pointer}
+.vf .hint{margin:6px 0 0;font-size:14px;color:var(--fg2)}
+.vf .hint a{color:var(--accent)}
+.vf-note{font-size:14px;color:var(--fg2);margin:16px 0 0}
+#vf-missing{color:var(--accent2);font-weight:700}
+.vf-hp{position:absolute!important;left:-9999px;top:-9999px;width:1px;height:1px;opacity:0}
+.vf-demo{border:1px dashed var(--accent2);color:var(--accent2);border-radius:8px;padding:8px 12px;font-size:14px;font-weight:700;margin:0 0 14px}
 /* footer */
 footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);font-size:14px}
 /* screen responsive（screen限定） */
@@ -277,7 +291,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
   .person-body{display:grid}
   .episode{page-break-inside:avoid;border:1px solid #999;box-shadow:none}
   .chapters{display:none}
-  #shindan{display:none!important}
+  #shindan,#voice{display:none!important}
   .tip{page-break-inside:avoid;border:1px solid #999;box-shadow:none}
   section.block{padding:20pt 0}
   .radar .lbl{font-size:11pt}
@@ -292,6 +306,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
     <li><a href="../index.html">番組トップ</a></li>
     <li><a href="../tips.html">TIPS集</a></li>
     <li><a href="../shindan.html">AI活用診断</a></li>
+    <li><a href="../voice.html">お便り</a></li>
     <li><a class="btn" href="https://open.spotify.com/show/033MPcU5KieI6y73kwmaBw" target="_blank" rel="noopener">Spotifyでフォロー</a></li>
   </ul>
 </div></nav>
@@ -318,7 +333,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
   <div class="tip-nav"><a href="kami-scan.html">← 前 紙はスキャンごと外に出す</a><a href="kando.html">次 まず最初に感動してもらう →</a></div>
   <div class="dm-cta">
     <h3>自分の現在地を知りたい方へ</h3>
-    <p>12問に答えるだけで、AI活用の立ち位置が出演者と同じ5角形で分かる診断を用意しました。次の一歩のヒントも出ます。</p>
+    <p>14問に答えるだけで、AI活用の立ち位置が出演者と同じ6角形で分かる診断を用意しました。次の一歩のヒントも出ます。</p>
     <div class="dm-btns"><a class="btn" href="../shindan.html">AI活用度診断をやってみる</a></div>
   </div>
 </div></section>
