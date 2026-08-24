@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AIに質問してもらう | AI活用TIPS集 | AI税理士のふたりごと</title>
+<meta name="description" content="指示が下手なのは「自分より優秀な部下」を持ったことがないから。逆にAIから質問してもらう形式にすると、会話が自然に進みます。#14でも「Claudeから質問が来る形式にする」として登場する定番の型です。">
+<meta property="og:title" content="AIに質問してもらう | AI活用TIPS集 | AI税理士のふたりごと">
+<meta property="og:description" content="指示が下手なのは「自分より優秀な部下」を持ったことがないから。逆にAIから質問してもらう形式にすると、会話が自然に進みます。#14でも「Claudeから質問が来る形式にする」として登場する定番の型です。">
+<meta property="og:type" content="website">
+<style>
+:root{
+  --bg:#ffffff;--bg2:#f4f5f7;--fg:#1a1a1a;--fg2:#555;--line:#d9dce1;--card:#ffffff;
+  --accent:#005abe;--accent-soft:rgba(0,90,190,.14);--accent2:#e87300;--accent2-soft:rgba(251,128,1,.16);--shadow:0 1px 2px rgba(0,0,0,.06);
+}
+@media (prefers-color-scheme: dark){
+  :root{--bg:#131416;--bg2:#1c1e22;--fg:#ececec;--fg2:#b3b3b3;--line:#34373d;--card:#1a1c20;
+    --accent:#7fb0e0;--accent-soft:rgba(127,176,224,.18);--accent2:#ffa14a;--accent2-soft:rgba(255,161,74,.18);--shadow:none;}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:"Meiryo UI","Meiryo","Yu Gothic UI","Hiragino Sans","Noto Sans JP",sans-serif;font-size:16px;line-height:1.75}
+a{color:var(--accent)}
+h1,h2,h3,h4{line-height:1.35;margin:0}
+small{font-size:14px;color:var(--fg2)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+/* nav */
+.nav{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:18px;height:56px}
+.nav .brand{font-weight:700;text-decoration:none;color:var(--fg);white-space:nowrap}
+.nav ul{display:flex;gap:16px;list-style:none;margin:0 0 0 auto;padding:0}
+.nav a{text-decoration:none;color:var(--fg2);font-size:14px}
+.nav a:hover{color:var(--accent)}
+.nav .btn{margin-left:8px}
+/* hero */
+.hero{padding:48px 0 40px;border-bottom:1px solid var(--line);background:var(--bg2)}
+.hero .wrap{display:grid;grid-template-columns:280px 1fr;gap:36px;align-items:center}
+.hero img{width:100%;border-radius:16px;box-shadow:0 8px 28px rgba(0,0,0,.12)}
+.hero .kicker{color:var(--accent);font-weight:700;letter-spacing:.06em;font-size:14px}
+.hero h1{font-size:40px;margin:6px 0 14px}
+.hero p{margin:0 0 10px;color:var(--fg2)}
+.hero .hosts{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 18px}
+.hero .hosts a{text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 14px;color:var(--fg);font-size:14px}
+.hero .cta{display:flex;flex-wrap:wrap;gap:10px}
+/* buttons */
+.btn{display:inline-block;background:var(--accent);color:#fff;border:1px solid var(--accent);border-radius:8px;padding:8px 16px;font-size:14px;text-decoration:none;cursor:pointer;font-family:inherit;line-height:1.4}
+[hidden]{display:none!important}
+.btn:hover{filter:brightness(1.08)}
+.btn-ghost{background:transparent;color:var(--accent)}
+/* sections */
+section.block{padding:52px 0}
+section.block+section.block{border-top:1px solid var(--line)}
+.block h2{font-size:26px;margin-bottom:6px}
+.block .lead{color:var(--fg2);margin:0 0 26px}
+/* people */
+.person{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px;margin-bottom:24px;box-shadow:var(--shadow)}
+.person-head{display:grid;grid-template-columns:120px 1fr 300px;gap:22px;align-items:start}
+.avatar{width:120px;height:120px;border-radius:50%;object-fit:cover;border:1px solid var(--line);background:var(--bg2)}
+.avatar-ph{display:flex;align-items:center;justify-content:center;font-size:44px;font-weight:700;color:var(--fg2)}
+.role{display:inline-block;font-size:14px;color:var(--accent);border:1px solid var(--accent);border-radius:6px;padding:0 8px;font-weight:700}
+.person h3{font-size:24px;margin-top:4px}
+.person h3 small{margin-left:4px;font-size:16px}
+.person .title{margin:2px 0 0;color:var(--fg2)}
+.person .extra{margin:2px 0 0;color:var(--fg2);font-size:14px}
+.person .tagline{margin:10px 0 0;font-weight:700}
+.person .links{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.chip{font-size:14px;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:1px 10px;color:var(--fg2)}
+.chip:hover{border-color:var(--accent);color:var(--accent)}
+.radar-wrap{justify-self:end}
+.radar{width:300px;height:auto;display:block;overflow:visible}
+.radar .grid{fill:none;stroke:var(--line);stroke-width:1}
+.radar .grid-outer{stroke:var(--fg2)}
+.radar .shape{fill:var(--accent-soft);stroke:var(--accent);stroke-width:2}
+.radar .dot{fill:var(--accent)}
+.radar .lbl{font-size:14px;fill:var(--fg2)}
+.person-more{margin-top:18px;border-top:1px solid var(--line)}
+.person-more summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:12px 0;font-weight:700;color:var(--accent);user-select:none}
+.person-more summary::-webkit-details-marker{display:none}
+.person-more summary::before{content:"▸";font-size:14px;transition:transform .15s}
+.person-more[open] summary::before{transform:rotate(90deg)}
+.person-more summary .sum-close,.person-more[open] summary .sum-open{display:none}
+.person-more[open] summary .sum-close{display:inline}
+.person-more summary .sum-sub{font-weight:400;font-size:14px;color:var(--fg2)}
+.person-more[open] summary .sum-sub{display:none}
+.person-body{display:grid;grid-template-columns:1fr 1fr;gap:22px;padding-top:6px}
+.person-body section.params{grid-column:1/-1}
+.person h4{font-size:16px;color:var(--accent);margin-bottom:8px}
+.person p{margin:0}
+.styles{margin:0;padding-left:20px}
+.styles li{margin-bottom:6px}
+.quote{margin:12px 0 0;padding:10px 14px;border-left:3px solid var(--accent);background:var(--bg2);border-radius:0 8px 8px 0;color:var(--fg)}
+.qsrc{color:var(--fg2);font-size:14px}
+.dist-label{font-size:18px;font-weight:700;margin:0 0 6px!important}
+.tbl-wrap{overflow-x:auto}
+.ptable{width:100%;border-collapse:collapse;font-size:14px}
+.ptable th,.ptable td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+.ptable thead th{color:var(--fg2);font-weight:400}
+.ptable tbody th{white-space:nowrap;width:150px}
+.axis-help{display:block;font-weight:400;color:var(--fg2);font-size:14px;white-space:normal;margin-top:2px}
+.score{white-space:nowrap;width:170px}
+.bar{display:inline-block;vertical-align:middle;width:70px;height:8px;background:var(--line);border-radius:4px;margin-right:8px;position:relative;overflow:hidden}
+.bar::after{content:"";position:absolute;left:0;top:0;bottom:0;width:calc(var(--v)/5*100%);background:var(--accent);border-radius:4px}
+
+.rawv{display:block;font-size:14px;color:var(--fg2);font-weight:400;margin-top:2px}
+/* trend */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;box-shadow:var(--shadow)}
+.stat .k{display:block;font-size:14px;color:var(--fg2)}
+.stat b{font-size:30px;line-height:1.2;color:var(--accent)}
+.stat .u{font-size:14px;color:var(--fg2);margin-left:4px}
+.trend-wrap{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 12px 8px;box-shadow:var(--shadow);overflow-x:auto}
+.trend{width:100%;min-width:640px;height:auto;display:block}
+.trend .g{stroke:var(--line);stroke-width:1}
+.trend .axis{stroke:var(--fg2);stroke-width:1}
+.trend .tick{font-size:14px;fill:var(--fg2)}
+.trend .tick2{fill:var(--accent2)}
+.trend .dbar{fill:var(--fg2);opacity:.18}
+.trend .area{fill:var(--accent-soft)}
+.trend .line{fill:none;stroke:var(--accent);stroke-width:2.5;stroke-linejoin:round}
+.trend .hit{fill:transparent}
+.trend .hit:hover{fill:var(--accent-soft)}
+.trend .dot{fill:var(--accent)}
+.trend .line2{fill:none;stroke:var(--accent2);stroke-width:2.5;stroke-linejoin:round}
+.trend .dot2{fill:var(--accent2)}
+.trend .val{font-size:15px;font-weight:700;fill:var(--accent);paint-order:stroke;stroke:var(--card);stroke-width:5px;stroke-linejoin:round}
+.trend .val2{fill:var(--accent2)}
+.legend{display:flex;flex-wrap:wrap;gap:16px;font-size:14px;color:var(--fg2);padding:0 8px 10px}
+.lg::before{content:"";display:inline-block;width:14px;height:14px;border-radius:3px;margin-right:6px;vertical-align:-2px;background:var(--line)}
+.lg-h::before{background:var(--accent)}
+.lg-f::before{background:var(--accent2)}
+.lg-d::before{background:var(--fg2);opacity:.3}
+.note{font-size:14px;color:var(--fg2);margin-top:10px}
+.person.theme-orange{--accent:var(--accent2);--accent-soft:var(--accent2-soft)}
+.hero .kicker b{color:var(--accent2)}
+/* episodes */
+.series{margin-bottom:36px}
+.series h3.sh{font-size:18px;color:var(--fg2);margin:0 0 14px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+.series h3.sh b{color:var(--fg)}
+.episode{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px;box-shadow:var(--shadow)}
+.episode header{display:flex;gap:16px;align-items:flex-start}
+.epno{font-size:26px;font-weight:700;color:var(--accent);min-width:64px;line-height:1.2}
+.epmeta{display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-size:14px;color:var(--fg2)}
+.badge{font-size:13px;border-radius:4px;padding:0 7px;background:var(--accent);color:#fff;font-weight:700}
+.badge-soon{background:var(--fg2)}
+.part{border:1px solid var(--line);border-radius:4px;padding:0 6px}
+.episode h3{font-size:19px;margin-top:4px}
+.guest{margin:4px 0 0;font-size:14px;color:var(--fg2)}
+.gtitle{margin-left:6px}
+.summary{margin:12px 0 0;color:var(--fg)}
+.chapters{margin-top:10px}
+.chapters summary{cursor:pointer;color:var(--accent);font-size:14px}
+.chapters ol{list-style:none;margin:8px 0 0;padding:0;columns:2;column-gap:28px;font-size:14px}
+.chapters li{break-inside:avoid;padding:2px 0}
+.chapters .t{display:inline-block;min-width:52px;color:var(--fg2);font-variant-numeric:tabular-nums}
+.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.embed iframe{width:100%;height:152px;border:0;border-radius:12px;margin-top:12px}
+.upcoming{opacity:.85;border-style:dashed}
+/* tips */
+.tips-cat{font-size:18px;color:var(--fg2);margin:30px 0 14px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+.tips-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.tip{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.tip h4{font-size:16px;margin:0 0 8px;color:var(--accent)}
+.tip p{margin:0;font-size:14px;flex:1}
+.tip footer{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:14px;color:var(--fg2)}
+.tip h4 a{color:inherit;text-decoration:none}
+.tip h4 a:hover{text-decoration:underline}
+.tip .more{margin-left:auto;font-size:14px;text-decoration:none;white-space:nowrap}
+/* 業務別タグ（一覧の絞り込みバー＋カード・詳細ページのタグ） */
+.tagbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:18px 0 4px}
+.tagbar-k{font-size:14px;color:var(--fg2)}
+.tagchip{border:1px solid var(--line);background:var(--card);color:var(--fg);border-radius:999px;padding:4px 14px;font-size:14px;cursor:pointer;font-family:inherit;line-height:1.6}
+.tagchip:hover{border-color:var(--accent)}
+.tagchip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.tip-tags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 0}
+.tip .tip-tags{flex:none;margin:10px 0 0;display:flex}
+.tip-detail .tip-tags{margin:10px 0 0}
+.tag{display:inline-block;font-size:14px;border:1px solid var(--line);border-radius:999px;padding:0 10px;color:var(--fg2);background:transparent;cursor:pointer;font-family:inherit;text-decoration:none;line-height:1.7}
+.tag:hover{border-color:var(--accent);color:var(--accent)}
+/* tip detail */
+.crumb{font-size:14px;margin:0 0 20px}
+.crumb a{text-decoration:none}
+.tip-cat-badge{display:inline-block;font-size:14px;color:var(--accent);border:1px solid var(--accent);border-radius:6px;padding:0 8px;font-weight:700;margin:0 0 6px}
+.tip-detail h2{font-size:28px;margin:0 0 8px}
+.tip-detail h3{font-size:18px;color:var(--accent);margin:30px 0 10px}
+.tip-src{margin:0;color:var(--fg2);font-size:14px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.prompt-box textarea{min-height:150px}
+.tip-nav{display:flex;justify-content:space-between;gap:16px;margin-top:34px;padding-top:16px;border-top:1px solid var(--line);font-size:14px}
+.tip-nav a{text-decoration:none;max-width:48%}
+/* diagnosis */
+.dq{border:1px solid var(--line);border-radius:12px;background:var(--card);padding:14px 18px 16px;margin:0 0 14px;box-shadow:var(--shadow)}
+.dq legend{font-weight:700;padding:0 6px}
+.dq .qn{color:var(--accent);margin-right:8px}
+.dq.miss{border-color:var(--accent2);box-shadow:0 0 0 2px var(--accent2-soft)}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+.opt{display:flex;gap:8px;align-items:flex-start;border:1px solid var(--line);border-radius:8px;padding:8px 12px;cursor:pointer;font-size:14px;line-height:1.55}
+.opt:hover{border-color:var(--accent)}
+.opt.sel{border-color:var(--accent);background:var(--accent-soft)}
+.opt input{margin:3px 0 0;accent-color:var(--accent);flex:none}
+.diag-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+#diag-missing{color:var(--accent2);font-weight:700}
+/* wizard（JSが .wiz を付けると1問ずつ表示になる。JS無効時は全問表示） */
+.wiz-head{display:none;align-items:center;gap:14px;margin:0 0 14px}
+.wiz .wiz-head{display:flex}
+#wiz-pos{font-weight:700;color:var(--accent);white-space:nowrap;font-variant-numeric:tabular-nums}
+.wiz-bar{flex:1;height:8px;background:var(--line);border-radius:4px;overflow:hidden}
+#wiz-fill{height:100%;width:0;background:var(--accent);border-radius:4px;transition:width .25s}
+.wiz .dq{display:none}
+.wiz .dq.cur{display:block}
+#diag-result{margin-top:28px}
+.dr-head{display:grid;grid-template-columns:1fr 320px;gap:22px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px;box-shadow:var(--shadow)}
+.dr-kicker{margin:0;color:var(--fg2);font-size:14px}
+.dr-type{margin:2px 0 6px;font-size:32px;font-weight:700;color:var(--accent);line-height:1.3}
+.dr-total{margin:0 0 10px;color:var(--fg2);font-size:14px}
+.dr-desc{margin:0 0 12px}
+.dr-advice{margin:0;border-left:3px solid var(--accent);background:var(--bg2);border-radius:0 8px 8px 0;padding:10px 14px}
+.dr-advice b{display:block;color:var(--accent)}
+.dr-radar{justify-self:center}
+.dr-legend{display:flex;gap:14px;justify-content:center;font-size:14px;color:var(--fg2);margin:4px 0 0}
+.lg-ref::before{background:transparent;border:2px dashed var(--fg2);width:10px;height:6px;border-radius:2px}
+.radar .refline{fill:none;stroke:var(--fg2);stroke-width:1.5;stroke-dasharray:5 4}
+.dr-list{list-style:none;margin:14px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:8px 24px}
+.dr-list li{display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--line);padding:6px 2px;font-size:14px}
+.dr-list .k{flex:1}
+.dr-list .vs{color:var(--fg2)}
+/* 現状と理想の差分カード */
+.dr-gap{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 24px;box-shadow:var(--shadow)}
+.dr-gap h3{font-size:18px;margin:0 0 12px}
+.dr-gap h4{font-size:15px;margin:16px 0 4px;color:var(--accent)}
+.dr-gap p{margin:0;font-size:14px}
+.gap-grid{display:flex;gap:12px;align-items:stretch}
+.gap-cell{flex:1;background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:10px 14px}
+.gap-goal{border-color:var(--accent)}
+.gap-k{font-size:14px;color:var(--fg2);margin:0 0 4px!important}
+.gap-arrow{align-self:center;color:var(--fg2);flex:none}
+.kabe{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 24px;box-shadow:var(--shadow)}
+.kabe h3{font-size:18px;margin:0 0 6px}
+.kabe p{margin:0 0 12px;color:var(--fg2);font-size:14px}
+.kabe textarea{width:100%;min-height:200px;font-family:inherit;font-size:14px;line-height:1.6;color:var(--fg);background:var(--bg2);border:1px solid var(--line);border-radius:8px;padding:12px;resize:vertical}
+.dm-cta{margin-top:28px;border:1px solid var(--accent);border-radius:14px;padding:24px;background:var(--accent-soft)}
+.dm-cta h3{font-size:20px;margin:0 0 8px}
+.dm-cta p{margin:0 0 14px}
+.dm-btns{display:flex;flex-wrap:wrap;gap:10px}
+/* footer */
+footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);font-size:14px}
+/* screen responsive（screen限定） */
+@media screen and (max-width:820px){
+  .hero .wrap{grid-template-columns:1fr}
+  .hero img{max-width:260px}
+  .hero h1{font-size:30px}
+  .person-head{grid-template-columns:88px 1fr}
+  .avatar{width:88px;height:88px}
+  .radar-wrap{grid-column:1/-1;justify-self:center}
+  .person-body{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr 1fr}
+  .stat b{font-size:24px}
+  .chapters ol{columns:1}
+  .nav ul{display:none}
+  .tips-grid{grid-template-columns:1fr}
+  .opts{grid-template-columns:1fr}
+  .dr-head{grid-template-columns:1fr}
+  .dr-list{grid-template-columns:1fr}
+  .gap-grid{flex-direction:column}
+  .gap-arrow{transform:rotate(90deg);align-self:center}
+}
+/* print: A4横スライド */
+@page{size:A4 landscape;margin:12mm}
+@media print{
+  body{font-size:14pt;background:#fff;color:#000}
+  .nav,.actions,.embed,.hero .cta,.person .links{display:none!important}
+  .hero{page-break-after:always;background:#fff;border:0}
+  #trend{page-break-after:always}
+  .trend-wrap,.stat{border:1px solid #999;box-shadow:none}
+  .trend{min-width:0}
+  .person{page-break-inside:avoid;page-break-after:always;border:1px solid #999;box-shadow:none}
+  .person-more summary{display:none}
+  .person-body{display:grid}
+  .episode{page-break-inside:avoid;border:1px solid #999;box-shadow:none}
+  .chapters{display:none}
+  #shindan{display:none!important}
+  .tip{page-break-inside:avoid;border:1px solid #999;box-shadow:none}
+  section.block{padding:20pt 0}
+  .radar .lbl{font-size:11pt}
+  a{color:#000;text-decoration:none}
+}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="brand" href="../index.html">AI税理士のふたりごと</a>
+  <ul>
+    <li><a href="../index.html">番組トップ</a></li>
+    <li><a href="../tips.html">TIPS集</a></li>
+    <li><a href="../shindan.html">AI活用診断</a></li>
+    <li><a class="btn" href="https://open.spotify.com/show/033MPcU5KieI6y73kwmaBw" target="_blank" rel="noopener">Spotifyでフォロー</a></li>
+  </ul>
+</div></nav>
+
+<section class="block tip-detail"><div class="wrap">
+  <p class="crumb"><a href="../tips.html">← TIPS集にもどる</a></p>
+  <p class="tip-cat-badge">はじめの一歩</p>
+  <h2>AIに質問してもらう</h2>
+  <p class="tip-src">出典: <a class="chip" href="../index.html#ep-5">#5</a> <span class="tip-who">ゲスト回（灰藤健吾さん）</span></p>
+  <p class="tip-tags"><a class="tag" href="../tips.html?tag=%E5%A3%81%E6%89%93%E3%81%A1%E3%83%BB%E6%80%9D%E8%80%83%E6%95%B4%E7%90%86">壁打ち・思考整理</a></p>
+  <h3>番組で語られたこと</h3>
+  <p>指示が下手なのは「自分より優秀な部下」を持ったことがないから。逆にAIから質問してもらう形式にすると、会話が自然に進みます。#14でも「Claudeから質問が来る形式にする」として登場する定番の型です。</p>
+  <h3>こんなシーンで使えます</h3>
+  <ul class="styles"><li>顧問先への月次報告や決算説明の資料づくりを頼みたいが、何をどこまで説明すればいいか分からないとき</li><li>記帳や資料回収の手順が自分の頭の中にしかなく、言語化できていないとき</li><li>AIの回答がいつもピント外れで、指示の出し方に自信がないとき</li></ul>
+  
+  <h3>AIに投げるプロンプト例</h3>
+  <p class="note">番組の内容をもとに、そのまま使える形に畠山のAI秘書が起こした例文です。◯◯や（　）はご自身の状況に置き換えてください。</p>
+  <div class="kabe prompt-box">
+    <textarea id="tip-prompt" readonly rows="8">私は税理士です。「◯◯（例: 顧問先への月次報告づくり）」をAIに手伝ってほしいのですが、何から説明すればいいか分かりません。あなたが必要な情報を、私に1問ずつ質問してください。ひととおり揃ったら、進め方を提案してください。</textarea>
+    <div class="diag-actions"><button class="btn" type="button" onclick="copyPrompt(this)">プロンプトをコピー</button></div>
+  </div>
+  <div class="tip-nav"><a href="guchi-kara-hajimeru.html">← 前 「雑な愚痴」から始める</a><a href="ketsuron-made.html">次 結論まで出させる →</a></div>
+  <div class="dm-cta">
+    <h3>自分の現在地を知りたい方へ</h3>
+    <p>12問に答えるだけで、AI活用の立ち位置が出演者と同じ5角形で分かる診断を用意しました。次の一歩のヒントも出ます。</p>
+    <div class="dm-btns"><a class="btn" href="../shindan.html">AI活用度診断をやってみる</a></div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <p>AI税理士のふたりごと / パーソナリティ: 畠山謙人・さとうのごはん</p>
+  <p>税務判断は人、実行はAI。番組の内容は出演者個人の見解であり、個別の税務判断は専門家にご相談ください。</p>
+  <p>作成：畠山のAI秘書</p>
+</div></footer>
+<script>
+function copyPrompt(btn){
+  var ta=document.getElementById('tip-prompt');
+  function done(){btn.textContent='コピーしました';setTimeout(function(){btn.textContent='プロンプトをコピー';},2000);}
+  function fallback(){ta.select();document.execCommand('copy');done();}
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(ta.value).then(done,fallback);}
+  else{fallback();}
+}
+</script>
+</body>
+</html>

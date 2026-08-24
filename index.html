@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>AI税理士のふたりごと | 公式ページ</title>
-<meta name="description" content="AIで事務所を回す2人の税理士、畠山謙人とさとうのごはんによる対談ポッドキャスト「AI税理士のふたりごと」の公式ページ。各回の紹介・チャプター・出演者のAI活用法。">
+<meta name="description" content="AIで事務所を回す2人の税理士、畠山謙人とさとうのごはんによる対談ポッドキャスト「AI税理士のふたりごと」の公式ページ。各回の紹介・チャプター・出演者のAI活用法・AI活用TIPS集・AI活用度診断。">
 <meta property="og:title" content="AI税理士のふたりごと | 公式ページ">
 <meta property="og:description" content="AIで事務所を回す税理士2人の対談ポッドキャスト。各回の紹介と出演者のAI活用法。">
 <meta property="og:type" content="website">
@@ -44,6 +44,7 @@ small{font-size:14px;color:var(--fg2)}
 .hero .cta{display:flex;flex-wrap:wrap;gap:10px}
 /* buttons */
 .btn{display:inline-block;background:var(--accent);color:#fff;border:1px solid var(--accent);border-radius:8px;padding:8px 16px;font-size:14px;text-decoration:none;cursor:pointer;font-family:inherit;line-height:1.4}
+[hidden]{display:none!important}
 .btn:hover{filter:brightness(1.08)}
 .btn-ghost{background:transparent;color:var(--accent)}
 /* sections */
@@ -155,6 +156,91 @@ section.block+section.block{border-top:1px solid var(--line)}
 .actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
 .embed iframe{width:100%;height:152px;border:0;border-radius:12px;margin-top:12px}
 .upcoming{opacity:.85;border-style:dashed}
+/* tips */
+.tips-cat{font-size:18px;color:var(--fg2);margin:30px 0 14px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+.tips-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.tip{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.tip h4{font-size:16px;margin:0 0 8px;color:var(--accent)}
+.tip p{margin:0;font-size:14px;flex:1}
+.tip footer{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:14px;color:var(--fg2)}
+.tip h4 a{color:inherit;text-decoration:none}
+.tip h4 a:hover{text-decoration:underline}
+.tip .more{margin-left:auto;font-size:14px;text-decoration:none;white-space:nowrap}
+/* 業務別タグ（一覧の絞り込みバー＋カード・詳細ページのタグ） */
+.tagbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:18px 0 4px}
+.tagbar-k{font-size:14px;color:var(--fg2)}
+.tagchip{border:1px solid var(--line);background:var(--card);color:var(--fg);border-radius:999px;padding:4px 14px;font-size:14px;cursor:pointer;font-family:inherit;line-height:1.6}
+.tagchip:hover{border-color:var(--accent)}
+.tagchip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.tip-tags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 0}
+.tip .tip-tags{flex:none;margin:10px 0 0;display:flex}
+.tip-detail .tip-tags{margin:10px 0 0}
+.tag{display:inline-block;font-size:14px;border:1px solid var(--line);border-radius:999px;padding:0 10px;color:var(--fg2);background:transparent;cursor:pointer;font-family:inherit;text-decoration:none;line-height:1.7}
+.tag:hover{border-color:var(--accent);color:var(--accent)}
+/* tip detail */
+.crumb{font-size:14px;margin:0 0 20px}
+.crumb a{text-decoration:none}
+.tip-cat-badge{display:inline-block;font-size:14px;color:var(--accent);border:1px solid var(--accent);border-radius:6px;padding:0 8px;font-weight:700;margin:0 0 6px}
+.tip-detail h2{font-size:28px;margin:0 0 8px}
+.tip-detail h3{font-size:18px;color:var(--accent);margin:30px 0 10px}
+.tip-src{margin:0;color:var(--fg2);font-size:14px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.prompt-box textarea{min-height:150px}
+.tip-nav{display:flex;justify-content:space-between;gap:16px;margin-top:34px;padding-top:16px;border-top:1px solid var(--line);font-size:14px}
+.tip-nav a{text-decoration:none;max-width:48%}
+/* diagnosis */
+.dq{border:1px solid var(--line);border-radius:12px;background:var(--card);padding:14px 18px 16px;margin:0 0 14px;box-shadow:var(--shadow)}
+.dq legend{font-weight:700;padding:0 6px}
+.dq .qn{color:var(--accent);margin-right:8px}
+.dq.miss{border-color:var(--accent2);box-shadow:0 0 0 2px var(--accent2-soft)}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+.opt{display:flex;gap:8px;align-items:flex-start;border:1px solid var(--line);border-radius:8px;padding:8px 12px;cursor:pointer;font-size:14px;line-height:1.55}
+.opt:hover{border-color:var(--accent)}
+.opt.sel{border-color:var(--accent);background:var(--accent-soft)}
+.opt input{margin:3px 0 0;accent-color:var(--accent);flex:none}
+.diag-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+#diag-missing{color:var(--accent2);font-weight:700}
+/* wizard（JSが .wiz を付けると1問ずつ表示になる。JS無効時は全問表示） */
+.wiz-head{display:none;align-items:center;gap:14px;margin:0 0 14px}
+.wiz .wiz-head{display:flex}
+#wiz-pos{font-weight:700;color:var(--accent);white-space:nowrap;font-variant-numeric:tabular-nums}
+.wiz-bar{flex:1;height:8px;background:var(--line);border-radius:4px;overflow:hidden}
+#wiz-fill{height:100%;width:0;background:var(--accent);border-radius:4px;transition:width .25s}
+.wiz .dq{display:none}
+.wiz .dq.cur{display:block}
+#diag-result{margin-top:28px}
+.dr-head{display:grid;grid-template-columns:1fr 320px;gap:22px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px;box-shadow:var(--shadow)}
+.dr-kicker{margin:0;color:var(--fg2);font-size:14px}
+.dr-type{margin:2px 0 6px;font-size:32px;font-weight:700;color:var(--accent);line-height:1.3}
+.dr-total{margin:0 0 10px;color:var(--fg2);font-size:14px}
+.dr-desc{margin:0 0 12px}
+.dr-advice{margin:0;border-left:3px solid var(--accent);background:var(--bg2);border-radius:0 8px 8px 0;padding:10px 14px}
+.dr-advice b{display:block;color:var(--accent)}
+.dr-radar{justify-self:center}
+.dr-legend{display:flex;gap:14px;justify-content:center;font-size:14px;color:var(--fg2);margin:4px 0 0}
+.lg-ref::before{background:transparent;border:2px dashed var(--fg2);width:10px;height:6px;border-radius:2px}
+.radar .refline{fill:none;stroke:var(--fg2);stroke-width:1.5;stroke-dasharray:5 4}
+.dr-list{list-style:none;margin:14px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:8px 24px}
+.dr-list li{display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--line);padding:6px 2px;font-size:14px}
+.dr-list .k{flex:1}
+.dr-list .vs{color:var(--fg2)}
+/* 現状と理想の差分カード */
+.dr-gap{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 24px;box-shadow:var(--shadow)}
+.dr-gap h3{font-size:18px;margin:0 0 12px}
+.dr-gap h4{font-size:15px;margin:16px 0 4px;color:var(--accent)}
+.dr-gap p{margin:0;font-size:14px}
+.gap-grid{display:flex;gap:12px;align-items:stretch}
+.gap-cell{flex:1;background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:10px 14px}
+.gap-goal{border-color:var(--accent)}
+.gap-k{font-size:14px;color:var(--fg2);margin:0 0 4px!important}
+.gap-arrow{align-self:center;color:var(--fg2);flex:none}
+.kabe{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 24px;box-shadow:var(--shadow)}
+.kabe h3{font-size:18px;margin:0 0 6px}
+.kabe p{margin:0 0 12px;color:var(--fg2);font-size:14px}
+.kabe textarea{width:100%;min-height:200px;font-family:inherit;font-size:14px;line-height:1.6;color:var(--fg);background:var(--bg2);border:1px solid var(--line);border-radius:8px;padding:12px;resize:vertical}
+.dm-cta{margin-top:28px;border:1px solid var(--accent);border-radius:14px;padding:24px;background:var(--accent-soft)}
+.dm-cta h3{font-size:20px;margin:0 0 8px}
+.dm-cta p{margin:0 0 14px}
+.dm-btns{display:flex;flex-wrap:wrap;gap:10px}
 /* footer */
 footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);font-size:14px}
 /* screen responsive（screen限定） */
@@ -170,6 +256,12 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
   .stat b{font-size:24px}
   .chapters ol{columns:1}
   .nav ul{display:none}
+  .tips-grid{grid-template-columns:1fr}
+  .opts{grid-template-columns:1fr}
+  .dr-head{grid-template-columns:1fr}
+  .dr-list{grid-template-columns:1fr}
+  .gap-grid{flex-direction:column}
+  .gap-arrow{transform:rotate(90deg);align-self:center}
 }
 /* print: A4横スライド */
 @page{size:A4 landscape;margin:12mm}
@@ -185,6 +277,8 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
   .person-body{display:grid}
   .episode{page-break-inside:avoid;border:1px solid #999;box-shadow:none}
   .chapters{display:none}
+  #shindan{display:none!important}
+  .tip{page-break-inside:avoid;border:1px solid #999;box-shadow:none}
   section.block{padding:20pt 0}
   .radar .lbl{font-size:11pt}
   a{color:#000;text-decoration:none}
@@ -199,6 +293,8 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
     <li><a href="#trend">番組の伸び</a></li>
     <li><a href="#people">出演者</a></li>
     <li><a href="#episodes">エピソード</a></li>
+    <li><a href="tips.html">TIPS集</a></li>
+    <li><a href="shindan.html">AI活用診断</a></li>
     <li><a class="btn" href="https://open.spotify.com/show/033MPcU5KieI6y73kwmaBw" target="_blank" rel="noopener">Spotifyでフォロー</a></li>
   </ul>
 </div></nav>
@@ -732,7 +828,6 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
   <div class="embed" hidden></div>
 </article></div>
 </div></section>
-
 <footer><div class="wrap">
   <p>AI税理士のふたりごと / パーソナリティ: 畠山謙人・さとうのごはん</p>
   <p>税務判断は人、実行はAI。番組の内容は出演者個人の見解であり、個別の税務判断は専門家にご相談ください。</p>
