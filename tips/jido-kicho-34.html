@@ -281,6 +281,14 @@ section.block+section.block{border-top:1px solid var(--line)}
 #vf-missing{color:var(--accent2);font-weight:700}
 .vf-hp{position:absolute!important;left:-9999px;top:-9999px;width:1px;height:1px;opacity:0}
 .vf-demo{border:1px dashed var(--accent2);color:var(--accent2);border-radius:8px;padding:8px 12px;font-size:14px;font-weight:700;margin:0 0 14px}
+/* レトロ訪問者カウンター（Windows98風。意図的にOS配色固定・ダークモード非連動） */
+.w98{margin:36px auto 0;width:fit-content;max-width:calc(100% - 8px);background:#c0c0c0;color:#000;border:2px solid;border-color:#fff #404040 #404040 #fff;box-shadow:1px 1px 0 #000;padding:3px}
+.w98-bar{display:flex;align-items:center;gap:8px;background:linear-gradient(90deg,#000080,#1084d0);color:#fff;font-size:14px;font-weight:700;padding:2px 6px}
+.w98-bar .x{margin-left:auto;flex:none;background:#c0c0c0;color:#000;border:1px solid;border-color:#fff #404040 #404040 #fff;width:18px;height:16px;line-height:14px;font-size:14px;text-align:center}
+.w98-body{padding:12px 16px 10px;font-size:14px;text-align:center}
+.w98-digits{display:inline-flex;gap:2px;background:#000;border:2px solid;border-color:#404040 #fff #fff #404040;padding:3px 4px;margin:0 8px;vertical-align:middle}
+.w98-digits b{font-family:"Courier New",monospace;font-weight:700;font-size:22px;line-height:1;color:#00e600;background:#0d0d0d;padding:4px 3px;min-width:15px;text-align:center;text-shadow:0 0 6px rgba(0,230,0,.6)}
+.w98-note{font-size:14px;color:#404040;margin-top:6px}
 /* footer */
 footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);font-size:14px}
 /* screen responsive（screen限定） */
@@ -317,7 +325,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
   .person-body{display:grid}
   .episode{page-break-inside:avoid;border:1px solid #999;box-shadow:none}
   .chapters{display:none}
-  #shindan,#voice{display:none!important}
+  #shindan,#voice,.w98{display:none!important}
   .tip{page-break-inside:avoid;border:1px solid #999;box-shadow:none}
   section.block{padding:20pt 0}
   .radar .lbl{font-size:11pt}
