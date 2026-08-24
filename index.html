@@ -34,7 +34,7 @@ small{font-size:14px;color:var(--fg2)}
 .nav .btn{margin-left:8px}
 /* hero */
 .hero{padding:48px 0 40px;border-bottom:1px solid var(--line);background:var(--bg2)}
-.hero .wrap{display:grid;grid-template-columns:280px 1fr;gap:36px;align-items:center}
+.hero .wrap{position:relative;display:grid;grid-template-columns:280px 1fr;gap:36px;align-items:center}
 .hero img{width:100%;border-radius:16px;box-shadow:0 8px 28px rgba(0,0,0,.12)}
 .hero .kicker{color:var(--accent);font-weight:700;letter-spacing:.06em;font-size:14px}
 .hero h1{font-size:40px;margin:6px 0 14px}
@@ -281,19 +281,15 @@ section.block+section.block{border-top:1px solid var(--line)}
 #vf-missing{color:var(--accent2);font-weight:700}
 .vf-hp{position:absolute!important;left:-9999px;top:-9999px;width:1px;height:1px;opacity:0}
 .vf-demo{border:1px dashed var(--accent2);color:var(--accent2);border-radius:8px;padding:8px 12px;font-size:14px;font-weight:700;margin:0 0 14px}
-/* レトロ訪問者カウンター（Windows98風。意図的にOS配色固定・ダークモード非連動） */
-.w98{margin:36px auto 0;width:fit-content;max-width:calc(100% - 8px);background:#c0c0c0;color:#000;border:2px solid;border-color:#fff #404040 #404040 #fff;box-shadow:1px 1px 0 #000;padding:3px}
-.w98-bar{display:flex;align-items:center;gap:8px;background:linear-gradient(90deg,#000080,#1084d0);color:#fff;font-size:14px;font-weight:700;padding:2px 6px}
-.w98-bar .x{margin-left:auto;flex:none;background:#c0c0c0;color:#000;border:1px solid;border-color:#fff #404040 #404040 #fff;width:18px;height:16px;line-height:14px;font-size:14px;text-align:center}
-.w98-body{padding:12px 16px 10px;font-size:14px;text-align:center}
-.w98-digits{display:inline-flex;gap:2px;background:#000;border:2px solid;border-color:#404040 #fff #fff #404040;padding:3px 4px;margin:0 8px;vertical-align:middle}
-.w98-digits b{font-family:"Courier New",monospace;font-weight:700;font-size:22px;line-height:1;color:#00e600;background:#0d0d0d;padding:4px 3px;min-width:15px;text-align:center;text-shadow:0 0 6px rgba(0,230,0,.6)}
-.w98-note{font-size:14px;color:#404040;margin-top:6px}
+/* 訪問者カウンター（今風バッジ。昔のキリ番カウンター文化へのオマージュ） */
+.vc{position:absolute;top:22px;right:20px;display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:7px 16px;box-shadow:var(--shadow);font-size:14px;color:var(--fg2);cursor:default}
+.vc b{font-family:ui-monospace,"Cascadia Mono","Consolas","Courier New",monospace;font-variant-numeric:tabular-nums;font-weight:700;font-size:18px;line-height:1;letter-spacing:3px;color:var(--accent)}
 /* footer */
 footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);font-size:14px}
 /* screen responsive（screen限定） */
 @media screen and (max-width:820px){
   .hero .wrap{grid-template-columns:1fr}
+  .vc{position:static;margin-top:16px;width:fit-content}
   .hero img{max-width:260px}
   .hero h1{font-size:30px}
   .person-head{grid-template-columns:88px 1fr}
@@ -325,7 +321,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
   .person-body{display:grid}
   .episode{page-break-inside:avoid;border:1px solid #999;box-shadow:none}
   .chapters{display:none}
-  #shindan,#voice,.w98{display:none!important}
+  #shindan,#voice,.vc{display:none!important}
   .tip{page-break-inside:avoid;border:1px solid #999;box-shadow:none}
   section.block{padding:20pt 0}
   .radar .lbl{font-size:11pt}
@@ -354,12 +350,15 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
     <div class="kicker">PODCAST <b>×</b> 税理士2人の定期対談</div>
     <h1>AI税理士のふたりごと</h1>
     <p id="about">AIで事務所を回す2人の税理士、畠山謙人（@kandmybike）とさとうのごはん（@lklkfafa1）による対談番組。<br><br>AIエージェント運用の設計、自動化の失敗談、発信と収益の裏側まで。<br>実務家同士だから話せる本音を、定期対談で配信します。<br><br>税務判断は人、実行はAI。その実践の裏側をどうぞ。</p>
+    <p>ゲストも募集中。出演すると、6角形パラメータで自分のAI活用の立ち位置がわかります。<a href="#guest">くわしく →</a></p>
     <div class="hosts"><a href="https://x.com/kandmybike" target="_blank" rel="noopener">畠山謙人（@kandmybike）</a><a href="https://x.com/lklkfafa1" target="_blank" rel="noopener">さとうのごはん（@lklkfafa1）</a></div>
     <div class="cta">
       <a class="btn" href="https://open.spotify.com/show/033MPcU5KieI6y73kwmaBw" target="_blank" rel="noopener">Spotifyで聴く</a>
       <a class="btn btn-ghost" href="#episodes">エピソード一覧へ</a>
+      <a class="btn btn-ghost" href="#guest">ゲスト出演に応募する</a>
     </div>
   </div>
+  <div class="vc" title="Since 2026.08。キリ番を踏んだ方は、お便りフォームで自己申告してください">あなたは<b id="vcd">-------</b>人目の訪問者です</div>
 </div></header>
 
 <section class="block" id="trend"><div class="wrap">
@@ -680,7 +679,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
   </div>
   </details>
 </article>
-  <div class="dm-cta">
+  <div class="dm-cta" id="guest">
     <h3>ゲストも募集しています</h3>
     <p>AIを使って仕事をしている税理士・士業・経営者の方のゲスト出演を、随時募集しています。出演のおすすめポイントは2つ。ひとつは、6角形パラメータで自分のAI活用の立ち位置を確認できること。もうひとつは、台本なしの雑談から「その使い方があったか」という気づきが毎回生まれること。応募はお便りフォームに「ゲスト出演希望」と書いて送ってください。出演者のXへのDMでも大丈夫です。</p>
     <div class="dm-btns"><a class="btn" href="voice.html">お便りフォームから応募する</a><a class="btn btn-ghost" href="https://x.com/kandmybike" target="_blank" rel="noopener">畠山謙人のXにDM</a><a class="btn btn-ghost" href="https://x.com/lklkfafa1" target="_blank" rel="noopener">さとうのごはんのXにDM</a></div>
@@ -893,11 +892,6 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
     <div class="dm-btns"><a class="btn" href="voice.html">お便りフォームへ</a></div>
   </div>
 </div></section>
-<div class="wrap"><div class="w98">
-  <div class="w98-bar"><span>訪問者カウンター.exe</span><span class="x">×</span></div>
-  <div class="w98-body">あなたは<span class="w98-digits" id="w98d"><b>-</b><b>-</b><b>-</b><b>-</b><b>-</b><b>-</b><b>-</b></span>人目の訪問者です
-  <div class="w98-note">Since 2026.08　キリ番を踏んだ方は、お便りフォームで自己申告してください</div></div>
-</div></div>
 <footer><div class="wrap">
   <p>AI税理士のふたりごと / パーソナリティ: 畠山謙人・さとうのごはん</p>
   <p>税務判断は人、実行はAI。番組の内容は出演者個人の見解であり、個別の税務判断は専門家にご相談ください。</p>
@@ -915,20 +909,20 @@ function loadEmbed(btn){
   box.innerHTML='<iframe src="https://open.spotify.com/embed/episode/'+btn.dataset.embed+'?utm_source=generator&theme=0" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" title="Spotify player"></iframe>';
   box.hidden=false;btn.textContent='プレイヤーを閉じる';
 }
-/* Windows98風 訪問者カウンター（Abacus API・登録不要の無料カウントAPI）。
-   同一セッション内のリロードは加算しない（sessionStorageフラグ）。失敗時は「-」表示のまま */
+/* 訪問者カウンター（Abacus API・登録不要の無料カウントAPI）。
+   同一セッション内のリロードは加算しない（sessionStorageフラグ）。失敗時は「-------」表示のまま */
 (function(){
-  var d=document.getElementById('w98d');if(!d)return;
+  var d=document.getElementById('vcd');if(!d)return;
   var counted=false;
-  try{counted=!!sessionStorage.getItem('w98counted');}catch(e){}
+  try{counted=!!sessionStorage.getItem('vcounted');}catch(e){}
   var mode=counted?'get':'hit';
   fetch('https://abacus.jasoncameron.dev/'+mode+'/futarigoto-official/top-visits')
     .then(function(r){return r.json();})
     .then(function(j){
       if(typeof j.value!=='number')return;
-      if(!counted){try{sessionStorage.setItem('w98counted','1');}catch(e){}}
+      if(!counted){try{sessionStorage.setItem('vcounted','1');}catch(e){}}
       var s=String(j.value);if(s.length<7){s=('0000000'+s).slice(-7);}
-      d.innerHTML=s.split('').map(function(c){return '<b>'+c+'</b>';}).join('');
+      d.textContent=s;
     })
     .catch(function(){});
 })();
