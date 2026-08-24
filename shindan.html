@@ -4,10 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>AI活用度診断 | AI税理士のふたりごと</title>
-<meta name="description" content="AIを活用したいけれど、思うように進んでいない士業の方向け。14問に1問ずつ答えると、AI活用の現在地が6角形で分かり、次の一歩のヒントが出ます。回答はどこにも送信されません。">
+<meta name="description" content="AIを活用したいけれど、思うように進んでいない士業の方向け。14問に1問ずつ答えると、AI活用の現在地が6角形で分かり、次の一歩のヒントが出ます。結果はXでシェアできます。回答はどこにも送信されません。">
 <meta property="og:title" content="AI活用度診断 | AI税理士のふたりごと">
-<meta property="og:description" content="AIを活用したいけれど、思うように進んでいない士業の方向け。14問に1問ずつ答えると、AI活用の現在地が6角形で分かり、次の一歩のヒントが出ます。回答はどこにも送信されません。">
+<meta property="og:description" content="AIを活用したいけれど、思うように進んでいない士業の方向け。14問に1問ずつ答えると、AI活用の現在地が6角形で分かり、次の一歩のヒントが出ます。結果はXでシェアできます。回答はどこにも送信されません。">
 <meta property="og:type" content="website">
+<meta property="og:image" content="https://fromk0326-boop.github.io/futarigoto/og-shindan.png">
+<meta name="twitter:card" content="summary_large_image">
 <style>
 :root{
   --bg:#ffffff;--bg2:#f4f5f7;--fg:#1a1a1a;--fg2:#555;--line:#d9dce1;--card:#ffffff;
@@ -233,6 +235,12 @@ section.block+section.block{border-top:1px solid var(--line)}
 .gap-goal{border-color:var(--accent)}
 .gap-k{font-size:14px;color:var(--fg2);margin:0 0 4px!important}
 .gap-arrow{align-self:center;color:var(--fg2);flex:none}
+/* 結果のXシェア */
+.dr-share{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 24px;box-shadow:var(--shadow)}
+.dr-share h3{font-size:18px;margin:0 0 6px}
+.dr-share p{margin:0 0 12px;color:var(--fg2);font-size:14px}
+.dr-share img{width:100%;max-width:560px;height:auto;display:block;border:1px solid var(--line);border-radius:10px;margin:0 0 14px;background:#fff}
+.dr-share .note{margin:10px 0 0}
 .kabe{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 24px;box-shadow:var(--shadow)}
 .kabe h3{font-size:18px;margin:0 0 6px}
 .kabe p{margin:0 0 12px;color:var(--fg2);font-size:14px}
@@ -313,7 +321,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
 
 <section class="block" id="shindan"><div class="wrap">
   <h2>AI活用度診断</h2>
-  <p class="lead">「AIを使いたいけれど、思うように進んでいない」。そんな士業（税理士・会計士・社労士・司法書士など）の方向けの診断です。14個の質問に1問ずつ答えると、あなたの現在地が番組出演者と同じ6角形で分かり、「いまの困りごと」と「ありたい姿」の差分も見える化されて、次の一歩のヒントが出ます。結果からは、AIに貼るだけで壁打ちが始まる「カベウチ用プロンプト」も作れます。回答と結果はこのページの中だけで完結し、どこにも送信されません。</p>
+  <p class="lead">「AIを使いたいけれど、思うように進んでいない」。そんな士業（税理士・会計士・社労士・司法書士など）の方向けの診断です。14個の質問に1問ずつ答えると、あなたの現在地が番組出演者と同じ6角形で分かり、「いまの困りごと」と「ありたい姿」の差分も見える化されて、次の一歩のヒントが出ます。結果からは、AIに貼るだけで壁打ちが始まる「カベウチ用プロンプト」も作れて、6角形入りの結果画像を1枚にしてXでシェアもできます。回答と結果はこのページの中だけで完結し、どこにも送信されません（あなたがシェアしたときだけ、6角形のスコアがリンクに入ります）。</p>
   <div class="diag-form" id="diag-form">
     <div class="wiz-head"><span id="wiz-pos"></span><div class="wiz-bar"><div id="wiz-fill"></div></div></div>
     <fieldset class="dq"><legend><span class="qn">Q1</span><span class="qt">日々の定型業務（記帳・入力・転記・集計など）は、どれくらいAIに任せていますか？</span></legend><div class="opts"><label class="opt"><input type="radio" name="dq1" value="1" data-axis="automation"><span>ほぼ手作業でやっている</span></label><label class="opt"><input type="radio" name="dq1" value="2.5" data-axis="automation"><span>一部の作業でAIに下書きさせている</span></label><label class="opt"><input type="radio" name="dq1" value="4" data-axis="automation"><span>主要な定型業務はAIが処理して、人が確認する形になっている</span></label><label class="opt"><input type="radio" name="dq1" value="5" data-axis="automation"><span>定型業務の大半は自動で流れ、人は例外だけ見ている</span></label></div></fieldset><fieldset class="dq"><legend><span class="qn">Q2</span><span class="qt">人が指示しなくても勝手に動く仕組み（定時実行・自動レポート・自動送信など）はありますか？</span></legend><div class="opts"><label class="opt"><input type="radio" name="dq2" value="1" data-axis="automation"><span>ない。毎回自分がAIに指示している</span></label><label class="opt"><input type="radio" name="dq2" value="2.5" data-axis="automation"><span>決まったプロンプトを使い回している</span></label><label class="opt"><input type="radio" name="dq2" value="4" data-axis="automation"><span>1〜2本は自動で動く仕組みがある</span></label><label class="opt"><input type="radio" name="dq2" value="5" data-axis="automation"><span>毎日・毎週、複数の仕組みが勝手に動いている</span></label></div></fieldset><fieldset class="dq"><legend><span class="qn">Q3</span><span class="qt">あなたにとって、AIはどんな存在ですか？</span></legend><div class="opts"><label class="opt"><input type="radio" name="dq3" value="1" data-axis="delegation"><span>検索の代わり。たまに聞く相手</span></label><label class="opt"><input type="radio" name="dq3" value="2.5" data-axis="delegation"><span>文章や資料の下書き係</span></label><label class="opt"><input type="radio" name="dq3" value="4" data-axis="delegation"><span>仕事を任せる部下・アシスタント</span></label><label class="opt"><input type="radio" name="dq3" value="5" data-axis="delegation"><span>事務所（会社）を一緒に回す相棒・実行部隊</span></label></div></fieldset><fieldset class="dq"><legend><span class="qn">Q4</span><span class="qt">AIの出した結果を、どう扱っていますか？</span></legend><div class="opts"><label class="opt"><input type="radio" name="dq4" value="1" data-axis="delegation"><span>参考程度。基本は自分で作り直す</span></label><label class="opt"><input type="radio" name="dq4" value="2.5" data-axis="delegation"><span>出力を自分で手直しして使う</span></label><label class="opt"><input type="radio" name="dq4" value="4" data-axis="delegation"><span>だいたいそのまま使い、要所だけ直す</span></label><label class="opt"><input type="radio" name="dq4" value="5" data-axis="delegation"><span>承認するポイントだけ決めて、あとは任せている</span></label></div></fieldset><fieldset class="dq"><legend><span class="qn">Q5</span><span class="qt">本業の中で、AIを使っている業務の範囲はどれくらいですか？</span></legend><div class="opts"><label class="opt"><input type="radio" name="dq5" value="1" data-axis="breadth"><span>ほぼ1つの用途だけ（例: 文章作成だけ）</span></label><label class="opt"><input type="radio" name="dq5" value="2.5" data-axis="breadth"><span>2〜3の業務で使っている</span></label><label class="opt"><input type="radio" name="dq5" value="4" data-axis="breadth"><span>大半の業務で何かしら使っている</span></label><label class="opt"><input type="radio" name="dq5" value="5" data-axis="breadth"><span>ほぼ全業務に加えて、経営判断の壁打ちにも使っている</span></label></div></fieldset><fieldset class="dq"><legend><span class="qn">Q6</span><span class="qt">本業以外（発信・学習・資料づくり・プライベート）でAIを使っていますか？</span></legend><div class="opts"><label class="opt"><input type="radio" name="dq6" value="1" data-axis="breadth"><span>使っていない</span></label><label class="opt"><input type="radio" name="dq6" value="2.5" data-axis="breadth"><span>たまに調べ物や文章で使う</span></label><label class="opt"><input type="radio" name="dq6" value="4" data-axis="breadth"><span>発信や資料づくりで日常的に使っている</span></label><label class="opt"><input type="radio" name="dq6" value="5" data-axis="breadth"><span>生活や趣味まで含めて、AIが生活の一部になっている</span></label></div></fieldset><fieldset class="dq"><legend><span class="qn">Q7</span><span class="qt">AIへの指示（プロンプト）を、仕組みとして整えていますか？</span></legend><div class="opts"><label class="opt"><input type="radio" name="dq7" value="1" data-axis="design"><span>毎回その場で書いている</span></label><label class="opt"><input type="radio" name="dq7" value="2.5" data-axis="design"><span>よく使う指示をメモに貯めている</span></label><label class="opt"><input type="radio" name="dq7" value="4" data-axis="design"><span>テンプレートやルールを整備して使い回している</span></label><label class="opt"><input type="radio" name="dq7" value="5" data-axis="design"><span>指示や手順書そのものを、AIと一緒に改善し続けている</span></label></div></fieldset><fieldset class="dq"><legend><span class="qn">Q8</span><span class="qt">AIに渡す情報（自分のプロフィール・業務ルール・ファイル）を整備していますか？</span></legend><div class="opts"><label class="opt"><input type="radio" name="dq8" value="1" data-axis="design"><span>特にしていない。毎回その場で説明する</span></label><label class="opt"><input type="radio" name="dq8" value="2.5" data-axis="design"><span>長めの前提文を貼り付けて使っている</span></label><label class="opt"><input type="radio" name="dq8" value="4" data-axis="design"><span>自己紹介やルールをファイル化してAIに読ませている</span></label><label class="opt"><input type="radio" name="dq8" value="5" data-axis="design"><span>フォルダ構造ごと、AIが読める前提で設計している</span></label></div></fieldset><fieldset class="dq"><legend><span class="qn">Q9</span><span class="qt">自分の業務に合わせた独自の仕組みやツールを、作ったことはありますか？</span></legend><div class="opts"><label class="opt"><input type="radio" name="dq9" value="1" data-axis="originality"><span>ない</span></label><label class="opt"><input type="radio" name="dq9" value="2.5" data-axis="originality"><span>既存ツールの設定を工夫したことはある</span></label><label class="opt"><input type="radio" name="dq9" value="4" data-axis="originality"><span>AIと一緒に小さなツールや仕組みを作った</span></label><label class="opt"><input type="radio" name="dq9" value="5" data-axis="originality"><span>自作ツールが業務に組み込まれて、毎日動いている</span></label></div></fieldset><fieldset class="dq"><legend><span class="qn">Q10</span><span class="qt">あなたのAI活用を同業者に見せたら、どんな反応になりそうですか？</span></legend><div class="opts"><label class="opt"><input type="radio" name="dq10" value="1" data-axis="originality"><span>見せられるものは、まだない</span></label><label class="opt"><input type="radio" name="dq10" value="2.5" data-axis="originality"><span>「同じことをやっている」と言われそう</span></label><label class="opt"><input type="radio" name="dq10" value="4" data-axis="originality"><span>「それ、どうやるの？」と聞かれそう</span></label><label class="opt"><input type="radio" name="dq10" value="5" data-axis="originality"><span>勉強会やセミナーで話してほしいと言われそう</span></label></div></fieldset><fieldset class="dq"><legend><span class="qn">Q11</span><span class="qt">仕事の記録（作業ログ・売上・問い合わせ・顧客情報など）を、あとから使える形で貯めていますか？</span></legend><div class="opts"><label class="opt"><input type="radio" name="dq11" value="1" data-axis="data"><span>特に貯めていない。必要になったら探す</span></label><label class="opt"><input type="radio" name="dq11" value="2.5" data-axis="data"><span>ファイルやメモに残しているが、形式はバラバラ</span></label><label class="opt"><input type="radio" name="dq11" value="4" data-axis="data"><span>決まった形式で貯めて、AIが読める状態にしている</span></label><label class="opt"><input type="radio" name="dq11" value="5" data-axis="data"><span>記録自体が自動で貯まる仕組みになっている</span></label></div></fieldset><fieldset class="dq"><legend><span class="qn">Q12</span><span class="qt">貯めたデータを、振り返りや改善に使っていますか？</span></legend><div class="opts"><label class="opt"><input type="radio" name="dq12" value="1" data-axis="data"><span>ほとんど見返していない</span></label><label class="opt"><input type="radio" name="dq12" value="2.5" data-axis="data"><span>気になったときに見返す程度</span></label><label class="opt"><input type="radio" name="dq12" value="4" data-axis="data"><span>定期的に集計して、やり方の見直しに使っている</span></label><label class="opt"><input type="radio" name="dq12" value="5" data-axis="data"><span>集計・レポートまで自動化して、判断材料にしている</span></label></div></fieldset><fieldset class="dq"><legend><span class="qn">Q13</span><span class="qt">いま、いちばん時間を取られている（または、やりたいのにできていない）ことはどれですか？</span></legend><div class="opts"><label class="opt"><input type="radio" name="dp" value="0"><span>記帳・データ入力・チェックなどの経理作業</span></label><label class="opt"><input type="radio" name="dp" value="1"><span>資料回収・リマインドなど顧問先とのやり取り</span></label><label class="opt"><input type="radio" name="dp" value="2"><span>月次報告・決算説明など顧問先向けの資料づくり</span></label><label class="opt"><input type="radio" name="dp" value="3"><span>自分の時間・タスクの管理</span></label><label class="opt"><input type="radio" name="dp" value="4"><span>発信・営業（X・ブログ・セミナー）</span></label><label class="opt"><input type="radio" name="dp" value="5"><span>所内・チームへのAI浸透</span></label></div></fieldset><fieldset class="dq"><legend><span class="qn">Q14</span><span class="qt">AIをうまく使えたら、どうなっていたいですか？いちばん近いものを選んでください。</span></legend><div class="opts"><label class="opt"><input type="radio" name="dg" value="0"><span>残業や休日作業を減らして、時間の余裕を作りたい</span></label><label class="opt"><input type="radio" name="dg" value="1"><span>今の人数のまま、顧問先や案件を増やしたい</span></label><label class="opt"><input type="radio" name="dg" value="2"><span>単純作業を減らして、相談対応など付加価値の高い仕事に時間を使いたい</span></label><label class="opt"><input type="radio" name="dg" value="3"><span>発信や新サービスなど、新しい挑戦の時間を作りたい</span></label><label class="opt"><input type="radio" name="dg" value="4"><span>事務所やチーム全体の生産性を上げたい</span></label></div></fieldset>
@@ -337,7 +345,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
   <p>税務判断は人、実行はAI。番組の内容は出演者個人の見解であり、個別の税務判断は専門家にご相談ください。</p>
   <p>作成：畠山のAI秘書</p>
 </div></footer>
-<script>var DIAG={"axes": [["automation", "自動化の深さ"], ["delegation", "AIとの距離"], ["breadth", "業務の幅"], ["design", "工夫・設計"], ["originality", "オリジナリティ"], ["data", "データ活用"]], "levels": [[2.0, "これから派", "伸びしろが一番大きいゾーンです。最初の一歩は「雑な愚痴をAIに投げる」でOK。きれいな指示文は要りません。"], [3.0, "お試し派", "AIが「たまに使う道具」から「下書き係」になってきた段階です。定型業務を1つ選んで、最後まで任せてみるのが次の一歩です。"], [3.8, "実務投入派", "番組出演者の平均ライン（3.0）付近です。任せる範囲を広げるには、承認ポイントの設計と、AIに読ませる情報の整備が効きます。"], [4.5, "仕組み化派", "人が指示しなくても動く仕組みを増やす段階です。組織に広げるなら「チェック→レポート→業務自動化」の順番がおすすめです。"], [99, "実行部隊派", "もう番組に出る側です。あなたの活用法を、ぜひ2人に聞かせてください。下のDMからどうぞ。"]], "advice": {"automation": {"t": "定型業務を1つ選んで、AIに最後まで任せてみましょう。誤作動が怖い箇所にだけ「承認ゲート」を置くのがコツです。", "slug": "shonin-gate", "label": "誤作動が怖い所に「承認ゲート」"}, "delegation": {"t": "AIを下書き係から部下へ。結論と理由まで出させて、人は承認だけに回るのが次の一歩です。", "slug": "ketsuron-made", "label": "結論まで出させる"}, "breadth": {"t": "本業以外（発信・資料づくり・生活）にも広げると、AIとの会話量が増えて一気に馴染みます。", "slug": "jibun-log", "label": "「自分とは何者か」を貯め続ける"}, "design": {"t": "自己紹介やルールのファイル化から始めましょう。AIに読ませる情報を整えると、同じ指示でも精度が変わります。", "slug": "jikoshokai-file", "label": "自己紹介ファイルをAIに読ませる"}, "originality": {"t": "「ないなら作る」。AIと一緒に作る小さな自作ツールが、独自性の入口です。", "slug": "jisaku-button", "label": "会計ソフトに自作ボタンを付ける"}, "data": {"t": "まずは仕事の記録を「あとからAIが読める形」で貯めるところから。貯まったデータは、顧客対応や発信との掛け算で効いてきます。", "slug": "kokyaku-master", "label": "顧客マスターデータとの掛け算"}}, "pain": [{"label": "記帳・データ入力・チェックなどの経理作業", "self": "記帳の自動化は「全部」を狙わず、月次処理の工程分解と自動記帳率3〜4割から始められます。", "consult": "どの工程から自動化するかの優先順位づけと、事務所の記帳フロー全体の再設計", "tips": [{"slug": "jido-kicho-34", "title": "自動記帳率は3〜4割から"}, {"slug": "jisaku-button", "title": "会計ソフトに自作ボタンを付ける"}]}, {"label": "資料回収・リマインドなど顧問先とのやり取り", "self": "催促・リマインドの下書きはAI、送信ボタンだけ人が押す「承認ゲート」型なら今日から試せます。", "consult": "顧問先を巻き込む運用変更（資料の出し方・連絡手段をお客様側に変えてもらう部分）", "tips": [{"slug": "shonin-gate", "title": "誤作動が怖い所に「承認ゲート」"}, {"slug": "honyaku", "title": "AIの答えを「翻訳」する"}]}, {"label": "月次報告・決算説明など顧問先向けの資料づくり", "self": "AIに1問ずつ質問させて要件を出し切る型と、顧客カルテとの掛け算で「その会社向けの説明」に変えられます。", "consult": "顧問先ごとの説明レベル・報告フォーマットの設計と、既存資料からの移行", "tips": [{"slug": "ai-ni-shitsumon", "title": "AIに質問してもらう"}, {"slug": "kokyaku-master", "title": "顧客マスターデータとの掛け算"}]}, {"label": "自分の時間・タスクの管理", "self": "毎朝AIが今日の予定・期限・未処理を1通にまとめる「朝のブリーフィング」の型があります。", "consult": "散らばったツール（カレンダー・TODO・メモ）を、あなたの環境でどうつなぐかの設計", "tips": [{"slug": "asa-mail", "title": "毎朝8時の自分あてメール"}, {"slug": "guchi-kara-hajimeru", "title": "「雑な愚痴」から始める"}]}, {"label": "発信・営業（X・ブログ・セミナー）", "self": "音声を一次情報にしてAIに展開させる分業と、自分メモの蓄積で「自分らしい文章」に近づけられます。", "consult": "何を強みとして発信するかの設計と、業務に無理なく組み込む頻度・体制づくり", "tips": [{"slug": "ichiji-joho", "title": "一次情報は音声・動画に置く"}, {"slug": "jibun-log", "title": "「自分とは何者か」を貯め続ける"}]}, {"label": "所内・チームへのAI浸透", "self": "「まず感動してもらうデモ」と「チェック→レポート→業務自動化の順番」という浸透の型があります。", "consult": "所内の反対意見への向き合い方や、誰から・どの業務から広げるかの組織設計", "tips": [{"slug": "kando", "title": "まず最初に感動してもらう"}, {"slug": "dounyu-junban", "title": "AI導入は順番を間違えない"}]}], "goal": [{"label": "残業や休日作業を減らして、時間の余裕を作りたい"}, {"label": "今の人数のまま、顧問先や案件を増やしたい"}, {"label": "単純作業を減らして、相談対応など付加価値の高い仕事に時間を使いたい"}, {"label": "発信や新サービスなど、新しい挑戦の時間を作りたい"}, {"label": "事務所やチーム全体の生産性を上げたい"}]};
+<script>var DIAG={"axes": [["automation", "自動化の深さ"], ["delegation", "AIとの距離"], ["breadth", "業務の幅"], ["design", "工夫・設計"], ["originality", "オリジナリティ"], ["data", "データ活用"]], "levels": [[2.0, "これから派", "伸びしろが一番大きいゾーンです。最初の一歩は「雑な愚痴をAIに投げる」でOK。きれいな指示文は要りません。"], [3.0, "お試し派", "AIが「たまに使う道具」から「下書き係」になってきた段階です。定型業務を1つ選んで、最後まで任せてみるのが次の一歩です。"], [3.8, "実務投入派", "番組出演者の平均ライン（3.0）付近です。任せる範囲を広げるには、承認ポイントの設計と、AIに読ませる情報の整備が効きます。"], [4.5, "仕組み化派", "人が指示しなくても動く仕組みを増やす段階です。組織に広げるなら「チェック→レポート→業務自動化」の順番がおすすめです。"], [99, "実行部隊派", "もう番組に出る側です。あなたの活用法を、ぜひ2人に聞かせてください。下のDMからどうぞ。"]], "advice": {"automation": {"t": "定型業務を1つ選んで、AIに最後まで任せてみましょう。誤作動が怖い箇所にだけ「承認ゲート」を置くのがコツです。", "slug": "shonin-gate", "label": "誤作動が怖い所に「承認ゲート」"}, "delegation": {"t": "AIを下書き係から部下へ。結論と理由まで出させて、人は承認だけに回るのが次の一歩です。", "slug": "ketsuron-made", "label": "結論まで出させる"}, "breadth": {"t": "本業以外（発信・資料づくり・生活）にも広げると、AIとの会話量が増えて一気に馴染みます。", "slug": "jibun-log", "label": "「自分とは何者か」を貯め続ける"}, "design": {"t": "自己紹介やルールのファイル化から始めましょう。AIに読ませる情報を整えると、同じ指示でも精度が変わります。", "slug": "jikoshokai-file", "label": "自己紹介ファイルをAIに読ませる"}, "originality": {"t": "「ないなら作る」。AIと一緒に作る小さな自作ツールが、独自性の入口です。", "slug": "jisaku-button", "label": "会計ソフトに自作ボタンを付ける"}, "data": {"t": "まずは仕事の記録を「あとからAIが読める形」で貯めるところから。貯まったデータは、顧客対応や発信との掛け算で効いてきます。", "slug": "kokyaku-master", "label": "顧客マスターデータとの掛け算"}}, "pain": [{"label": "記帳・データ入力・チェックなどの経理作業", "self": "記帳の自動化は「全部」を狙わず、月次処理の工程分解と自動記帳率3〜4割から始められます。", "consult": "どの工程から自動化するかの優先順位づけと、事務所の記帳フロー全体の再設計", "tips": [{"slug": "jido-kicho-34", "title": "自動記帳率は3〜4割から"}, {"slug": "jisaku-button", "title": "会計ソフトに自作ボタンを付ける"}]}, {"label": "資料回収・リマインドなど顧問先とのやり取り", "self": "催促・リマインドの下書きはAI、送信ボタンだけ人が押す「承認ゲート」型なら今日から試せます。", "consult": "顧問先を巻き込む運用変更（資料の出し方・連絡手段をお客様側に変えてもらう部分）", "tips": [{"slug": "shonin-gate", "title": "誤作動が怖い所に「承認ゲート」"}, {"slug": "honyaku", "title": "AIの答えを「翻訳」する"}]}, {"label": "月次報告・決算説明など顧問先向けの資料づくり", "self": "AIに1問ずつ質問させて要件を出し切る型と、顧客カルテとの掛け算で「その会社向けの説明」に変えられます。", "consult": "顧問先ごとの説明レベル・報告フォーマットの設計と、既存資料からの移行", "tips": [{"slug": "ai-ni-shitsumon", "title": "AIに質問してもらう"}, {"slug": "kokyaku-master", "title": "顧客マスターデータとの掛け算"}]}, {"label": "自分の時間・タスクの管理", "self": "毎朝AIが今日の予定・期限・未処理を1通にまとめる「朝のブリーフィング」の型があります。", "consult": "散らばったツール（カレンダー・TODO・メモ）を、あなたの環境でどうつなぐかの設計", "tips": [{"slug": "asa-mail", "title": "毎朝8時の自分あてメール"}, {"slug": "guchi-kara-hajimeru", "title": "「雑な愚痴」から始める"}]}, {"label": "発信・営業（X・ブログ・セミナー）", "self": "音声を一次情報にしてAIに展開させる分業と、自分メモの蓄積で「自分らしい文章」に近づけられます。", "consult": "何を強みとして発信するかの設計と、業務に無理なく組み込む頻度・体制づくり", "tips": [{"slug": "ichiji-joho", "title": "一次情報は音声・動画に置く"}, {"slug": "jibun-log", "title": "「自分とは何者か」を貯め続ける"}]}, {"label": "所内・チームへのAI浸透", "self": "「まず感動してもらうデモ」と「チェック→レポート→業務自動化の順番」という浸透の型があります。", "consult": "所内の反対意見への向き合い方や、誰から・どの業務から広げるかの組織設計", "tips": [{"slug": "kando", "title": "まず最初に感動してもらう"}, {"slug": "dounyu-junban", "title": "AI導入は順番を間違えない"}]}], "goal": [{"label": "残業や休日作業を減らして、時間の余裕を作りたい"}, {"label": "今の人数のまま、顧問先や案件を増やしたい"}, {"label": "単純作業を減らして、相談対応など付加価値の高い仕事に時間を使いたい"}, {"label": "発信や新サービスなど、新しい挑戦の時間を作りたい"}, {"label": "事務所やチーム全体の生産性を上げたい"}], "url": "https://fromk0326-boop.github.io/futarigoto/", "hashtag": "#AI税理士のふたりごと"};
 var wizForm=document.getElementById('diag-form');
 var steps=[].slice.call(document.querySelectorAll('#shindan .dq'));
 var cur=0;
@@ -439,9 +447,7 @@ function diagRun(){
   });
   var avg=details.reduce(function(a,d){return a+d.score;},0)/details.length;
   avg=Math.round(avg*10)/10;
-  var lv=null;
-  for(var i=0;i<DIAG.levels.length;i++){if(avg<DIAG.levels[i][0]){lv=DIAG.levels[i];break;}}
-  if(!lv)lv=DIAG.levels[DIAG.levels.length-1];
+  var lv=diagLevel(avg);
   var lowest=details.slice().sort(function(a,b){return a.score-b.score;})[0];
   var ad=DIAG.advice[lowest.key];
   var rows=details.map(function(d){
@@ -478,6 +484,13 @@ function diagRun(){
     '</div>'+
     '<ul class="dr-list">'+rows+'</ul>'+
     gap+
+    '<div class="dr-share">'+
+      '<h3>結果をXでシェアする</h3>'+
+      '<p>診断結果を1枚の画像にしました。6角形と「これから」が、そのまま伝わります。</p>'+
+      '<img id="share-img" alt="診断結果のシェア画像">'+
+      '<div class="diag-actions" id="share-btns"></div>'+
+      '<p class="note" id="share-note"></p>'+
+    '</div>'+
     '<div class="kabe">'+
       '<h3>この結果でカベウチする</h3>'+
       '<p>下のプロンプトをコピーして、いつものAI（Claude・ChatGPTなど）に貼り付けると、診断結果を踏まえた壁打ちがそのまま始まります。</p>'+
@@ -486,10 +499,191 @@ function diagRun(){
       '<button class="btn btn-ghost" type="button" onclick="diagReset()">もう一度診断する</button></div>'+
     '</div>';
   document.getElementById('kabe-text').value=diagPrompt(avg,lv,details,pain,goal);
+  diagShareSetup(vals,avg,lv,details,goal,gc?gc.value:null);
   wizForm.hidden=true;
   box.hidden=false;
   box.scrollIntoView({behavior:'smooth',block:'start'});
 }
+function diagLevel(avg){
+  for(var i=0;i<DIAG.levels.length;i++){if(avg<DIAG.levels[i][0])return DIAG.levels[i];}
+  return DIAG.levels[DIAG.levels.length-1];
+}
+/* ---- Xシェア: 結果カード画像（1200x675 canvas）＋ポスト文生成 ---- */
+var SHARE={canvas:null,text:'',url:''};
+var SHARE_FONT='"Meiryo UI","Hiragino Sans","Yu Gothic UI",sans-serif';
+function cwrap(x,text,px,py,maxW,lh,maxLines){
+  var line='',lines=[];
+  for(var i=0;i<text.length;i++){
+    var t=line+text.charAt(i);
+    if(x.measureText(t).width>maxW&&line){lines.push(line);line=text.charAt(i);}else{line=t;}
+  }
+  if(line)lines.push(line);
+  if(maxLines&&lines.length>maxLines){lines=lines.slice(0,maxLines);lines[maxLines-1]=lines[maxLines-1].replace(/.$/, '…');}
+  lines.forEach(function(l,i){x.fillText(l,px,py+i*lh);});
+  return lines.length;
+}
+function chipDraw(x,label,px,by){
+  x.font='bold 22px '+SHARE_FONT;
+  var w=x.measureText(label).width+26;
+  x.fillStyle='#2b6cb0';
+  if(x.roundRect){x.beginPath();x.roundRect(px,by-26,w,37,8);x.fill();}else{x.fillRect(px,by-26,w,37);}
+  x.fillStyle='#fff';x.fillText(label,px+13,by);
+  return w;
+}
+function drawShareCard(vals,avg,lv,strength,goal){
+  var W=1200,H=675,c=document.createElement('canvas');c.width=W;c.height=H;
+  var x=c.getContext('2d');
+  var AC='#2b6cb0',FG='#1a202c',FG2='#5f6b7a',LINE='#d7dde3',F=SHARE_FONT;
+  x.fillStyle='#fff';x.fillRect(0,0,W,H);
+  x.fillStyle=AC;x.fillRect(0,0,W,8);
+  x.textBaseline='alphabetic';
+  x.fillStyle=FG2;x.font='26px '+F;x.fillText('AI活用度診断｜ポッドキャスト「AI税理士のふたりごと」',70,80);
+  x.fillStyle=FG2;x.font='28px '+F;x.fillText('わたしの現在地',70,150);
+  x.fillStyle=AC;x.font='bold 76px '+F;x.fillText(lv[1],70,226);
+  x.fillStyle=FG;x.font='bold 36px '+F;
+  var tt='総合 '+avg.toFixed(1)+' / 5';
+  x.fillText(tt,70,288);
+  var tw=x.measureText(tt).width;
+  x.fillStyle=FG2;x.font='22px '+F;x.fillText('点線＝番組出演者の平均（3.0）',70+tw+18,288);
+  for(var i=0;i<DIAG.axes.length;i++){
+    var px=70+(i%2)*270,py=352+Math.floor(i/2)*46;
+    x.fillStyle=FG2;x.font='24px '+F;x.fillText(DIAG.axes[i][1],px,py);
+    x.fillStyle=FG;x.font='bold 24px '+F;x.fillText((vals[DIAG.axes[i][0]]||0).toFixed(1),px+180,py);
+  }
+  var cw=chipDraw(x,'強み',70,524);
+  x.fillStyle=FG;x.font='bold 30px '+F;
+  x.fillText(strength.label+'  '+strength.score.toFixed(1),70+cw+16,524);
+  if(goal){
+    var cw2=chipDraw(x,'これから',70,590);
+    x.fillStyle=FG;x.font='26px '+F;
+    cwrap(x,goal.label,70+cw2+16,590,1040-cw2,30,2);
+  }
+  x.fillStyle=FG2;x.font='22px '+F;
+  x.fillText(DIAG.url.replace(/^https?:\/\//,'')+'shindan.html　'+DIAG.hashtag,70,658);
+  /* 6角形レーダー（右側）。ラベル込みで 1200px に収まるよう cx/r/フォントを調整済み */
+  var cx=850,cy=330,r=165,n=DIAG.axes.length;
+  function pt(i,ratio){var a=-Math.PI/2+2*Math.PI*i/n;return [cx+r*ratio*Math.cos(a),cy+r*ratio*Math.sin(a)];}
+  function poly(ratioFn){x.beginPath();for(var i=0;i<n;i++){var p=ratioFn(i);if(i===0)x.moveTo(p[0],p[1]);else x.lineTo(p[0],p[1]);}x.closePath();}
+  for(var lvl=1;lvl<=5;lvl++){
+    poly(function(i){return pt(i,lvl/5);});
+    x.strokeStyle=lvl===5?FG2:LINE;x.lineWidth=lvl===5?2:1;x.setLineDash([]);x.stroke();
+  }
+  for(var i=0;i<n;i++){var p=pt(i,1);x.beginPath();x.moveTo(cx,cy);x.lineTo(p[0],p[1]);x.strokeStyle=LINE;x.lineWidth=1;x.stroke();}
+  poly(function(i){return pt(i,0.6);});
+  x.strokeStyle=FG2;x.lineWidth=2;x.setLineDash([8,6]);x.stroke();x.setLineDash([]);
+  poly(function(i){return pt(i,Math.max(0,Math.min(5,vals[DIAG.axes[i][0]]||0))/5);});
+  x.fillStyle='rgba(43,108,176,0.16)';x.fill();
+  x.strokeStyle=AC;x.lineWidth=4;x.stroke();
+  for(var i=0;i<n;i++){
+    var v=Math.max(0,Math.min(5,vals[DIAG.axes[i][0]]||0)),p=pt(i,v/5);
+    x.beginPath();x.arc(p[0],p[1],6,0,2*Math.PI);x.fillStyle=AC;x.fill();
+  }
+  x.fillStyle=FG2;x.font='24px '+F;
+  for(var i=0;i<n;i++){
+    var p=pt(i,1.22),lx=p[0],ly=p[1];
+    x.textAlign=lx<cx-8?'right':(lx>cx+8?'left':'center');
+    x.fillText(DIAG.axes[i][1],lx,ly+(Math.abs(ly-cy)<8?9:(ly>cy?26:-6)));
+  }
+  x.textAlign='left';
+  return c;
+}
+function diagShareSetup(vals,avg,lv,details,goal,goalIdx){
+  var strength=details.slice().sort(function(a,b){return b.score-a.score;})[0];
+  var code=DIAG.axes.map(function(ax){return ('0'+Math.round((vals[ax[0]]||0)*10)).slice(-2);}).join('');
+  SHARE.url=DIAG.url+'shindan.html?r='+code+(goalIdx!==null&&goalIdx!==undefined?'&g='+goalIdx:'');
+  SHARE.text='AI活用度診断をやってみた。タイプは「'+lv[1]+'」（総合'+avg.toFixed(1)+'/5）。強みは「'+strength.label+'」'+(goal?'、これからは「'+goal.label+'」':'')+'。\n'+DIAG.hashtag;
+  SHARE.canvas=drawShareCard(vals,avg,lv,strength,goal);
+  var img=document.getElementById('share-img');
+  if(img)img.src=SHARE.canvas.toDataURL('image/png');
+  var btns=document.getElementById('share-btns'),note=document.getElementById('share-note');
+  if(!btns)return;
+  var canFiles=false;
+  try{canFiles=!!(navigator.canShare&&navigator.canShare({files:[new File([new Blob(['x'])],'t.png',{type:'image/png'})]}));}catch(e){}
+  var h='';
+  if(canFiles){
+    h+='<button class="btn" type="button" onclick="diagShareNative()">画像つきでXにシェア</button>';
+    h+='<button class="btn btn-ghost" type="button" onclick="diagShareX()">Xでポスト（リンクのみ）</button>';
+    note.textContent='共有メニューでXを選ぶと、画像つきのままポスト画面が開きます。ポスト文は自動で入ります。';
+  }else{
+    h+='<button class="btn btn-ghost" type="button" onclick="diagSaveImg()">① 画像を保存</button>';
+    if(navigator.clipboard&&window.ClipboardItem){h+='<button class="btn btn-ghost" type="button" onclick="diagCopyImg(this)">画像をコピー</button>';}
+    h+='<button class="btn" type="button" onclick="diagShareX()">② Xでポスト</button>';
+    note.textContent='ポスト文とリンクは自動で入ります。保存（コピー）した画像を添付してポストしてください。';
+  }
+  btns.innerHTML=h;
+}
+function diagShareX(){
+  window.open('https://x.com/intent/post?text='+encodeURIComponent(SHARE.text)+'&url='+encodeURIComponent(SHARE.url),'_blank','noopener');
+}
+function diagShareNative(){
+  if(!SHARE.canvas)return;
+  SHARE.canvas.toBlob(function(b){
+    if(!b)return;
+    var f=new File([b],'ai-katsuyo-shindan.png',{type:'image/png'});
+    navigator.share({files:[f],text:SHARE.text+'\n'+SHARE.url}).catch(function(){});
+  },'image/png');
+}
+function diagSaveImg(){
+  if(!SHARE.canvas)return;
+  var a=document.createElement('a');
+  a.href=SHARE.canvas.toDataURL('image/png');a.download='ai-katsuyo-shindan.png';
+  document.body.appendChild(a);a.click();a.remove();
+}
+function diagCopyImg(btn){
+  if(!SHARE.canvas)return;
+  try{
+    navigator.clipboard.write([new ClipboardItem({'image/png':new Promise(function(res){SHARE.canvas.toBlob(res,'image/png');})})]).then(
+      function(){btn.textContent='コピーしました';setTimeout(function(){btn.textContent='画像をコピー';},2000);},
+      function(){diagSaveImg();}
+    );
+  }catch(e){diagSaveImg();}
+}
+/* ---- シェアされたURL（?r=…）で開いたとき: 投稿者の6角形＋「自分も診断」CTA ---- */
+function diagInitShared(qs){
+  var m=/[?&]r=(\d{12})(?:&|$)/.exec(qs);
+  if(!m)return;
+  var g=/[?&]g=(\d)(?:&|$)/.exec(qs);
+  var vals={},ok=true;
+  DIAG.axes.forEach(function(ax,i){
+    var v=parseInt(m[1].substr(i*2,2),10)/10;
+    if(!(v>=1&&v<=5))ok=false;
+    vals[ax[0]]=v;
+  });
+  if(!ok)return;
+  var goal=g&&DIAG.goal[parseInt(g[1],10)]?DIAG.goal[parseInt(g[1],10)]:null;
+  var details=DIAG.axes.map(function(ax){return {key:ax[0],label:ax[1],score:vals[ax[0]]};});
+  var avg=Math.round(details.reduce(function(a,d){return a+d.score;},0)/details.length*10)/10;
+  var lv=diagLevel(avg);
+  var strength=details.slice().sort(function(a,b){return b.score-a.score;})[0];
+  var rows=details.map(function(d){
+    return '<li><span class="k">'+d.label+'</span><span class="bar" style="--v:'+d.score+'"></span><b>'+d.score.toFixed(1)+'</b><span class="vs">/ 5</span></li>';
+  }).join('');
+  var box=document.getElementById('diag-result');
+  box.innerHTML=
+    '<div class="dr-head">'+
+      '<div class="dr-text">'+
+        '<p class="dr-kicker">シェアされた診断結果</p>'+
+        '<p class="dr-type">'+lv[1]+'</p>'+
+        '<p class="dr-total">総合 '+avg.toFixed(1)+' / 5（3.0が番組出演者の平均に相当）</p>'+
+        '<p class="dr-desc">この6角形は、リンクをシェアした人の診断結果です。強みは「'+strength.label+'」'+(goal?'、これからは「'+goal.label+'」':'')+'。</p>'+
+        '<div class="diag-actions"><button class="btn" type="button" onclick="diagStartFresh()">自分も診断してみる（14問・約3分）</button></div>'+
+      '</div>'+
+      '<div class="dr-radar">'+diagRadarSvg(vals)+
+        '<p class="dr-legend"><span class="lg lg-h">シェアした人</span><span class="lg lg-ref">出演者平均（3.0）</span></p>'+
+      '</div>'+
+    '</div>'+
+    '<ul class="dr-list">'+rows+'</ul>';
+  wizForm.hidden=true;
+  box.hidden=false;
+}
+function diagStartFresh(){
+  if(history.replaceState)history.replaceState(null,'',location.pathname);
+  document.getElementById('diag-result').hidden=true;
+  wizForm.hidden=false;
+  wizShow(0);
+  document.getElementById('shindan').scrollIntoView({behavior:'smooth',block:'start'});
+}
+diagInitShared(location.search);
 function diagCopy(btn){
   var ta=document.getElementById('kabe-text');
   function done(){btn.textContent='コピーしました';setTimeout(function(){btn.textContent='プロンプトをコピー';},2000);}
