@@ -12,10 +12,12 @@
 :root{
   --bg:#ffffff;--bg2:#f4f5f7;--fg:#1a1a1a;--fg2:#555;--line:#d9dce1;--card:#ffffff;
   --accent:#005abe;--accent-soft:rgba(0,90,190,.14);--accent2:#e87300;--accent2-soft:rgba(251,128,1,.16);--shadow:0 1px 2px rgba(0,0,0,.06);
+  --rank:#c62828;
 }
 @media (prefers-color-scheme: dark){
   :root{--bg:#131416;--bg2:#1c1e22;--fg:#ececec;--fg2:#b3b3b3;--line:#34373d;--card:#1a1c20;
-    --accent:#7fb0e0;--accent-soft:rgba(127,176,224,.18);--accent2:#ffa14a;--accent2-soft:rgba(255,161,74,.18);--shadow:none;}
+    --accent:#7fb0e0;--accent-soft:rgba(127,176,224,.18);--accent2:#ffa14a;--accent2-soft:rgba(255,161,74,.18);--shadow:none;
+    --rank:#f28b82;}
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -173,6 +175,7 @@ section.block+section.block{border-top:1px solid var(--line)}
 .gtitle{margin-left:6px}
 .epstats{margin-left:auto;flex-shrink:0;text-align:right;font-size:14px;color:var(--fg2);display:flex;flex-direction:column;gap:2px}
 .epstats b{font-weight:700;color:var(--fg);margin-left:4px}
+.epstats b.top{color:var(--rank)}
 .summary{margin:12px 0 0;color:var(--fg)}
 .chapters{margin-top:10px}
 .chapters summary{cursor:pointer;color:var(--accent);font-size:14px}
@@ -291,6 +294,16 @@ section.block+section.block{border-top:1px solid var(--line)}
 /* 訪問者カウンター（今風バッジ。昔のキリ番カウンター文化へのオマージュ） */
 .vc{position:absolute;top:22px;right:20px;display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:7px 16px;box-shadow:var(--shadow);font-size:14px;color:var(--fg2);cursor:default}
 .vc b{font-family:ui-monospace,"Cascadia Mono","Consolas","Courier New",monospace;font-variant-numeric:tabular-nums;font-weight:700;font-size:18px;line-height:1;letter-spacing:3px;color:var(--accent)}
+/* キリ番演出（バッジ・お祝いトースト・花吹雪キャンバス） */
+.vc .kiriban-badge{background:var(--rank);color:#fff;border-radius:999px;padding:3px 10px;font-size:14px;font-weight:700;cursor:pointer;border:0;line-height:1.4}
+.kiriban-toast{position:fixed;left:50%;top:38%;transform:translate(-50%,-50%);z-index:1001;background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,.25);padding:26px 34px;text-align:center;max-width:min(90vw,420px)}
+.kiriban-toast h2{margin:0 0 8px;font-size:24px;color:var(--rank)}
+.kiriban-toast p{margin:0 0 14px;font-size:15px;color:var(--fg2)}
+.kiriban-toast p b{color:var(--fg);font-size:18px}
+.kiriban-toast .kt-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.kiriban-toast .btn{font-size:14px}
+#kiriban-canvas{position:fixed;inset:0;width:100%;height:100%;z-index:1000;pointer-events:none}
+@media print{.kiriban-toast,#kiriban-canvas,.vc .kiriban-badge{display:none!important}}
 /* footer */
 footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);font-size:14px}
 /* screen responsive（screen限定） */

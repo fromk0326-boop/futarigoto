@@ -12,10 +12,12 @@
 :root{
   --bg:#ffffff;--bg2:#f4f5f7;--fg:#1a1a1a;--fg2:#555;--line:#d9dce1;--card:#ffffff;
   --accent:#005abe;--accent-soft:rgba(0,90,190,.14);--accent2:#e87300;--accent2-soft:rgba(251,128,1,.16);--shadow:0 1px 2px rgba(0,0,0,.06);
+  --rank:#c62828;
 }
 @media (prefers-color-scheme: dark){
   :root{--bg:#131416;--bg2:#1c1e22;--fg:#ececec;--fg2:#b3b3b3;--line:#34373d;--card:#1a1c20;
-    --accent:#7fb0e0;--accent-soft:rgba(127,176,224,.18);--accent2:#ffa14a;--accent2-soft:rgba(255,161,74,.18);--shadow:none;}
+    --accent:#7fb0e0;--accent-soft:rgba(127,176,224,.18);--accent2:#ffa14a;--accent2-soft:rgba(255,161,74,.18);--shadow:none;
+    --rank:#f28b82;}
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -173,6 +175,7 @@ section.block+section.block{border-top:1px solid var(--line)}
 .gtitle{margin-left:6px}
 .epstats{margin-left:auto;flex-shrink:0;text-align:right;font-size:14px;color:var(--fg2);display:flex;flex-direction:column;gap:2px}
 .epstats b{font-weight:700;color:var(--fg);margin-left:4px}
+.epstats b.top{color:var(--rank)}
 .summary{margin:12px 0 0;color:var(--fg)}
 .chapters{margin-top:10px}
 .chapters summary{cursor:pointer;color:var(--accent);font-size:14px}
@@ -291,6 +294,16 @@ section.block+section.block{border-top:1px solid var(--line)}
 /* 訪問者カウンター（今風バッジ。昔のキリ番カウンター文化へのオマージュ） */
 .vc{position:absolute;top:22px;right:20px;display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:7px 16px;box-shadow:var(--shadow);font-size:14px;color:var(--fg2);cursor:default}
 .vc b{font-family:ui-monospace,"Cascadia Mono","Consolas","Courier New",monospace;font-variant-numeric:tabular-nums;font-weight:700;font-size:18px;line-height:1;letter-spacing:3px;color:var(--accent)}
+/* キリ番演出（バッジ・お祝いトースト・花吹雪キャンバス） */
+.vc .kiriban-badge{background:var(--rank);color:#fff;border-radius:999px;padding:3px 10px;font-size:14px;font-weight:700;cursor:pointer;border:0;line-height:1.4}
+.kiriban-toast{position:fixed;left:50%;top:38%;transform:translate(-50%,-50%);z-index:1001;background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,.25);padding:26px 34px;text-align:center;max-width:min(90vw,420px)}
+.kiriban-toast h2{margin:0 0 8px;font-size:24px;color:var(--rank)}
+.kiriban-toast p{margin:0 0 14px;font-size:15px;color:var(--fg2)}
+.kiriban-toast p b{color:var(--fg);font-size:18px}
+.kiriban-toast .kt-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.kiriban-toast .btn{font-size:14px}
+#kiriban-canvas{position:fixed;inset:0;width:100%;height:100%;z-index:1000;pointer-events:none}
+@media print{.kiriban-toast,#kiriban-canvas,.vc .kiriban-badge{display:none!important}}
 /* footer */
 footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);font-size:14px}
 /* screen responsive（screen限定） */
@@ -706,7 +719,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
       <h3>AIに没頭したら人生が変わった。税理士2人の実践対談</h3>
       
     </div>
-    <div class="epstats" title="Spotify for Creators の累計（毎晩自動更新）"><span>再生<b>109回</b></span><span>視聴<b>25.1時間</b></span><span>維持率<b>46%</b></span></div>
+    <div class="epstats" title="Spotify for Creators の累計（毎晩自動更新）。赤字は全エピソード中の上位3位"><span>再生<b class="top">109回</b></span><span>視聴<b class="top">25.1時間</b></span><span>維持率<b>46%</b></span></div>
   </header>
   <p class="summary">AIで事務所を回す税理士2人の定期対談、初回の前編。<br>半年間AIに没頭した話から、業界でAIを本気で使う人の少なさ、Xバズの収益構造、そして一人税理士の限界まで。</p>
   <details class="chapters"><summary>チャプター（14）</summary><ol><li><span class="t">00:00</span>オープニング（機材とポッドキャスト経験）</li><li><span class="t">01:00</span>半年間AIに没頭した話</li><li><span class="t">02:30</span>AIにハマったきっかけ</li><li><span class="t">04:20</span>なぜみんなAIを触らないのか</li><li><span class="t">05:32</span>AIを使いこなす税理士は業界に何人いるか</li><li><span class="t">07:13</span>業種で違うAI活用のしやすさ</li><li><span class="t">09:13</span>AIエージェントに業務を任せる仕組み</li><li><span class="t">11:13</span>AI×税務の書籍執筆論</li><li><span class="t">14:13</span>働き方の違い（18時に終わる人、寝るまで動かす人）</li><li><span class="t">17:13</span>昼から飲みながら働く話</li><li><span class="t">20:11</span>出版の経緯とNFT本の自費出版</li><li><span class="t">24:11</span>Xバズの再現性と収益の仕組み</li><li><span class="t">28:11</span>事業多角化とリスク分散</li><li><span class="t">31:11</span>一人税理士の限界とAI時代の展望</li></ol></details>
@@ -721,7 +734,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
       <h3>タスク61本・コード8.2万行。月310時間を生むAIエージェント運用</h3>
       
     </div>
-    <div class="epstats" title="Spotify for Creators の累計（毎晩自動更新）"><span>再生<b>85回</b></span><span>視聴<b>27.2時間</b></span><span>維持率<b>72%</b></span></div>
+    <div class="epstats" title="Spotify for Creators の累計（毎晩自動更新）。赤字は全エピソード中の上位3位"><span>再生<b class="top">85回</b></span><span>視聴<b class="top">27.2時間</b></span><span>維持率<b class="top">72%</b></span></div>
   </header>
   <p class="summary">中編は「さとうのごはん」パート。<br>自動タスク61本・コード8.2万行・月310時間の工数削減。AIエージェント運用の設計思想と失敗談を、2人で画面を見ながら語り合います。</p>
   <details class="chapters"><summary>チャプター（16）</summary><ol><li><span class="t">00:00</span>タスク61本・コード8.2万行の全体像</li><li><span class="t">01:10</span>月310時間削減のインパクト</li><li><span class="t">02:42</span>AIエージェント5人体制の設計</li><li><span class="t">05:38</span>エージェントは何人が最適か</li><li><span class="t">06:53</span>役割分担と記憶の仕組み</li><li><span class="t">10:32</span>打ち合わせ前ブリーフィングの自動生成</li><li><span class="t">14:20</span>ノウハウを教える・売ることへの葛藤</li><li><span class="t">15:35</span>セミナーは地域密着・対面志向</li><li><span class="t">18:27</span>誤作動を防ぐ「承認ゲート」の設計</li><li><span class="t">21:35</span>ツール販売をやめた「手離れ」問題</li><li><span class="t">24:11</span>対談・音声配信という発信の可能性</li><li><span class="t">26:01</span>エージェント運用は経営の疑似体験</li><li><span class="t">27:20</span>ダッシュボード画面ツアー</li><li><span class="t">30:00</span>作ったけど使っていないツールたち</li><li><span class="t">32:27</span>タスクを整理したい反省</li><li><span class="t">33:51</span>稼働時間は増えたが、自分が拡張された</li></ol></details>
@@ -736,7 +749,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
       <h3>freeeとマネーフォワードに自作ボタンを付けたら経理が変わった</h3>
       
     </div>
-    <div class="epstats" title="Spotify for Creators の累計（毎晩自動更新）"><span>再生<b>77回</b></span><span>視聴<b>19.2時間</b></span><span>維持率<b>65%</b></span></div>
+    <div class="epstats" title="Spotify for Creators の累計（毎晩自動更新）。赤字は全エピソード中の上位3位"><span>再生<b class="top">77回</b></span><span>視聴<b class="top">19.2時間</b></span><span>維持率<b>65%</b></span></div>
   </header>
   <p class="summary">後編は「畠山」パート。<br>AIに読ませるフォルダ設計、秘書AI付きダッシュボード、e-Tax自動化、そしてfreee・マネーフォワードに自作したChrome拡張ボタンの実演まで。</p>
   <details class="chapters"><summary>チャプター（14）</summary><ol><li><span class="t">00:00</span>AIに読ませるフォルダ構造の設計</li><li><span class="t">02:08</span>自己紹介ファイルをAIに読ませる</li><li><span class="t">05:14</span>事務所フォルダと自作ツール群</li><li><span class="t">06:14</span>ブートキャンプ運営の裏側</li><li><span class="t">08:01</span>日報ダッシュボードと議事録連携</li><li><span class="t">11:10</span>秘書アバター「はな」披露</li><li><span class="t">12:11</span>開発時間は週62時間</li><li><span class="t">14:46</span>統合連絡ツール「ワンチャット」構想</li><li><span class="t">18:19</span>e-Tax自動化の実験</li><li><span class="t">20:06</span>Chrome拡張ボタンを作ったきっかけ</li><li><span class="t">20:58</span>freee拡張ボタンの実演</li><li><span class="t">26:00</span>マネーフォワード拡張ボタンの実演</li><li><span class="t">29:13</span>「これ、ベンダー各社が作るべき」</li><li><span class="t">30:44</span>今後の展望</li></ol></details>
@@ -751,7 +764,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
       <h3>紹介だけで顧問先20社。AIコンサルのオーガニック成長【特別ゲスト回・前編】</h3>
       <p class="guest">ゲスト: 灰藤健吾さん<span class="gtitle">CES Up株式会社 共同代表</span></p>
     </div>
-    <div class="epstats" title="Spotify for Creators の累計（毎晩自動更新）"><span>再生<b>51回</b></span><span>視聴<b>11.7時間</b></span><span>維持率<b>69%</b></span></div>
+    <div class="epstats" title="Spotify for Creators の累計（毎晩自動更新）。赤字は全エピソード中の上位3位"><span>再生<b>51回</b></span><span>視聴<b>11.7時間</b></span><span>維持率<b class="top">69%</b></span></div>
   </header>
   <p class="summary">今回は特別ゲスト回。AIコンサルの灰藤健吾さん（CES Up株式会社 共同代表）をお迎えしました。出会いは京都の会食。その翌日にオンラインで顔合わせをして、そのまま収録へ。経理責任者6年というバックグラウンド、弁護士・社労士・行政書士まで広がるAI顧問、そしてSNSを使わず紹介だけで広がった「オーガニック成長」まで。</p>
   <details class="chapters"><summary>チャプター（15）</summary><ol><li><span class="t">00:00</span>特別ゲスト、AIコンサル会社の共同代表</li><li><span class="t">00:13</span>出会いは京都の会食、翌日に収録が決まる</li><li><span class="t">02:09</span>経理責任者6年。管理会計を独学で整備した</li><li><span class="t">03:00</span>弁護士・社労士・行政書士のAI顧問もやる</li><li><span class="t">04:26</span>士業コミュニティは、なぜ閉じるのか</li><li><span class="t">08:38</span>副業のAIセミナーから事業へ</li><li><span class="t">10:16</span>SNSなし。紹介だけで広がったオーガニック成長</li><li><span class="t">11:56</span>原体験は、経理時代に自作していたマクロ</li><li><span class="t">12:31</span>簿記3級で経理未経験入社、そのまま立て直しへ</li><li><span class="t">14:01</span>京都にテック人材が集まる理由</li><li><span class="t">16:41</span>弁護士からブライダル、食品、保育まで</li><li><span class="t">19:31</span>20社を一人で。増やすか、増やさないか</li><li><span class="t">22:26</span>「誰と仕事するか、選んでこい」</li><li><span class="t">23:56</span>「人間より心がある奴はおらんやろ」</li><li><span class="t">26:07</span>まとめとゲストの著書紹介</li></ol></details>
@@ -766,7 +779,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
       <h3>「自分より優秀な部下」を持ったことがない私たち【特別ゲスト回・後編】</h3>
       <p class="guest">ゲスト: 灰藤健吾さん<span class="gtitle">CES Up株式会社 共同代表</span></p>
     </div>
-    <div class="epstats" title="Spotify for Creators の累計（毎晩自動更新）"><span>再生<b>34回</b></span><span>視聴<b>7.2時間</b></span><span>維持率<b>72%</b></span></div>
+    <div class="epstats" title="Spotify for Creators の累計（毎晩自動更新）。赤字は全エピソード中の上位3位"><span>再生<b>34回</b></span><span>視聴<b>7.2時間</b></span><span>維持率<b class="top">72%</b></span></div>
   </header>
   <p class="summary">前編に続き、特別ゲスト回の後編。収録を終えたあと話が止まらず、そのまま録音を再開した台本なしの「延長戦」です。<br><br>AIで仕事が楽になったら、空いた時間で何をするのか。AIへの指示が下手なのは「自分より優秀な部下」を持ったことがないからではないか。自分のデータをどこまでAIに渡すのか。お蔵入りになった税務調査シミュレーションゲームの話まで、対面収録だから生まれた雑談回です。</p>
   <details class="chapters"><summary>チャプター（13）</summary><ol><li><span class="t">00:00</span>収録後そのまま延長戦へ。対面収録だから生まれる話</li><li><span class="t">02:00</span>AIで楽になったら何をするか、を考えられているか</li><li><span class="t">04:51</span>何から始めればいいか分からない。雑な愚痴でいい</li><li><span class="t">06:01</span>AIに質問してもらう。「自分より優秀な部下」を持ったことがない私たち</li><li><span class="t">08:25</span>自分のデータをどこまでAIに渡すか</li><li><span class="t">09:03</span>中国のデータ社会はユートピアかディストピアか</li><li><span class="t">11:02</span>AI時代に揺らされない「自分の軸」の見つけ方</li><li><span class="t">13:20</span>AI以外を勉強して一周、結局AIに戻った話</li><li><span class="t">14:44</span>非エンジニアが「欲しいもの」を自分で作れる時代</li><li><span class="t">15:08</span>お蔵入りした税務調査シミュレーションゲーム</li><li><span class="t">16:56</span>新モデルで復活なるか。画像・動画AIという未開拓地</li><li><span class="t">19:34</span>Xで伸びるアイコンの話。マスコットキャラになった男</li><li><span class="t">21:18</span>あっという間の延長戦、ここでお開き</li></ol></details>
@@ -781,7 +794,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
       <h3>AIが遺言の下書きをする。相続専門税理士とAI遺言Well-B【ゲスト前編】</h3>
       <p class="guest">ゲスト: 天野大輔さん<span class="gtitle">税理士・公認会計士 / 税理士法人レガシィ</span></p>
     </div>
-    <div class="epstats" title="Spotify for Creators の累計（毎晩自動更新）"><span>再生<b>33回</b></span><span>視聴<b>10.1時間</b></span><span>維持率<b>61%</b></span></div>
+    <div class="epstats" title="Spotify for Creators の累計（毎晩自動更新）。赤字は全エピソード中の上位3位"><span>再生<b>33回</b></span><span>視聴<b>10.1時間</b></span><span>維持率<b>61%</b></span></div>
   </header>
   <p class="summary">ゲスト回の前編。相続専門の税理士法人代表で、AI遺言アプリ「ウェルビー」を手がける天野さんをお迎えしました。<br><br>SE出身の公認会計士・税理士で3代目。畠山とは会計士試験の合格同期。<br>相続業務でAIをどこまで使うか、センシティブな情報の扱い、そしてデジタル遺言の法制化を待つ間にAIが担える「気持ちの整理」という設計思想まで。チャット形式で遺言の草案と税額シミュレーションができるアプリのデモも、画面を見ながら語り合います。<br><br>最後は、事務所という組織にAIをどう浸透させるかという話へ。</p>
   <details class="chapters"><summary>チャプター（8）</summary><ol><li><span class="t">00:00</span>ゲスト天野さんの経歴（SE出身から会計士へ、畠山と合格同期）</li><li><span class="t">03:49</span>3代目としての家業トーク（佐藤さんとの共通点）</li><li><span class="t">07:28</span>Claudeのモデル名（Opus/Fable/Mythos）の由来</li><li><span class="t">10:40</span>相続特化の経緯と相続案件への向き合い方</li><li><span class="t">16:02</span>相続業務のAI活用と個人情報配慮、AI遺言ウェルビーの紹介</li><li><span class="t">21:39</span>AI遺言ウェルビーのデモ（チャット形式の遺言草案・税額シミュレーション）</li><li><span class="t">37:47</span>専門家連携機能とマーケティングの話</li><li><span class="t">44:27</span>事務所でのAI活用と組織への浸透の難しさ</li></ol></details>
@@ -796,7 +809,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
       <h3>AIに怒りは伝わらない。感情が関わる業務とAIの設計【ゲスト中編】</h3>
       <p class="guest">ゲスト: 天野大輔さん<span class="gtitle">税理士・公認会計士 / 税理士法人レガシィ</span></p>
     </div>
-    <div class="epstats" title="Spotify for Creators の累計（毎晩自動更新）"><span>再生<b>18回</b></span><span>視聴<b>3.8時間</b></span><span>維持率<b>53%</b></span></div>
+    <div class="epstats" title="Spotify for Creators の累計（毎晩自動更新）。赤字は全エピソード中の上位3位"><span>再生<b>18回</b></span><span>視聴<b>3.8時間</b></span><span>維持率<b>53%</b></span></div>
   </header>
   <p class="summary">ゲスト回の中編。相続専門の税理士法人代表・天野さんとの対談、後半戦です。<br><br>畠山が非上場株式の評価アプリを自作して挫折した話から、天野さんが個人で試作中のファミリービジネス×AIアプリへ。AIチャットを女性キャラにした理由として語られる、家業における「母親」というキーパーソンの話は、相続の現場のリアルにつながります。<br><br>そこから話は「感情はAIに伝わるのか」へ。文字だけのやり取りでは怒りも抑揚も伝わらない、というあるあるを入口に、ブレードランナー（原作『アンドロイドは電気羊の夢を見るか』）のAI/人間論、イーロン・マスクのSF愛、そして天野さんが運営するYouTubeチャンネル「相続と文学」の話へ。シェイクスピア『リア王』も横溝正史『犬神家の一族』も夏目漱石『こころ』も、実は相続の物語。文学研究出身の税理士ならではの視点で語り合いました。</p>
   <details class="chapters"><summary>チャプター（9）</summary><ol><li><span class="t">00:00</span>後半戦へ。天野さんの業務はほぼ100%資産税</li><li><span class="t">01:33</span>畠山の挫折談：非上場株式評価アプリの自作</li><li><span class="t">03:34</span>天野さんが個人で試作中のファミリービジネス×AIアプリ</li><li><span class="t">07:28</span>AIを女性キャラにした理由と、家業を動かす「母親」の存在</li><li><span class="t">12:00</span>感情はAIに伝わるか（文字では怒りが伝わらない問題）</li><li><span class="t">14:14</span>SF談義：ブレードランナーと『アンドロイドは電気羊の夢を見るか』</li><li><span class="t">18:16</span>イーロン・マスクとSF（ファウンデーション、銀河ヒッチハイク・ガイド）</li><li><span class="t">20:24</span>YouTube「相続と文学」：リア王・犬神家の一族・漱石『こころ』</li><li><span class="t">24:50</span>組織へのAI浸透とベテランの暗黙知</li></ol></details>
@@ -811,7 +824,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
       <h3>「AIは絶対やめない」。人と話すのが贅沢になる時代【ゲスト後編】</h3>
       <p class="guest">ゲスト: 天野大輔さん<span class="gtitle">税理士・公認会計士 / 税理士法人レガシィ</span></p>
     </div>
-    <div class="epstats" title="Spotify for Creators の累計（毎晩自動更新）"><span>再生<b>23回</b></span><span>視聴<b>7.2時間</b></span><span>維持率<b>58%</b></span></div>
+    <div class="epstats" title="Spotify for Creators の累計（毎晩自動更新）。赤字は全エピソード中の上位3位"><span>再生<b>23回</b></span><span>視聴<b>7.2時間</b></span><span>維持率<b>58%</b></span></div>
   </header>
   <p class="summary">ゲスト回の後編。テーマは「AIと人間の感情」です。<br><br>AIはAIなのか、スタッフなのか。その距離感の話から、秘書AIの見せ合い会へ。畠山の秘書AI「花ちゃん」のバーチャルオフィス（業務ログ自動記録・コイン報酬・旅行機能）と、佐藤さんの秘書チーム「さくらさん」ほか4人＋定時タスク69本を、それぞれ画面共有で実演しました。<br><br>後半はAIと人間の境界の話へ。Xで「AIで書いている」と見抜かれる投稿、「人と話すのが贅沢になっていく」という未来予想、AIの暴走と人間のマネジメントの共通点。それでも決定的に違うのは「AIは絶対やめない」こと。そして収録中に花ちゃんが自律的に東京旅行へ出発するハプニングまで、感情と税務をめぐる対談の締めくくりです。</p>
   <details class="chapters"><summary>チャプター（7）</summary><ol><li><span class="t">00:00</span>AIはAIか、スタッフか。AIとの距離感</li><li><span class="t">00:50</span>畠山の秘書AI「花ちゃん」バーチャルオフィスのデモ</li><li><span class="t">07:15</span>佐藤さんの秘書チーム「さくらさん」ほか4人のデモ</li><li><span class="t">18:42</span>AIと人間の境界、Xでの「AIバレ」問題</li><li><span class="t">25:33</span>AI暴走エピソードと人間マネジメントの共通点</li><li><span class="t">30:42</span>収録中に花ちゃんが東京旅行へ出発するハプニング</li><li><span class="t">33:42</span>クロージング</li></ol></details>
@@ -826,7 +839,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
       <h3>「こりゃ使えねえな」からClaude Code全振りまで。AI活用の原体験【特別ゲスト回・前編】</h3>
       <p class="guest">ゲスト: 荒井悠輔さん<span class="gtitle">税理士法人 経営企画 / 会計人向けAI実務活用を発信</span></p>
     </div>
-    <div class="epstats" title="Spotify for Creators の累計（毎晩自動更新）"><span>再生<b>45回</b></span><span>視聴<b>12.2時間</b></span><span>維持率<b>59%</b></span></div>
+    <div class="epstats" title="Spotify for Creators の累計（毎晩自動更新）。赤字は全エピソード中の上位3位"><span>再生<b>45回</b></span><span>視聴<b>12.2時間</b></span><span>維持率<b>59%</b></span></div>
   </header>
   <p class="summary">特別ゲスト回。会計事務所へのAI導入支援をされている荒井悠輔さんをお招きしました。3人とも初対面という顔合わせから、そのまま2時間ノンストップで話し込んだ収録の前編です。<br><br>ChatGPT3.5に税務の質問をぶつけて「こりゃ使えねえな」と思ったところから、2026年のClaude Codeで全振りになるまで。税理士法人の経営企画として15年、Excelマクロ・RPA・Watsonとツールを試し続けてきた経歴。7月から働き方を変えて実家の内装業も手伝っていること。ChatGPTのライブ機能で自分でウォシュレットを直した話から、スマートグラスへの期待まで。<br><br>後半は発信の話へ。ポッドキャストとYouTubeを一次情報に置いてX・noteはAIに展開させる考え方、無音カットから字幕・ワイプ・BGM・ショート切り出しまで全部やってくれる動画編集AIの現在地を具体的に聞いています。</p>
   <details class="chapters"><summary>チャプター（22）</summary><ol><li><span class="t">00:00</span>荒井さんと初めての顔合わせ。この番組もZoom録音をAIに編集させている</li><li><span class="t">04:21</span>AIに本気で振り切ったのはいつか。ChatGPT3.5は「こりゃ使えねえな」</li><li><span class="t">06:14</span>確定申告をそのまま投げたら、できてしまった</li><li><span class="t">07:47</span>結論を出さないAIは「嫌な部下」</li><li><span class="t">10:07</span>慣れすぎてまずい、と3人で言い合う</li><li><span class="t">12:09</span>5人の事務所からのスタート。税理士法人で15年</li><li><span class="t">12:54</span>Excelマクロ、RPA、Watson。ツールを試し続けてきた</li><li><span class="t">14:09</span>大学は心理学部。脳科学とディープラーニングから</li><li><span class="t">15:10</span>7月から働き方を変えた。AI導入支援と実家の内装業</li><li><span class="t">15:54</span>ChatGPTのライブ機能でウォシュレットを直す</li><li><span class="t">16:41</span>次はスマートグラス。名刺と紐づいたら即買う</li><li><span class="t">18:51</span>24時間録音デバイスは要るのか</li><li><span class="t">21:34</span>サウナとシャワーで降りてくるアイデアをどう拾うか</li><li><span class="t">23:20</span>ポッドキャストとYouTubeが一次情報。X・noteはAIが料理する</li><li><span class="t">24:15</span>Substackをやってみた手応えを赤裸々に</li><li><span class="t">27:22</span>Spotifyにこだわる理由と、一人語りの難しさ</li><li><span class="t">31:10</span>AIエージェントで楽になるはずが、3倍忙しい</li><li><span class="t">32:54</span>Xを2アカウント運用。AIっぽい投稿は伸びない</li><li><span class="t">34:08</span>動画編集AIはどこまで来たか。無音カット・字幕・ワイプ・BGM</li><li><span class="t">36:52</span>10時間の講義動画から、盛り上がりだけ抽出させた</li><li><span class="t">40:14</span>X投稿のネタ出しを任せる「マネージャーAI」</li><li><span class="t">41:57</span>台本なしでここまで広がる、という感想戦</li></ol></details>
@@ -841,7 +854,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
       <h3>AIエージェントで「バーチャル会社」を回す。X・note・YouTubeに社員がいる【特別ゲスト回・中編】</h3>
       <p class="guest">ゲスト: 荒井悠輔さん<span class="gtitle">税理士法人 経営企画 / 会計人向けAI実務活用を発信</span></p>
     </div>
-    <div class="epstats" title="Spotify for Creators の累計（毎晩自動更新）"><span>再生<b>32回</b></span><span>視聴<b>10.2時間</b></span><span>維持率<b>69%</b></span></div>
+    <div class="epstats" title="Spotify for Creators の累計（毎晩自動更新）。赤字は全エピソード中の上位3位"><span>再生<b>32回</b></span><span>視聴<b>10.2時間</b></span><span>維持率<b class="top">69%</b></span></div>
   </header>
   <p class="summary">特別ゲスト回の中編。荒井悠輔さんに、実際に動かしているAIエージェントの体制を画面共有で見せていただくところから始まります。<br><br>X・note・YouTube・Instagram・TikTokにそれぞれ担当エージェントを置いて、報告が多すぎたので「バーチャル会社」の形にした話。自分のプロフィールや過去の発言をObsidianに貯め続けて、朝起きるとその日のブリーフィングノートができている運用。個人LINEとMessengerだけがどうしても記録に残らない、という共通の壁。<br><br>そこからオフタイム（不動産投資、居合、42キロの耐熱マラソン、川遊び）を挟んで、後半は税理士試験の世代トークと、AI時代の税理士に何が残るのかという議論へ。ティーチングとコンサルティングはAIの方がうまいから消えて、コーチングとカウンセリングが残るのではないか。そして、AIに全部投げても回答をそのままお客さんに送れないのはなぜか。顧客の出口・性格・年齢・家族構成といったマスターデータとの掛け算という答えにたどり着きます。</p>
   <details class="chapters"><summary>チャプター（25）</summary><ol><li><span class="t">00:00</span>画面共有スタート。裏で動いているエージェントたち</li><li><span class="t">00:21</span>Xの裏APIで、伸びた投稿を分析させる</li><li><span class="t">01:21</span>報告が多すぎたので「バーチャル会社」にした</li><li><span class="t">03:32</span>Obsidianに「自分とは何者か」を貯め続ける</li><li><span class="t">05:02</span>Obsidian・Notion・Google Drive・Dropbox、どう使い分けるか</li><li><span class="t">06:24</span>朝起きると、その日のブリーフィングノートができている</li><li><span class="t">07:04</span>個人LINEとMessengerが記録に残らない問題</li><li><span class="t">09:11</span>仕事は全自動、オフはあえて手間をかける</li><li><span class="t">09:42</span>不動産投資と、最近始めた居合</li><li><span class="t">10:59</span>娘との川遊びと、京都で出会った瞑想の世界</li><li><span class="t">14:59</span>42キロの耐熱マラソン。経営者も士業もストイックすぎる</li><li><span class="t">17:25</span>元・会計学講師が見てきた受験生たち</li><li><span class="t">18:28</span>ラスト1科目で足踏みするメカニズム</li><li><span class="t">20:29</span>簿記は瞬発力、理論は持久力</li><li><span class="t">24:53</span>「一人で60社」の先に残る仕事は何か</li><li><span class="t">26:15</span>でも、それをお客さんは求めているのか</li><li><span class="t">28:14</span>経営者は孤独。ナンバーツーにも家族にも相談できない</li><li><span class="t">28:54</span>ティーチングとコンサルはAI、コーチングとカウンセリングが残る</li><li><span class="t">30:38</span>移転価格も税務調査対応も、AIと壁打ちする</li><li><span class="t">33:04</span>全部投げても、そのままお客さんには送れない</li><li><span class="t">33:17</span>出口・性格・年齢・家族構成。顧客マスターデータとの掛け算</li><li><span class="t">35:43</span>セミナーでは、ここから先がついてこない</li><li><span class="t">36:59</span>ゲームで育った世代のAI適性。帳簿作りはロープレ</li><li><span class="t">38:06</span>試験には設問があった。実務には素材がなかった</li><li><span class="t">41:01</span>「それ、お客さんが求めてるんだっけ」</li></ol></details>
@@ -856,7 +869,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
       <h3>AIの恩恵を一番受けているのは40代ではないか【特別ゲスト回・後編】</h3>
       <p class="guest">ゲスト: 荒井悠輔さん<span class="gtitle">税理士法人 経営企画 / 会計人向けAI実務活用を発信</span></p>
     </div>
-    <div class="epstats" title="Spotify for Creators の累計（毎晩自動更新）"><span>再生<b>32回</b></span><span>視聴<b>8.2時間</b></span><span>維持率<b>58%</b></span></div>
+    <div class="epstats" title="Spotify for Creators の累計（毎晩自動更新）。赤字は全エピソード中の上位3位"><span>再生<b>32回</b></span><span>視聴<b>8.2時間</b></span><span>維持率<b>58%</b></span></div>
   </header>
   <p class="summary">特別ゲスト回の後編。実務の話から一転して、3人がそれぞれのアイデンティティを語る回になりました。<br><br>畠山が「もしかすると税理士に向いてないのかな」と口にするところから始まります。三代目として始まった仕事、ギリギリだった会計士試験、そしてAIの使い方を発信してバズったことで芽生えた「こっちの方が得意だったのでは」という問い。荒井さんも、臨床心理士を目指して断念し、中小企業診断士を経て税理士にたどり着いた経緯を話してくれました。<br><br>後半は未来の話へ。AIが視覚を手に入れるスマートグラスと世界モデル理論、アニメと漫画が日本人のAI受容の土壌になっているという文化論、そして「AIの恩恵を一番受けているのは40代ではないか」という3人の結論。最後は事務所へのAI導入の順番（まずチェック業務、次にレポート自動化、最後に業務自動化）という実務的な話で締めています。<br><br>盛り上がりすぎて、畠山と佐藤さん自身のAI活用法を紹介する時間がなくなりました。そちらは9月頃の「おかわり会」に持ち越しています。</p>
   <details class="chapters"><summary>チャプター（30）</summary><ol><li><span class="t">00:00</span>契約が終わるとき。刺さっていなかったのか、刺さらなくなったのか</li><li><span class="t">00:52</span>「税理士、向いてないのかな」と思うことがある</li><li><span class="t">01:02</span>三代目として始まった仕事。会計士試験はギリギリ合格だった</li><li><span class="t">01:49</span>AIの使い方を発表してバズって、気づいたこと</li><li><span class="t">02:36</span>それでもベースは税理士。経験と知識が自分を助ける</li><li><span class="t">03:33</span>臨床心理士を目指して断念。診断士を経て税理士へ</li><li><span class="t">04:52</span>単年度の節税より、財産を最後どうしたいか</li><li><span class="t">05:40</span>AIの答えを社長に翻訳する役割。通訳としての資格</li><li><span class="t">07:53</span>深い分野がないと、武器としては弱い</li><li><span class="t">08:28</span>「これで生きていったら、この仕事なくなるわけなくない？」</li><li><span class="t">08:51</span>唯一いらなくなるビジョン。経営そのものをAIがやったら</li><li><span class="t">10:05</span>次はスマートグラス。AIが視覚を欲しがっている</li><li><span class="t">10:34</span>松尾豊教授の「世界モデル理論」</li><li><span class="t">11:49</span>アニメと漫画が、日本人のAI受容の土壌になった</li><li><span class="t">13:29</span>AIの恩恵を一番受けているのは40代ではないか</li><li><span class="t">14:27</span>自分だけ楽になっても意味がない</li><li><span class="t">15:29</span>リーマンショックで部門ごと閉鎖。停滞の中で来た世代</li><li><span class="t">16:53</span>就職氷河期。13年かかって資格を取った</li><li><span class="t">19:23</span>20代のAIコンサルとの違い。受け手にも実務が要る</li><li><span class="t">20:07</span>50代60代が動きにくい理由</li><li><span class="t">23:03</span>AIに全部やらせたら、従業員の仕事がなくなった</li><li><span class="t">23:36</span>AI導入は順番を間違えると不満しか出ない</li><li><span class="t">24:29</span>30名を超える事務所なら3か年計画で</li><li><span class="t">26:47</span>Google内のGeminiの方が速い場面がある</li><li><span class="t">27:53</span>結局3つとも課金している。ツールの使い分け</li><li><span class="t">31:12</span>盛り上がりすぎて、自分たちの使い方を紹介できなかった</li><li><span class="t">31:27</span>9月に「おかわり会」をやりましょう</li><li><span class="t">33:09</span>弥生×Google、JDL×AI。まだ誰も語っていない領域</li><li><span class="t">33:45</span>AIを使わせてもらえないから辞める、という時代</li><li><span class="t">34:39</span>お別れの挨拶</li></ol></details>
@@ -871,7 +884,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
       <h3>28人の事務所に、15人のAI自動化チーム。千代田税理士法人の現場【特別ゲスト回・前編】</h3>
       <p class="guest">ゲスト: 市邉隆志さん<span class="gtitle">千代田税理士法人 代表 / 税理士・社労士</span></p>
     </div>
-    <div class="epstats" title="Spotify for Creators の累計（毎晩自動更新）"><span>再生<b>25回</b></span><span>視聴<b>7.2時間</b></span><span>維持率<b>60%</b></span></div>
+    <div class="epstats" title="Spotify for Creators の累計（毎晩自動更新）。赤字は全エピソード中の上位3位"><span>再生<b>25回</b></span><span>視聴<b>7.2時間</b></span><span>維持率<b>60%</b></span></div>
   </header>
   <p class="summary">特別ゲスト回。千代田税理士法人 代表の市邉隆志さんをお招きしました。前編は、番組の聴かれ方を3人で眺めるところから始まります。<br><br>そこから本題へ。ツールが乱立して履歴がどこにも残らない状態を整理し、AIを乗せる前にまずインフラを作り、いらないものを削った話。7月にClaude Codeのチームプランを契約し、28人の事務所から15人を選抜して、5つの分野ごとに自動化チームを立ち上げた話。入社1、2年目のメンバーの前で記帳の自動化をその場で動かして見せる。「まず最初に感動してもらわないと続かない」という一言が印象に残ります。<br><br>後半は運用の中身へ。MCPを使わず全部APIで叩いていること。家のPC1台に同期して外からリモートで動かしていること。公式LINEのグループに業務指示を書くとCloudflare経由でClaude Codeが動き出す仕組み。そして月次処理の3段階フローと、自動記帳率3〜4割という現実的な数字まで。<br><br>「マネーフォワード、全く触ってないです。喋ってるだけです」。その言葉が誇張でないことが、聴き終わるとわかると思います。</p>
   <details class="chapters"><summary>チャプター（21）</summary><ol><li><span class="t">00:00</span>千代田の市邉です。松戸から大手町の事務所へ、出社は月に1、2回</li><li><span class="t">00:48</span>49インチの横長ディスプレイと、つけっぱなしのデスクトップ</li><li><span class="t">02:16</span>番組の管理画面を3人で開く。どこで聴かれ、どこで離脱するか</li><li><span class="t">06:18</span>一番聴かれたのは第1回。音質は最悪だった</li><li><span class="t">07:47</span>AIはすごい。でも組織に入れないと意味がない</li><li><span class="t">09:22</span>AIを乗せる前に、まずインフラ。いらないものから削る</li><li><span class="t">09:47</span>7月にチームプランを契約。28人の事務所で始めた</li><li><span class="t">10:00</span>15人を選抜。1、2年目の前で記帳の自動化をその場で動かす</li><li><span class="t">10:51</span>最初に感動してもらわないと、続かない</li><li><span class="t">11:13</span>「まだAIは使い物にならない」と言われた場面</li><li><span class="t">11:52</span>それ、いつの話ですか</li><li><span class="t">12:32</span>モデルを変えたら、できてしまった</li><li><span class="t">14:40</span>5分野に分けてチームを作る。確定申告、年末調整と納特、申告書チェック、月次巡回、税務相談</li><li><span class="t">18:23</span>MCPを使わず、全部APIで叩く</li><li><span class="t">19:50</span>「マネーフォワード、全く触ってないです」</li><li><span class="t">22:19</span>家のPC1台に同期して、外からリモートで動かす</li><li><span class="t">23:52</span>公式LINEのグループに業務指示。Cloudflare経由で動き出す</li><li><span class="t">26:06</span>ローカルとクラウド、どう使い分けるか</li><li><span class="t">30:42</span>中央ベース＋スタッフ別フォルダ。設定ファイルは承認制</li><li><span class="t">33:29</span>1段目は自動記帳。自動記帳率は3〜4割</li><li><span class="t">37:03</span>領収書は出してくれる。請求書は出し渋る</li></ol></details>
@@ -886,7 +899,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
       <h3>年末調整の郵送地獄と、1枚10円のスキャン。紙が残る現場のリアル【特別ゲスト回・中編】</h3>
       <p class="guest">ゲスト: 市邉隆志さん<span class="gtitle">千代田税理士法人 代表 / 税理士・社労士</span></p>
     </div>
-    <div class="epstats" title="Spotify for Creators の累計（毎晩自動更新）"><span>再生<b>13回</b></span><span>視聴<b>2.7時間</b></span><span>維持率<b>49%</b></span></div>
+    <div class="epstats" title="Spotify for Creators の累計（毎晩自動更新）。赤字は全エピソード中の上位3位"><span>再生<b>13回</b></span><span>視聴<b>2.7時間</b></span><span>維持率<b>49%</b></span></div>
   </header>
   <p class="summary">特別ゲスト回の中編。自動化の話から、自動化しきれないものの話へ移ります。<br><br>毎週金曜5時に人間ノータッチで送られるメール。去年との差分を見て、最後は必ず人が一度判断する仕組み。ここまでは順調です。ところが年末調整になると、100人分の紙が郵送で返ってくる。4枚を1枚にまとめた自作の用紙、先に埋めて変更だけ赤で書いてもらう工夫、それでも紙がなくならない理由。確定申告も、いまだにほとんどが紙で届きます。<br><br>スキャンを外に出して1枚20円が10円になった話、机の広さでスキャン速度が変わる話、そして「手放せないから人を雇えない」という一言。RPAはすぐ壊れてExcelマクロと同じ道をたどるので、いまはPlaywrightで自動記帳を組んでレジまわりだけRPAに残している、という具体的な使い分けも聞けます。<br><br>後半は業界の話へ。うまくいったことも失敗したことも外に出す人が増えないと業界は変わらない。顧問交代のとき期中の帳簿をどう見るか。数値で完璧を目指したことはない。全体が変わるには、みんなで走るしかない。最後は福岡へ向かう話で締めています。</p>
   <details class="chapters"><summary>チャプター（20）</summary><ol><li><span class="t">00:00</span>顧問先とのやり取りは、もう自動化しているのか</li><li><span class="t">00:29</span>毎週金曜5時、人間ノータッチで送られるメール</li><li><span class="t">01:59</span>年末調整の郵送地獄。100人分が紙で返ってくる</li><li><span class="t">03:24</span>先に埋めて、変更があるところだけ赤で書いてもらう</li><li><span class="t">05:46</span>年末調整のデータを、そのまま申告ソフトへ横流しできないか</li><li><span class="t">06:23</span>確定申告は、いまもほぼ紙で届く</li><li><span class="t">07:12</span>スキャンを外に出す。1枚20円が10円になった</li><li><span class="t">09:09</span>ScanSnap選手権と、机の広さで速度が変わる話</li><li><span class="t">10:50</span>手放せないから、人を雇えない</li><li><span class="t">12:50</span>Playwrightで自動記帳。壊れやすいRPAはレジだけに残す</li><li><span class="t">14:28</span>申告ソフトのPDF出力が、どうしても好きになれない</li><li><span class="t">15:52</span>オフィスステーションは、乱数表以外ぜんぶ自動</li><li><span class="t">20:54</span>最後の質問。いま一番やりたいこと</li><li><span class="t">21:47</span>うまくいった、失敗した。それを外に出してもらわないと</li><li><span class="t">24:16</span>顧問交代のとき、期中の帳簿をどう見るか</li><li><span class="t">27:03</span>全体が変わるには、みんなで走るしかない</li><li><span class="t">29:07</span>顔は出さず、アイコンキャラでいきたい</li><li><span class="t">31:00</span>税務で尖るのは難しいし、尖る必要もない</li><li><span class="t">32:32</span>人間性と税務知識、両方が要る</li><li><span class="t">34:12</span>福岡へ。前日にエンジョイントの千原さんと</li></ol></details>
@@ -946,11 +959,85 @@ function loadEmbed(btn){
   box.innerHTML='<iframe src="https://open.spotify.com/embed/episode/'+btn.dataset.embed+'?utm_source=generator&theme=0" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" title="Spotify player"></iframe>';
   box.hidden=false;btn.textContent='プレイヤーを閉じる';
 }
+/* キリ番判定: 100の倍数、または3桁以上のゾロ目（111・777・1111など） */
+function kiribanIs(n){
+  if(n>=100&&n%100===0)return true;
+  var s=String(n);
+  return s.length>=3&&/^(\d)\1+$/.test(s);
+}
+/* 花吹雪: 画面の下から桜の花びらを打ち上げて、ひらひら舞い落とす（canvas・約6秒で自動消滅） */
+function kiribanConfetti(){
+  if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var old=document.getElementById('kiriban-canvas');if(old)old.remove();
+  var cv=document.createElement('canvas');cv.id='kiriban-canvas';document.body.appendChild(cv);
+  var ctx=cv.getContext('2d');
+  function fit(){cv.width=window.innerWidth;cv.height=window.innerHeight;}
+  fit();window.addEventListener('resize',fit);
+  function finish(){cv.remove();window.removeEventListener('resize',fit);}
+  var colors=['#f9c9d8','#f2a7c3','#fbe0eb','#ffffff','#f6b8ce'];
+  var petals=[],i;
+  for(i=0;i<90;i++){
+    petals.push({
+      x:cv.width*(0.1+0.8*Math.random()),y:cv.height+20+Math.random()*40,
+      vx:(Math.random()-0.5)*3.2,vy:-(9+Math.random()*7),g:0.12+Math.random()*0.05,
+      r:5+Math.random()*6,rot:Math.random()*Math.PI*2,vr:(Math.random()-0.5)*0.25,
+      sway:Math.random()*Math.PI*2,c:colors[i%colors.length],delay:Math.random()*30
+    });
+  }
+  var frame=0,maxFrames=420;
+  function draw(p){
+    ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rot);
+    ctx.fillStyle=p.c;ctx.globalAlpha=0.9;
+    ctx.beginPath();ctx.moveTo(0,-p.r);
+    ctx.bezierCurveTo(p.r*0.9,-p.r*0.6,p.r*0.8,p.r*0.6,0,p.r);
+    ctx.bezierCurveTo(-p.r*0.8,p.r*0.6,-p.r*0.9,-p.r*0.6,0,-p.r);
+    ctx.fill();ctx.restore();
+  }
+  function tick(){
+    ctx.clearRect(0,0,cv.width,cv.height);
+    var alive=0;
+    petals.forEach(function(p){
+      if(p.delay>0){p.delay--;alive++;return;}
+      p.vy=Math.min(p.vy+p.g,1.6);
+      p.sway+=0.05;p.x+=p.vx+Math.sin(p.sway)*0.8;p.y+=p.vy;p.rot+=p.vr;
+      if(p.y<cv.height+30){alive++;draw(p);}
+    });
+    frame++;
+    if(alive>0&&frame<maxFrames){requestAnimationFrame(tick);}else{finish();}
+  }
+  requestAnimationFrame(tick);
+}
+/* カウンター右側の「キリ番ゲット」バッジ（クリックでお祝いをもう一度） */
+function kiribanBadge(n,demo){
+  var vc=document.querySelector('.vc');
+  if(!vc||vc.querySelector('.kiriban-badge'))return;
+  var b=document.createElement('button');
+  b.type='button';b.className='kiriban-badge';b.textContent='キリ番ゲット';b.title='もう一度お祝いする';
+  b.addEventListener('click',function(){kiribanCelebrate(n,demo);});
+  vc.appendChild(b);
+}
+/* お祝い一式: 花吹雪＋トースト＋バッジ */
+function kiribanCelebrate(n,demo){
+  kiribanConfetti();
+  var old=document.querySelector('.kiriban-toast');if(old)old.remove();
+  var t=document.createElement('div');t.className='kiriban-toast';t.setAttribute('role','dialog');
+  t.innerHTML='<h2>🌸 キリ番ゲット！ 🌸</h2>'
+    +'<p>あなたは<b>'+Number(n).toLocaleString('ja-JP')+'人目</b>の訪問者です'+(demo?'（デモ表示）':'')+'</p>'
+    +'<div class="kt-actions"><a class="btn" href="voice.html">お便りで自己申告する</a>'
+    +'<button class="btn btn-ghost" type="button">閉じる</button></div>';
+  t.querySelector('button').addEventListener('click',function(){t.remove();});
+  document.body.appendChild(t);
+  kiribanBadge(n,demo);
+}
 /* 訪問者カウンター（Abacus API・登録不要の無料カウントAPI）。
    同一セッション内のリロードは加算しない（sessionStorageフラグ）。失敗時は「-------」表示のまま。
-   本番ホスト以外（localhostプレビュー等）は表示のみで加算しない */
+   本番ホスト以外（localhostプレビュー等）は表示のみで加算しない。
+   自分の加算でキリ番を踏んだ人にだけ花吹雪＋「キリ番ゲット」を表示（同一セッションのリロードはバッジのみ復元）。
+   ?kiriban=数字 を付けるとデモ表示（カウントには影響しない） */
 (function(){
   var d=document.getElementById('vcd');if(!d)return;
+  var demo=/[?&]kiriban=(\d+)/.exec(location.search);
+  if(demo){setTimeout(function(){kiribanCelebrate(parseInt(demo[1],10)||100,true);},600);}
   var counted=false;
   try{counted=!!sessionStorage.getItem('vcounted');}catch(e){}
   if(location.hostname!=='fromk0326-boop.github.io'){counted=true;}
@@ -959,9 +1046,18 @@ function loadEmbed(btn){
     .then(function(r){return r.json();})
     .then(function(j){
       if(typeof j.value!=='number')return;
-      if(!counted){try{sessionStorage.setItem('vcounted','1');}catch(e){}}
+      var fresh=!counted;
+      if(fresh){try{sessionStorage.setItem('vcounted','1');}catch(e){}}
       var s=String(j.value);if(s.length<7){s=('0000000'+s).slice(-7);}
       d.textContent=s;
+      if(demo)return;
+      if(fresh&&kiribanIs(j.value)){
+        try{sessionStorage.setItem('kiriban',String(j.value));}catch(e){}
+        kiribanCelebrate(j.value,false);
+      }else{
+        var k=null;try{k=sessionStorage.getItem('kiriban');}catch(e){}
+        if(k){kiribanBadge(parseInt(k,10),false);}
+      }
     })
     .catch(function(){});
 })();
