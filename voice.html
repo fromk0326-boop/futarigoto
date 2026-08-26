@@ -145,10 +145,14 @@ section.block+section.block{border-top:1px solid var(--line)}
 .trend .dot2{fill:var(--accent2)}
 .trend .val{font-size:15px;font-weight:700;fill:var(--accent);paint-order:stroke;stroke:var(--card);stroke-width:5px;stroke-linejoin:round}
 .trend .val2{fill:var(--accent2)}
+.trend .line3{fill:none;stroke:var(--fg2);stroke-width:2;stroke-dasharray:5 4;stroke-linejoin:round}
+.trend .dot3{fill:var(--fg2)}
+.trend .val3{fill:var(--fg2)}
 .legend{display:flex;flex-wrap:wrap;gap:16px;font-size:14px;color:var(--fg2);padding:0 8px 10px}
 .lg::before{content:"";display:inline-block;width:14px;height:14px;border-radius:3px;margin-right:6px;vertical-align:-2px;background:var(--line)}
 .lg-h::before{background:var(--accent)}
 .lg-f::before{background:var(--accent2)}
+.lg-v::before{background:var(--fg2);opacity:.65}
 .lg-d::before{background:var(--fg2);opacity:.3}
 .note{font-size:14px;color:var(--fg2);margin-top:10px}
 .person.theme-orange{--accent:var(--accent2);--accent-soft:var(--accent2-soft)}
@@ -167,6 +171,8 @@ section.block+section.block{border-top:1px solid var(--line)}
 .episode h3{font-size:19px;margin-top:4px}
 .guest{margin:4px 0 0;font-size:14px;color:var(--fg2)}
 .gtitle{margin-left:6px}
+.epstats{margin-left:auto;flex-shrink:0;text-align:right;font-size:14px;color:var(--fg2);display:flex;flex-direction:column;gap:2px}
+.epstats b{font-weight:700;color:var(--fg);margin-left:4px}
 .summary{margin:12px 0 0;color:var(--fg)}
 .chapters{margin-top:10px}
 .chapters summary{cursor:pointer;color:var(--accent);font-size:14px}
@@ -307,6 +313,8 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
   .dr-list{grid-template-columns:1fr}
   .gap-grid{flex-direction:column}
   .gap-arrow{transform:rotate(90deg);align-self:center}
+  .epstats{flex-direction:row;flex-wrap:wrap;gap:2px 12px;flex-basis:100%;margin-left:0;text-align:left}
+  .episode header{flex-wrap:wrap}
 }
 /* print: A4横スライド */
 @page{size:A4 landscape;margin:12mm}
