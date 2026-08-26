@@ -947,11 +947,13 @@ function loadEmbed(btn){
   box.hidden=false;btn.textContent='プレイヤーを閉じる';
 }
 /* 訪問者カウンター（Abacus API・登録不要の無料カウントAPI）。
-   同一セッション内のリロードは加算しない（sessionStorageフラグ）。失敗時は「-------」表示のまま */
+   同一セッション内のリロードは加算しない（sessionStorageフラグ）。失敗時は「-------」表示のまま。
+   本番ホスト以外（localhostプレビュー等）は表示のみで加算しない */
 (function(){
   var d=document.getElementById('vcd');if(!d)return;
   var counted=false;
   try{counted=!!sessionStorage.getItem('vcounted');}catch(e){}
+  if(location.hostname!=='fromk0326-boop.github.io'){counted=true;}
   var mode=counted?'get':'hit';
   fetch('https://abacus.jasoncameron.dev/'+mode+'/futarigoto-official/top-visits')
     .then(function(r){return r.json();})
