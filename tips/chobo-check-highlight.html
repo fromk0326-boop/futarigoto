@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>AIに見つけてもらう形で情報を置く | AI活用TIPS集 | AI税理士のふたりごと</title>
-<meta name="description" content="これからは、人だけでなくAIが情報を探しに来ます。自分の持っている知識を、AIが拾いやすい形に整えて置いておくと、思わぬところから引き合いが来る。何を置けば引っかかるかを考えること自体が、AIを使っている人にしか出てこない発想です。">
-<meta property="og:title" content="AIに見つけてもらう形で情報を置く | AI活用TIPS集 | AI税理士のふたりごと">
-<meta property="og:description" content="これからは、人だけでなくAIが情報を探しに来ます。自分の持っている知識を、AIが拾いやすい形に整えて置いておくと、思わぬところから引き合いが来る。何を置けば引っかかるかを考えること自体が、AIを使っている人にしか出てこない発想です。">
+<title>帳簿チェックは「見るべき場所を黄色くする」だけにする | AI活用TIPS集 | AI税理士のふたりごと</title>
+<meta name="description" content="AIに正誤を判定させるのではなく、日頃の確認観点を渡して「怪しいところを色で示す」ところまでにする。判断は人に残します。重い診断にすると生成が遅くなってストレスになり、結局使われなくなる。スタッフが気づける程度の軽さに留めるのが、続く仕組み">
+<meta property="og:title" content="帳簿チェックは「見るべき場所を黄色くする」だけにする | AI活用TIPS集 | AI税理士のふたりごと">
+<meta property="og:description" content="AIに正誤を判定させるのではなく、日頃の確認観点を渡して「怪しいところを色で示す」ところまでにする。判断は人に残します。重い診断にすると生成が遅くなってストレスになり、結局使われなくなる。スタッフが気づける程度の軽さに留めるのが、続く仕組み">
 <meta property="og:type" content="website">
 <style>
 :root{
@@ -386,30 +386,28 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
 
 <section class="block tip-detail"><div class="wrap">
   <p class="crumb"><a href="../tips.html">← TIPS集にもどる</a></p>
-  <p class="tip-cat-badge">組織・発信</p>
-  <h2>AIに見つけてもらう形で情報を置く</h2>
-  <p class="tip-src">出典: <a class="chip" href="../index.html#ep-19">#19（配信予定）</a> <span class="tip-who">ゲスト回 西村啓さん × mameta さん（西村さんパート）</span></p>
-  <p class="tip-tags"><a class="tag" href="../tips.html?tag=%E7%99%BA%E4%BF%A1%E3%83%BBSNS">発信・SNS</a></p>
+  <p class="tip-cat-badge">経理・税務の実務</p>
+  <h2>帳簿チェックは「見るべき場所を黄色くする」だけにする</h2>
+  <p class="tip-src">出典: <a class="chip" href="../index.html#ep-21">#21</a> <span class="tip-who">おかわりゲスト回 荒井悠輔さん（前編・畠山パート）</span></p>
+  <p class="tip-tags"><a class="tag" href="../tips.html?tag=%E4%BC%9A%E8%A8%88%E3%83%BB%E7%A8%8E%E5%8B%99%E3%81%AE%E8%87%AA%E5%8B%95%E5%8C%96">会計・税務の自動化</a></p>
   <h3>番組で語られたこと</h3>
-  <p>これからは、人だけでなくAIが情報を探しに来ます。自分の持っている知識を、AIが拾いやすい形に整えて置いておくと、思わぬところから引き合いが来る。何を置けば引っかかるかを考えること自体が、AIを使っている人にしか出てこない発想です。</p>
+  <p>AIに正誤を判定させるのではなく、日頃の確認観点を渡して「怪しいところを色で示す」ところまでにする。判断は人に残します。重い診断にすると生成が遅くなってストレスになり、結局使われなくなる。スタッフが気づける程度の軽さに留めるのが、続く仕組みの条件です。</p>
   <h3>こんなシーンで使えます</h3>
-  <ul class="styles"><li>専門分野の解説記事を書いているが、検索経由の反応が鈍ってきた</li><li>海外から日本の制度について問い合わせが来ることがある</li><li>事務所の知見を、営業資料以外の形で外に出したい</li></ul>
+  <ul class="styles"><li>月次レビューで毎回同じ観点を目視で確認している</li><li>チェックツールを作ったが、動作が重くて誰も使わなくなった</li><li>スタッフに見てほしい観点を、口頭で伝えきれない</li></ul>
   
   <h3>AIに投げるプロンプト例</h3>
   <p class="note">番組の内容をもとに、そのまま使える形に畠山のAI秘書が起こした例文です。◯◯や（　）はご自身の状況に置き換えてください。</p>
   <div class="kabe prompt-box">
-    <textarea id="tip-prompt" readonly rows="8">私の専門分野の情報を、AIが探しに来たときに見つけて使ってもらえる形に整理したいです。次を出してください。
+    <textarea id="tip-prompt" readonly rows="8">月次の帳簿レビューで私が見ている観点を、画面上で色分けして示すだけの軽いチェック機能にしたいです。正誤の判定はせず、人が見るべき箇所を目立たせるところまでにしてください。
 
-1. どんな問いでAIが探しに来そうか（想定される質問を10個）
-2. その問いに答えるために、どんな粒度でまとめておくとよいか
-3. 一次情報として何を明示すべきか（出典・更新日・適用範囲）
+私が毎回見ている観点は次のとおりです。
 
-私の専門分野は次のとおりです。
+（ここに観点を箇条書きで書く。例: 仮払金・仮受金が残っている、口座残高と帳簿が一致しない、同じ内容なのに科目がばらついている）
 
-（ここに専門分野と手持ちの情報を書く）</textarea>
+観点ごとに、どんな条件で色を付けるか、閾値をどう決めるかを先に提案してください。</textarea>
     <div class="diag-actions"><button class="btn" type="button" onclick="copyPrompt(this)">プロンプトをコピー</button></div>
   </div>
-  <div class="tip-nav"><a href="ichiji-joho.html">← 前 一次情報は音声・動画に置く</a><a href="tekisei-shindan-buntan.html">次 適性診断の結果をAIに読ませて、仕事を振り分ける →</a></div>
+  <div class="tip-nav"><a href="hito-no-gamen-wo-sekkeizu.html">← 前 他の人が作った画面を、そのまま設計図として渡す</a><a href="yuryo-service-jisaku.html">次 使っている有料サービスの画面を、AIに再現させてみる →</a></div>
   <div class="dm-cta">
     <h3>自分の現在地を知りたい方へ</h3>
     <p>14問に答えるだけで、AI活用の立ち位置が出演者と同じ6角形で分かる診断を用意しました。次の一歩のヒントも出ます。</p>

@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>AIに見つけてもらう形で情報を置く | AI活用TIPS集 | AI税理士のふたりごと</title>
-<meta name="description" content="これからは、人だけでなくAIが情報を探しに来ます。自分の持っている知識を、AIが拾いやすい形に整えて置いておくと、思わぬところから引き合いが来る。何を置けば引っかかるかを考えること自体が、AIを使っている人にしか出てこない発想です。">
-<meta property="og:title" content="AIに見つけてもらう形で情報を置く | AI活用TIPS集 | AI税理士のふたりごと">
-<meta property="og:description" content="これからは、人だけでなくAIが情報を探しに来ます。自分の持っている知識を、AIが拾いやすい形に整えて置いておくと、思わぬところから引き合いが来る。何を置けば引っかかるかを考えること自体が、AIを使っている人にしか出てこない発想です。">
+<title>顧問先には、閲覧専用のリンクを渡しておく | AI活用TIPS集 | AI税理士のふたりごと</title>
+<meta name="description" content="決算予測や資金繰りを、そのつど資料にして送るのをやめて、閲覧専用のリンクを1本渡しておく。こちらが更新すれば顧問先の画面も最新になり、「ちゃんと見せていますよね」と言える状態が保てます。説明のための往復が減り、打ち合わせは中身の話から始めら">
+<meta property="og:title" content="顧問先には、閲覧専用のリンクを渡しておく | AI活用TIPS集 | AI税理士のふたりごと">
+<meta property="og:description" content="決算予測や資金繰りを、そのつど資料にして送るのをやめて、閲覧専用のリンクを1本渡しておく。こちらが更新すれば顧問先の画面も最新になり、「ちゃんと見せていますよね」と言える状態が保てます。説明のための往復が減り、打ち合わせは中身の話から始めら">
 <meta property="og:type" content="website">
 <style>
 :root{
@@ -386,30 +386,28 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
 
 <section class="block tip-detail"><div class="wrap">
   <p class="crumb"><a href="../tips.html">← TIPS集にもどる</a></p>
-  <p class="tip-cat-badge">組織・発信</p>
-  <h2>AIに見つけてもらう形で情報を置く</h2>
-  <p class="tip-src">出典: <a class="chip" href="../index.html#ep-19">#19（配信予定）</a> <span class="tip-who">ゲスト回 西村啓さん × mameta さん（西村さんパート）</span></p>
-  <p class="tip-tags"><a class="tag" href="../tips.html?tag=%E7%99%BA%E4%BF%A1%E3%83%BBSNS">発信・SNS</a></p>
+  <p class="tip-cat-badge">経理・税務の実務</p>
+  <h2>顧問先には、閲覧専用のリンクを渡しておく</h2>
+  <p class="tip-src">出典: <a class="chip" href="../index.html#ep-22">#22（配信予定）</a> <span class="tip-who">おかわりゲスト回 荒井悠輔さん（中編・佐藤さんパート）</span></p>
+  <p class="tip-tags"><a class="tag" href="../tips.html?tag=%E9%A1%A7%E5%AE%A2%E5%AF%BE%E5%BF%9C">顧客対応</a></p>
   <h3>番組で語られたこと</h3>
-  <p>これからは、人だけでなくAIが情報を探しに来ます。自分の持っている知識を、AIが拾いやすい形に整えて置いておくと、思わぬところから引き合いが来る。何を置けば引っかかるかを考えること自体が、AIを使っている人にしか出てこない発想です。</p>
+  <p>決算予測や資金繰りを、そのつど資料にして送るのをやめて、閲覧専用のリンクを1本渡しておく。こちらが更新すれば顧問先の画面も最新になり、「ちゃんと見せていますよね」と言える状態が保てます。説明のための往復が減り、打ち合わせは中身の話から始められます。</p>
   <h3>こんなシーンで使えます</h3>
-  <ul class="styles"><li>専門分野の解説記事を書いているが、検索経由の反応が鈍ってきた</li><li>海外から日本の制度について問い合わせが来ることがある</li><li>事務所の知見を、営業資料以外の形で外に出したい</li></ul>
+  <ul class="styles"><li>資料を作って送る作業が、顧問先の数だけ発生している</li><li>納税額を早めに伝えたいが、そのたびに連絡するのが手間</li><li>「聞いていない」と言われたときに、見せた記録が残らない</li></ul>
   
   <h3>AIに投げるプロンプト例</h3>
   <p class="note">番組の内容をもとに、そのまま使える形に畠山のAI秘書が起こした例文です。◯◯や（　）はご自身の状況に置き換えてください。</p>
   <div class="kabe prompt-box">
-    <textarea id="tip-prompt" readonly rows="8">私の専門分野の情報を、AIが探しに来たときに見つけて使ってもらえる形に整理したいです。次を出してください。
+    <textarea id="tip-prompt" readonly rows="8">顧問先ごとに、閲覧専用のダッシュボードページを書き出す仕組みを作ってください。
 
-1. どんな問いでAIが探しに来そうか（想定される質問を10個）
-2. その問いに答えるために、どんな粒度でまとめておくとよいか
-3. 一次情報として何を明示すべきか（出典・更新日・適用範囲）
+- 載せる内容: （例: 予実、決算予測、納税予定、経理カレンダー）
+- 更新のタイミング: （例: 月次処理が終わったら自動で書き出す）
+- 公開方法: 推測しにくいURLで、検索に載らない設定にする
 
-私の専門分野は次のとおりです。
-
-（ここに専門分野と手持ちの情報を書く）</textarea>
+顧問先ごとにファイルが混ざらない構成にしたうえで、更新履歴が分かるようにしてください。</textarea>
     <div class="diag-actions"><button class="btn" type="button" onclick="copyPrompt(this)">プロンプトをコピー</button></div>
   </div>
-  <div class="tip-nav"><a href="ichiji-joho.html">← 前 一次情報は音声・動画に置く</a><a href="tekisei-shindan-buntan.html">次 適性診断の結果をAIに読ませて、仕事を振り分ける →</a></div>
+  <div class="tip-nav"><a href="yuryo-service-jisaku.html">← 前 使っている有料サービスの画面を、AIに再現させてみる</a><a href="kigen-alert-dashboard.html">次 期限のあるものを、全部ダッシュボードに載せる →</a></div>
   <div class="dm-cta">
     <h3>自分の現在地を知りたい方へ</h3>
     <p>14問に答えるだけで、AI活用の立ち位置が出演者と同じ6角形で分かる診断を用意しました。次の一歩のヒントも出ます。</p>
