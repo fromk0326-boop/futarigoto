@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>業務をゲームにして研修に使う | AI活用TIPS集 | AI税理士のふたりごと</title>
-<meta name="description" content="税務調査の一日を、そのままゲームにした例が番組で登場します。調査官が来て、社長が余計なことを喋り、条文で反論すると更正額が減っていく。遊びとして作ったものが、そのまま新人研修の教材になる。真面目な教材より、手が動く分だけ身につきます。">
-<meta property="og:title" content="業務をゲームにして研修に使う | AI活用TIPS集 | AI税理士のふたりごと">
-<meta property="og:description" content="税務調査の一日を、そのままゲームにした例が番組で登場します。調査官が来て、社長が余計なことを喋り、条文で反論すると更正額が減っていく。遊びとして作ったものが、そのまま新人研修の教材になる。真面目な教材より、手が動く分だけ身につきます。">
+<title>利用ガイドラインを、AI自身に読ませる | AI活用TIPS集 | AI税理士のふたりごと</title>
+<meta name="description" content="生成AIの利用ルールを文書で配っても、読まれないまま終わります。番組で出てきたのは、ガイドラインをファイル1つにまとめてAIに読ませ、その範囲の中でしか動かないようにする形。人に守らせるのではなく、道具の側に守らせる。配るファイルが1つで済">
+<meta property="og:title" content="利用ガイドラインを、AI自身に読ませる | AI活用TIPS集 | AI税理士のふたりごと">
+<meta property="og:description" content="生成AIの利用ルールを文書で配っても、読まれないまま終わります。番組で出てきたのは、ガイドラインをファイル1つにまとめてAIに読ませ、その範囲の中でしか動かないようにする形。人に守らせるのではなく、道具の側に守らせる。配るファイルが1つで済">
 <meta property="og:type" content="website">
 <style>
 :root{
@@ -386,29 +386,28 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
 
 <section class="block tip-detail"><div class="wrap">
   <p class="crumb"><a href="../tips.html">← TIPS集にもどる</a></p>
-  <p class="tip-cat-badge">AIとの付き合い方</p>
-  <h2>業務をゲームにして研修に使う</h2>
-  <p class="tip-src">出典: <a class="chip" href="../index.html#ep-22">#22（配信予定）</a> <span class="tip-who">ゲスト回 西村啓さん × mameta さん（佐藤さんパート）</span></p>
+  <p class="tip-cat-badge">組織・発信</p>
+  <h2>利用ガイドラインを、AI自身に読ませる</h2>
+  <p class="tip-src">出典: <a class="chip" href="../index.html#ep-25">#25（配信予定）</a> <span class="tip-who">ゲスト回 石本憲史さん（後編）</span></p>
   <p class="tip-tags"><a class="tag" href="../tips.html?tag=%E7%B5%84%E7%B9%94%E3%81%B8%E3%81%AE%E5%B0%8E%E5%85%A5">組織への導入</a></p>
   <h3>番組で語られたこと</h3>
-  <p>税務調査の一日を、そのままゲームにした例が番組で登場します。調査官が来て、社長が余計なことを喋り、条文で反論すると更正額が減っていく。遊びとして作ったものが、そのまま新人研修の教材になる。真面目な教材より、手が動く分だけ身につきます。</p>
+  <p>生成AIの利用ルールを文書で配っても、読まれないまま終わります。番組で出てきたのは、ガイドラインをファイル1つにまとめてAIに読ませ、その範囲の中でしか動かないようにする形。人に守らせるのではなく、道具の側に守らせる。配るファイルが1つで済むのが、いちばん早い実装です。</p>
   <h3>こんなシーンで使えます</h3>
-  <ul class="styles"><li>新人に税務調査の立ち会いを教えたいが、実地の機会が年に数回しかない</li><li>研修資料を作っても読んでもらえない</li><li>勉強会のネタが毎回マンネリ化している</li></ul>
+  <ul class="styles"><li>事務所として生成AIの利用ルールを決めたい</li><li>顧問先のデータをどこまで入れてよいかが曖昧なまま使われている</li><li>ルールを文書で配ったが、読まれている手応えがない</li></ul>
   
   <h3>AIに投げるプロンプト例</h3>
   <p class="note">番組の内容をもとに、そのまま使える形に畠山のAI秘書が起こした例文です。◯◯や（　）はご自身の状況に置き換えてください。</p>
   <div class="kabe prompt-box">
-    <textarea id="tip-prompt" readonly rows="8">新人向けの研修教材として、ブラウザで動く簡単なシミュレーションゲームを作ってください。単一のHTMLファイルで、外部ライブラリは使わないでください。
+    <textarea id="tip-prompt" readonly rows="8">事務所の生成AI利用ガイドラインを、AIに読ませる前提のファイルとして作ってください。
 
-- 題材: （ここに題材を書く。例: 税務調査の1日）
-- プレイヤーの役割: （例: 立ち会う税理士）
-- 選択肢を選ぶと結果が変わり、最後に結果と解説が出る
-- 各選択肢には、なぜ良い/良くないのかの根拠を表示する
+- 業種・体制: （例: 税理士事務所、スタッフ3名）
+- 絶対に入れてはいけない情報: （例: マイナンバー、口座番号、顧問先の実名）
+- 使ってよい場面: （例: 下書き作成、調べもの、チェック）
 
-まず全体の流れと選択肢の設計案を出してから、実装してください。</textarea>
+禁止事項は「してはいけないこと」ではなく「代わりにこうする」まで書いてください。判断に迷う場合は人に確認する、というルールも入れてください。</textarea>
     <div class="diag-actions"><button class="btn" type="button" onclick="copyPrompt(this)">プロンプトをコピー</button></div>
   </div>
-  <div class="tip-nav"><a href="honyaku.html">← 前 AIの答えを「翻訳」する</a><a href="hikouzou-wo-kouzou-ni.html">次 AIが効くのは、非構造化を構造化にするところ →</a></div>
+  <div class="tip-nav"><a href="ai-dojo-level.html">← 前 若手の育成をレベル制にする</a><span></span></div>
   <div class="dm-cta">
     <h3>自分の現在地を知りたい方へ</h3>
     <p>14問に答えるだけで、AI活用の立ち位置が出演者と同じ6角形で分かる診断を用意しました。次の一歩のヒントも出ます。</p>

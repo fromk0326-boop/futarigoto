@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>業務をゲームにして研修に使う | AI活用TIPS集 | AI税理士のふたりごと</title>
-<meta name="description" content="税務調査の一日を、そのままゲームにした例が番組で登場します。調査官が来て、社長が余計なことを喋り、条文で反論すると更正額が減っていく。遊びとして作ったものが、そのまま新人研修の教材になる。真面目な教材より、手が動く分だけ身につきます。">
-<meta property="og:title" content="業務をゲームにして研修に使う | AI活用TIPS集 | AI税理士のふたりごと">
-<meta property="og:description" content="税務調査の一日を、そのままゲームにした例が番組で登場します。調査官が来て、社長が余計なことを喋り、条文で反論すると更正額が減っていく。遊びとして作ったものが、そのまま新人研修の教材になる。真面目な教材より、手が動く分だけ身につきます。">
+<title>通帳のコピー画像から、請求書を消し込む | AI活用TIPS集 | AI税理士のふたりごと</title>
+<meta name="description" content="通帳のコピー画像を渡して「今月分の取引で請求書の消し込みを全部やって」と指示するだけ。番組では、この形で消込を回している話が出てきます。入金額と請求書を人が目で突き合わせる時間が、まるごと消える。画像の読み取りと突合は、AIがいちばん得意な">
+<meta property="og:title" content="通帳のコピー画像から、請求書を消し込む | AI活用TIPS集 | AI税理士のふたりごと">
+<meta property="og:description" content="通帳のコピー画像を渡して「今月分の取引で請求書の消し込みを全部やって」と指示するだけ。番組では、この形で消込を回している話が出てきます。入金額と請求書を人が目で突き合わせる時間が、まるごと消える。画像の読み取りと突合は、AIがいちばん得意な">
 <meta property="og:type" content="website">
 <style>
 :root{
@@ -386,29 +386,27 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
 
 <section class="block tip-detail"><div class="wrap">
   <p class="crumb"><a href="../tips.html">← TIPS集にもどる</a></p>
-  <p class="tip-cat-badge">AIとの付き合い方</p>
-  <h2>業務をゲームにして研修に使う</h2>
-  <p class="tip-src">出典: <a class="chip" href="../index.html#ep-22">#22（配信予定）</a> <span class="tip-who">ゲスト回 西村啓さん × mameta さん（佐藤さんパート）</span></p>
-  <p class="tip-tags"><a class="tag" href="../tips.html?tag=%E7%B5%84%E7%B9%94%E3%81%B8%E3%81%AE%E5%B0%8E%E5%85%A5">組織への導入</a></p>
+  <p class="tip-cat-badge">経理・税務の実務</p>
+  <h2>通帳のコピー画像から、請求書を消し込む</h2>
+  <p class="tip-src">出典: <a class="chip" href="../index.html#ep-24">#24（配信予定）</a> <span class="tip-who">ゲスト回 久松秀之さん（中編）</span></p>
+  <p class="tip-tags"><a class="tag" href="../tips.html?tag=%E4%BC%9A%E8%A8%88%E3%83%BB%E7%A8%8E%E5%8B%99%E3%81%AE%E8%87%AA%E5%8B%95%E5%8C%96">会計・税務の自動化</a></p>
   <h3>番組で語られたこと</h3>
-  <p>税務調査の一日を、そのままゲームにした例が番組で登場します。調査官が来て、社長が余計なことを喋り、条文で反論すると更正額が減っていく。遊びとして作ったものが、そのまま新人研修の教材になる。真面目な教材より、手が動く分だけ身につきます。</p>
+  <p>通帳のコピー画像を渡して「今月分の取引で請求書の消し込みを全部やって」と指示するだけ。番組では、この形で消込を回している話が出てきます。入金額と請求書を人が目で突き合わせる時間が、まるごと消える。画像の読み取りと突合は、AIがいちばん得意な組み合わせです。</p>
   <h3>こんなシーンで使えます</h3>
-  <ul class="styles"><li>新人に税務調査の立ち会いを教えたいが、実地の機会が年に数回しかない</li><li>研修資料を作っても読んでもらえない</li><li>勉強会のネタが毎回マンネリ化している</li></ul>
+  <ul class="styles"><li>毎月の入金消込に時間がかかっている</li><li>通帳のコピーが画像やPDFでしか手に入らない</li><li>未入金の先を早く洗い出したい</li></ul>
   
   <h3>AIに投げるプロンプト例</h3>
   <p class="note">番組の内容をもとに、そのまま使える形に畠山のAI秘書が起こした例文です。◯◯や（　）はご自身の状況に置き換えてください。</p>
   <div class="kabe prompt-box">
-    <textarea id="tip-prompt" readonly rows="8">新人向けの研修教材として、ブラウザで動く簡単なシミュレーションゲームを作ってください。単一のHTMLファイルで、外部ライブラリは使わないでください。
+    <textarea id="tip-prompt" readonly rows="8">添付した通帳の画像と請求データを突き合わせて、消し込みの一覧を作ってください。
 
-- 題材: （ここに題材を書く。例: 税務調査の1日）
-- プレイヤーの役割: （例: 立ち会う税理士）
-- 選択肢を選ぶと結果が変わり、最後に結果と解説が出る
-- 各選択肢には、なぜ良い/良くないのかの根拠を表示する
+- 通帳: （画像またはPDFを添付）
+- 請求データ: （例: 請求書一覧のCSV）
 
-まず全体の流れと選択肢の設計案を出してから、実装してください。</textarea>
+「一致」「金額違い」「該当なし」の3つに分けて表にし、判断に迷ったものは消し込まずに理由を書いてください。</textarea>
     <div class="diag-actions"><button class="btn" type="button" onclick="copyPrompt(this)">プロンプトをコピー</button></div>
   </div>
-  <div class="tip-nav"><a href="honyaku.html">← 前 AIの答えを「翻訳」する</a><a href="hikouzou-wo-kouzou-ni.html">次 AIが効くのは、非構造化を構造化にするところ →</a></div>
+  <div class="tip-nav"><a href="kigen-alert-dashboard.html">← 前 期限のあるものを、全部ダッシュボードに載せる</a><a href="kando.html">次 まず最初に感動してもらう →</a></div>
   <div class="dm-cta">
     <h3>自分の現在地を知りたい方へ</h3>
     <p>14問に答えるだけで、AI活用の立ち位置が出演者と同じ6角形で分かる診断を用意しました。次の一歩のヒントも出ます。</p>

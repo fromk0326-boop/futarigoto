@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>業務をゲームにして研修に使う | AI活用TIPS集 | AI税理士のふたりごと</title>
-<meta name="description" content="税務調査の一日を、そのままゲームにした例が番組で登場します。調査官が来て、社長が余計なことを喋り、条文で反論すると更正額が減っていく。遊びとして作ったものが、そのまま新人研修の教材になる。真面目な教材より、手が動く分だけ身につきます。">
-<meta property="og:title" content="業務をゲームにして研修に使う | AI活用TIPS集 | AI税理士のふたりごと">
-<meta property="og:description" content="税務調査の一日を、そのままゲームにした例が番組で登場します。調査官が来て、社長が余計なことを喋り、条文で反論すると更正額が減っていく。遊びとして作ったものが、そのまま新人研修の教材になる。真面目な教材より、手が動く分だけ身につきます。">
+<title>頭の中の設計を、ER図に起こさせる | AI活用TIPS集 | AI税理士のふたりごと</title>
+<meta name="description" content="図を書くのが苦手でも、やりたいことを文章で説明すればAIが図にしてくれます。番組では、開発を外注するときの仕様調整にこれを使っている話が出てきます。簡易的なモックアップまで作らせれば、「思っていたのと違う」を発注前につぶせる。相手に見せるた">
+<meta property="og:title" content="頭の中の設計を、ER図に起こさせる | AI活用TIPS集 | AI税理士のふたりごと">
+<meta property="og:description" content="図を書くのが苦手でも、やりたいことを文章で説明すればAIが図にしてくれます。番組では、開発を外注するときの仕様調整にこれを使っている話が出てきます。簡易的なモックアップまで作らせれば、「思っていたのと違う」を発注前につぶせる。相手に見せるた">
 <meta property="og:type" content="website">
 <style>
 :root{
@@ -386,29 +386,27 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
 
 <section class="block tip-detail"><div class="wrap">
   <p class="crumb"><a href="../tips.html">← TIPS集にもどる</a></p>
-  <p class="tip-cat-badge">AIとの付き合い方</p>
-  <h2>業務をゲームにして研修に使う</h2>
-  <p class="tip-src">出典: <a class="chip" href="../index.html#ep-22">#22（配信予定）</a> <span class="tip-who">ゲスト回 西村啓さん × mameta さん（佐藤さんパート）</span></p>
-  <p class="tip-tags"><a class="tag" href="../tips.html?tag=%E7%B5%84%E7%B9%94%E3%81%B8%E3%81%AE%E5%B0%8E%E5%85%A5">組織への導入</a></p>
+  <p class="tip-cat-badge">仕組み化・エージェント運用</p>
+  <h2>頭の中の設計を、ER図に起こさせる</h2>
+  <p class="tip-src">出典: <a class="chip" href="../index.html#ep-23">#23（配信予定）</a> <span class="tip-who">ゲスト回 久松秀之さん（前編）</span></p>
+  <p class="tip-tags"><a class="tag" href="../tips.html?tag=%E7%92%B0%E5%A2%83%E6%95%B4%E5%82%99%E3%83%BB%E3%83%87%E3%83%BC%E3%82%BF%E5%8C%96">環境整備・データ化</a></p>
   <h3>番組で語られたこと</h3>
-  <p>税務調査の一日を、そのままゲームにした例が番組で登場します。調査官が来て、社長が余計なことを喋り、条文で反論すると更正額が減っていく。遊びとして作ったものが、そのまま新人研修の教材になる。真面目な教材より、手が動く分だけ身につきます。</p>
+  <p>図を書くのが苦手でも、やりたいことを文章で説明すればAIが図にしてくれます。番組では、開発を外注するときの仕様調整にこれを使っている話が出てきます。簡易的なモックアップまで作らせれば、「思っていたのと違う」を発注前につぶせる。相手に見せるためというより、自分の頭を整理するために作る図です。</p>
   <h3>こんなシーンで使えます</h3>
-  <ul class="styles"><li>新人に税務調査の立ち会いを教えたいが、実地の機会が年に数回しかない</li><li>研修資料を作っても読んでもらえない</li><li>勉強会のネタが毎回マンネリ化している</li></ul>
+  <ul class="styles"><li>システムを外注したいが、仕様が言葉のままで固まらない</li><li>顧問先管理に必要な項目を洗い出したい</li><li>使いにくくなったスプレッドシートを設計から作り直したい</li></ul>
   
   <h3>AIに投げるプロンプト例</h3>
   <p class="note">番組の内容をもとに、そのまま使える形に畠山のAI秘書が起こした例文です。◯◯や（　）はご自身の状況に置き換えてください。</p>
   <div class="kabe prompt-box">
-    <textarea id="tip-prompt" readonly rows="8">新人向けの研修教材として、ブラウザで動く簡単なシミュレーションゲームを作ってください。単一のHTMLファイルで、外部ライブラリは使わないでください。
+    <textarea id="tip-prompt" readonly rows="8">これから作りたい仕組みを説明します。データの構造をER図（Mermaid記法）にしてください。
 
-- 題材: （ここに題材を書く。例: 税務調査の1日）
-- プレイヤーの役割: （例: 立ち会う税理士）
-- 選択肢を選ぶと結果が変わり、最後に結果と解説が出る
-- 各選択肢には、なぜ良い/良くないのかの根拠を表示する
+- 作りたいもの: （例: 顧問先ごとの申告期限と進捗を管理する仕組み）
+- 扱いたい情報: （例: 顧問先、決算期、担当者、提出書類、進捗ステータス）
 
-まず全体の流れと選択肢の設計案を出してから、実装してください。</textarea>
+図のあとに、「この設計だと困りそうな点」を3つ挙げてください。</textarea>
     <div class="diag-actions"><button class="btn" type="button" onclick="copyPrompt(this)">プロンプトをコピー</button></div>
   </div>
-  <div class="tip-nav"><a href="honyaku.html">← 前 AIの答えを「翻訳」する</a><a href="hikouzou-wo-kouzou-ni.html">次 AIが効くのは、非構造化を構造化にするところ →</a></div>
+  <div class="tip-nav"><a href="gyomu-log-kara-shokai.html">← 前 説明文は、業務ログから作る</a><a href="db-sekkei-de-model-wo-sageru.html">次 精度は指示ではなく、情報の置き方で決まる →</a></div>
   <div class="dm-cta">
     <h3>自分の現在地を知りたい方へ</h3>
     <p>14問に答えるだけで、AI活用の立ち位置が出演者と同じ6角形で分かる診断を用意しました。次の一歩のヒントも出ます。</p>
