@@ -172,6 +172,11 @@ section.block+section.block{border-top:1px solid var(--line)}
 .part{border:1px solid var(--line);border-radius:4px;padding:0 6px}
 .episode h3{font-size:19px;margin-top:4px}
 .guest{margin:4px 0 0;font-size:14px;color:var(--fg2)}
+.gname{display:inline-flex;align-items:center;gap:6px;vertical-align:middle}
+.gname a{color:inherit;text-decoration:none;border-bottom:1px dotted var(--line)}
+.gname a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+.gav{display:inline-block;width:24px;height:24px;border-radius:50%;background:var(--bg2);background-size:cover;background-position:center;border:1px solid var(--line);flex-shrink:0}
+.gav-ph{display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--fg2)}
 .gtitle{margin-left:6px}
 .epstats{margin-left:auto;flex-shrink:0;text-align:right;font-size:14px;color:var(--fg2);display:flex;flex-direction:column;gap:2px}
 .epstats b{font-weight:700;color:var(--fg);margin-left:4px}
@@ -370,7 +375,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
   .radar .lbl{font-size:11pt}
   a{color:#000;text-decoration:none}
 }
-</style>
+.gav-haito{background-image:url("data:image/jpeg;base64,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")}.gav-amano{background-image:url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCABAAEADASIAAhEBAxEB/8QAGwAAAgMBAQEAAAAAAAAAAAAABgcCBAUDAQj/xAA1EAABAwMCAwYEAwkAAAAAAAABAgMEAAURBhIHITETFCJBUYEIMkKRFWFxM1JicqGxssHw/8QAGAEBAQEBAQAAAAAAAAAAAAAAAQIAAwT/xAAgEQADAQEAAQQDAAAAAAAAAAAAAQIRAwQSISIxMkFh/9oADAMBAAIRAxEAPwDjt51IJqeKkE0HmOeKpz7hEglIlyWmVK+ULWATVmc+IsR19XPYknHqaFdPcNper4h1JdZi2mXVKLCEpyVAHGTnoPQUVSlbR05866PJNT8VjPFQZfbXg4O1QOK9EgL6GlTq63ydH6h2NOqWhQ3BRGNw8waLbBc+9sIWDkEUpprUFw5eMLkKyKlVeOrKasCsSa4FSxXoHOpAUGMfU0V6XZJbUb9sU7kD1IOcf0pnWm3rgaTtCY76Exm7YMoJzuWEAgjngc8+VBC8Ac6OtMzE3DSBaRuPdStg9kN3PAIyP0Ncuv4nq8RpVjEXxUs8afYk3NS09s5hTeSfAfqySTyob0VGW3BaCuuK3eJD70e2d1Wlfdy+EqeX55OcVzsYQlhHZkEY8q3BtyPlter2CGMMJFWkiqrChirANdTym+E86pX25s2a3LlPDcR4Uozjca0gmgPiw/shxm89QpWMdaZWsjcArUWtbpdXu7BQiMDmpLJIKvyKuuKanw43WSu6XeEh0FpxlLoaWeRUDjIPrzFIBCtyt46jKT/qmnwBlhjXrTKj4ZEZ1v3ACh/jVOU1hStw1SDfjrbWYujp0l9IS4XUNtI/iUrmfsDSEs97l23Cc9oyPpPX2p3/ABOTz3OyW7dlTjq5Cx/KNo9vEfsa+fniCooHlzonmoWIp9K6PaGdY9Qsz0jacKHUHqKJGXQoAg0mtOPFi5bQevWmlbnipA50MGhiAUqOMDzhnNtJBOGxgev/AGabe2l7xStb7q48uOy44kJwsoSSBj1xTH2QxZ3KzsQYEeZCntSUOpT2rBOHWl4/d9M5H5VqcMbq1adc2iZJcDLDbpDjivlSCkjJ+9ZC47jyglCSpR8kjJPsKrKSgNbU5IJ8upqksKpqv0MHizc3dc6yzpll64w4kdDCHGkHBJySefTJOPal/Ntcq1yHG7mwuPIIBCF9cHz/AL1r6a1LM03KeXAaaWX2wlYcz4cdCB96zL/c5l3mLkz3i+4oYyfpHoB5Cj5b/CslSs+ynajsuhAOefX1pnWkkoT+lLrTUNT0ztMeEHFMy3t7EpFSzM//2Q==")}.gav-arai{background-image:url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCABAAEADASIAAhEBAxEB/8QAHAAAAQUBAQEAAAAAAAAAAAAABAIFBgcIAwEA/8QAMxAAAgEDAgQFAwIFBQAAAAAAAQIDAAQRBSEGEhMxB0FRYYEicZEUMggVI1KhorHB4fD/xAAZAQADAQEBAAAAAAAAAAAAAAACAwQABQH/xAApEQACAQMCBAUFAAAAAAAAAAABAgADBBESIRMxQYEiIyQycTNhscHh/9oADAMBAAIRAxEAPwDT5rw18TSSa8mjfqZxLH64NNX6hIol67ohZcfUwFd+Lb9dL0y4v3UuttA8xUdzyjOKy3xBZa7rUUOvagty8N6wMJRjJsc4AUftG3akuwBjUQsNpptJUkclHVwH7qc05xEdJz71l7grR+IdKafVreW4tktYjMqyBgtxy7leU9xgHf1xWlrO5S50uO4hOUmCyKfUHBpakajDZCAMidVkzNMO/lRynAP3zTTG+JJSSMN9W/lThC5kUk429KJeeYLL4YeWpJauLyHO1I6mdjTsxWIFxBBFeWj28680MyNG6+oIwaqvhiyu+GtOm0jUX6tra3RWCXGSYj9aHPluSMe1H+J3iXY6KkllpTrd6moIJU5jgPqx8yPQfNNnhfro1vh6UajM0l6Ceo7nJYjfIz/tUl37e8tsfqdpL7qS5u44IrVImgkPL9ZzzA7MCPt70/oiwBYo1CooCqo7AY2qA6FxHoNjxHc6dJqhjuFlAWKUckRyAcqTtnf1FTs8sgd8nKsMb0FGmQuYdzVVm0jpOlzFMOYQoN0G/NjFFac8hDrKirsCOVs/8Ul3wHx/bSYZOWXGe4p5OkiTZLAiFyvgmq18a+JLnROGEisJ2hu72XpB0/cEAy2P8D5qwpX7liAKoL+IO+jub7SIYJVlVElZumwOCSB+dqau5iSQBKwjdchHblkk/afImpZ4Z33S1xrNshbjBUDydfT371X+rMyRwTo2yzIWBHv39qkOh3aWvEWmXYblTrpzH0ORn/GaXd0uLRZPtGW9Th1FaOfibEIeLrvbusZ/0irN8EuI2v8AR7nS7h2eeyIZCzZJjY9vg7fIqsfFOQvxhf8AsYgAPTpihPC7iyHQeKDNcyNHaTExTkLzfTnYj7HBoLQemT4H4hXB85vmaraXm5iPQA/mvUY9YY7YNC2kqSxO4IZTyspB2I2NGRSc8pH9orMMjVMpwcQa/iS5ilWfLhgVCE/SPjzNZ78X2jjutKLYUKki4A3zkeVX9JOBy/8Au1Uh42aV/SfUkkSNrQnPPsCjkHb3B/NUp1E574DI3aVFqjyXFjIkMMgG3dQST5Um0vJZI5Ld4pUcboxUgAjz/Nck1GEw8sb5wcZz3Hc0ZA1xql0Laxglnc4PJCpYkfHYV6WCjJlIBJwI+6udR4m1pLuxsrudZukrmKIthumoIyBt2NSPQ/BjUTf3H6vV4re26zJbYt3kkk325tgBt7nerD8Mp/5LwvHZz6Td28nMXkkYr9TfbOceQqQ6ZxPbAzLcfqOcMdihIOe2MVyBfoBoRhgbc510sCw1uCSYycP3t5wbM3DerypdOIxJZyg4LLndSPbG3z6URfatqF1KT12t07qIiVP/AH80jWtK1LUeIYtdu7OeGxSPkhaUAcuxHN7ZyfbejoNLd12KpnuT3qSvesNs/qPpWqDf+z//2Q==")}.gav-ichibe{background-image:url("data:image/jpeg;base64,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")}.gav-nishimura{background-image:url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCABAAEADASIAAhEBAxEB/8QAHAAAAQUBAQEAAAAAAAAAAAAAAAMEBQcIAQYC/8QALxAAAQMDAwMCBAYDAAAAAAAAAQIDBAAFEQYSITFBUQcTFCJhgQgVQnGRsTJyof/EABcBAQEBAQAAAAAAAAAAAAAAAAADAgT/xAAlEQACAgEDAwQDAAAAAAAAAAABAgADEQQSISIxQTJRgfChscH/2gAMAwEAAhEDEQA/ANU0UU3uMxm3wJEyUrawwguLPgAZNIhcZbcCBIlvhRaYbU4vYncdoGTgd+KzTfvXi9zbifyCMluLvwhCmVLUsA8ZOQBnwMn+qsS2etdqujNxLVslpDMd19j3CMPhAzgj9ORk9+BVJ6i9QIc9pty1aftNqnNv+4txmOEnHUKSvhSVA+Ov076sZNO228EEjPxInV11HB5Pz/JqzRki6S9L26Rf2ER7m60FvNIzhBJOBzz0xU0CCAQcg9xWP5frJrFyyPQnLlHZYCQ38atOHSSM4Chgk+eM/WnnpJ6ntWvU6ntRSJa2kxRHbEYqW2vaEgZSo5HAz+/iom0HqHb9S4VjULiMKRnJmtKK8loLXtq1qJQtiJDTsbBW28kAlJzhQIJHY162tI6uNynIk0dbF3IciFRmp7WL3p642xStvxTC2s+MjFSdFam5mZrRmpvTS1SNRS24MgQ4zrQDeXtu4bQpSSB8p78nG7kEA1RC3lyCVqAbQSSMI/yz1PjrW2/WFuLI0HNiTmw41JcaaCScZO8H+gazHCszLmqnbcthpJfWW44VgI5T8mewAPnjNc+r1wu1C1vywH4zicrrXvC+e88rpmFHnXRiO4tLbSlFJ3AE9MnB7E/SnGpdOsWSQywxIUtTqVLXxg4zwOKun069IEta1mo1NCU5CZiNPoaKjtS84OQFpODtIWP4qxrnoiwW52OzH03FkMOIcC5C2gsMJCc/MpSs8ngYB6dqm9V9lqsX6APT9+8Smxye/T7SO/Dzp+Ha9HNzkRZTNxmJSZCn+igM7SgYGEnOfv8AtVq1xCUpSEoACQMADoBXa6lUKMCUVQgwohRRSM14sR1LSNznCUJ8qPAH81qakDreDHvtkl2txh18kBW5olJZUDlKgR+oHBA/nivH6U0FbLbdfzCTeJrt1LQRF+KShv2eckpCeFE4APJ4yO9WTDiLiwy0l8rdOVFxaRyo9TgfWuoaYmR9zzLThWnYvKcg44I56jIqZqRnFhAyPPmZKqTuI5joZwM9ai7wmS+6zGivlhS8krSAr5QOcpI57D70zds0eLexNKnFR3mhHKFKJDKgcpUg5ykHJBx9KmY8VDLil73HFkbdziskDwKpNT7jtBhhtoKKghITk9TilKKKRCm77SnZcdRx7Te5Z/2xgf8ACacUUiFIQW1NR9qxg7lH7FRIpeikRKU2HYzrZTuCkEY88V2Nv+Ha93PubBuz5xzSlFIhRRRSJ//Z")}.gav-mameta{background-image:url("data:image/jpeg;base64,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")}.gav-ishimoto{background-image:url("data:image/jpeg;base64,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")}</style>
 </head>
 <body>
 <nav class="nav"><div class="wrap">
@@ -982,7 +987,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
     <div class="ephead">
       <div class="epmeta"><span class="badge">配信中</span><span>2026-07-30 / 27分</span><span class="part">前編</span></div>
       <h3>紹介だけで顧問先20社。AIコンサルのオーガニック成長【特別ゲスト回・前編】</h3>
-      <p class="guest">ゲスト: 灰藤健吾さん<span class="gtitle">CES Up株式会社 共同代表</span></p>
+      <p class="guest">ゲスト: <span class="gname"><span class="gav gav-haito" role="img" aria-label="灰藤健吾"></span><a href="#person-haito">灰藤健吾さん</a></span><span class="gtitle">CES Up株式会社 共同代表</span></p>
     </div>
     <div class="epstats" title="Spotify for Creators の累計（毎晩自動更新）。赤字は全エピソード中の上位3位"><span>再生<b>75回</b></span><span>視聴<b>18.0時間</b></span><span>維持率<b>73%</b></span></div>
   </header>
@@ -998,7 +1003,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
     <div class="ephead">
       <div class="epmeta"><span class="badge">配信中</span><span>2026-08-03 / 21分</span><span class="part">後編</span></div>
       <h3>「自分より優秀な部下」を持ったことがない私たち【特別ゲスト回・後編】</h3>
-      <p class="guest">ゲスト: 灰藤健吾さん<span class="gtitle">CES Up株式会社 共同代表</span></p>
+      <p class="guest">ゲスト: <span class="gname"><span class="gav gav-haito" role="img" aria-label="灰藤健吾"></span><a href="#person-haito">灰藤健吾さん</a></span><span class="gtitle">CES Up株式会社 共同代表</span></p>
     </div>
     <div class="epstats" title="Spotify for Creators の累計（毎晩自動更新）。赤字は全エピソード中の上位3位"><span>再生<b>55回</b></span><span>視聴<b>12.0時間</b></span><span>維持率<b class="top">78%</b></span></div>
   </header>
@@ -1014,7 +1019,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
     <div class="ephead">
       <div class="epmeta"><span class="badge">配信中</span><span>2026-08-05 / 45分</span><span class="part">前編</span></div>
       <h3>AIが遺言の下書きをする。相続専門税理士とAI遺言Well-B【ゲスト前編】</h3>
-      <p class="guest">ゲスト: 天野大輔さん<span class="gtitle">税理士・公認会計士 / 税理士法人レガシィ</span></p>
+      <p class="guest">ゲスト: <span class="gname"><span class="gav gav-amano" role="img" aria-label="天野大輔"></span><a href="#person-amano">天野大輔さん</a></span><span class="gtitle">税理士・公認会計士 / 税理士法人レガシィ</span></p>
     </div>
     <div class="epstats" title="Spotify for Creators の累計（毎晩自動更新）。赤字は全エピソード中の上位3位"><span>再生<b>64回</b></span><span>視聴<b>17.6時間</b></span><span>維持率<b>61%</b></span></div>
   </header>
@@ -1030,7 +1035,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
     <div class="ephead">
       <div class="epmeta"><span class="badge">配信中</span><span>2026-08-07 / 27分</span><span class="part">中編</span></div>
       <h3>AIに怒りは伝わらない。感情が関わる業務とAIの設計【ゲスト中編】</h3>
-      <p class="guest">ゲスト: 天野大輔さん<span class="gtitle">税理士・公認会計士 / 税理士法人レガシィ</span></p>
+      <p class="guest">ゲスト: <span class="gname"><span class="gav gav-amano" role="img" aria-label="天野大輔"></span><a href="#person-amano">天野大輔さん</a></span><span class="gtitle">税理士・公認会計士 / 税理士法人レガシィ</span></p>
     </div>
     <div class="epstats" title="Spotify for Creators の累計（毎晩自動更新）。赤字は全エピソード中の上位3位"><span>再生<b>38回</b></span><span>視聴<b>7.8時間</b></span><span>維持率<b>60%</b></span></div>
   </header>
@@ -1046,7 +1051,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
     <div class="ephead">
       <div class="epmeta"><span class="badge">配信中</span><span>2026-08-10 / 37分</span><span class="part">後編</span></div>
       <h3>「AIは絶対やめない」。人と話すのが贅沢になる時代【ゲスト後編】</h3>
-      <p class="guest">ゲスト: 天野大輔さん<span class="gtitle">税理士・公認会計士 / 税理士法人レガシィ</span></p>
+      <p class="guest">ゲスト: <span class="gname"><span class="gav gav-amano" role="img" aria-label="天野大輔"></span><a href="#person-amano">天野大輔さん</a></span><span class="gtitle">税理士・公認会計士 / 税理士法人レガシィ</span></p>
     </div>
     <div class="epstats" title="Spotify for Creators の累計（毎晩自動更新）。赤字は全エピソード中の上位3位"><span>再生<b>42回</b></span><span>視聴<b>13.3時間</b></span><span>維持率<b>67%</b></span></div>
   </header>
@@ -1062,7 +1067,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
     <div class="ephead">
       <div class="epmeta"><span class="badge">配信中</span><span>2026-08-12 / 42分</span><span class="part">前編</span></div>
       <h3>「こりゃ使えねえな」からClaude Code全振りまで。AI活用の原体験【特別ゲスト回・前編】</h3>
-      <p class="guest">ゲスト: 荒井悠輔さん<span class="gtitle">税理士法人 経営企画 / 会計人向けAI実務活用を発信</span></p>
+      <p class="guest">ゲスト: <span class="gname"><span class="gav gav-arai" role="img" aria-label="荒井悠輔"></span><a href="#person-arai">荒井悠輔さん</a></span><span class="gtitle">税理士法人 経営企画 / 会計人向けAI実務活用を発信</span></p>
     </div>
     <div class="epstats" title="Spotify for Creators の累計（毎晩自動更新）。赤字は全エピソード中の上位3位"><span>再生<b>66回</b></span><span>視聴<b>20.1時間</b></span><span>維持率<b>63%</b></span></div>
   </header>
@@ -1078,7 +1083,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
     <div class="ephead">
       <div class="epmeta"><span class="badge">配信中</span><span>2026-08-14 / 41分</span><span class="part">中編</span></div>
       <h3>AIエージェントで「バーチャル会社」を回す。X・note・YouTubeに社員がいる【特別ゲスト回・中編】</h3>
-      <p class="guest">ゲスト: 荒井悠輔さん<span class="gtitle">税理士法人 経営企画 / 会計人向けAI実務活用を発信</span></p>
+      <p class="guest">ゲスト: <span class="gname"><span class="gav gav-arai" role="img" aria-label="荒井悠輔"></span><a href="#person-arai">荒井悠輔さん</a></span><span class="gtitle">税理士法人 経営企画 / 会計人向けAI実務活用を発信</span></p>
     </div>
     <div class="epstats" title="Spotify for Creators の累計（毎晩自動更新）。赤字は全エピソード中の上位3位"><span>再生<b>47回</b></span><span>視聴<b>16.2時間</b></span><span>維持率<b>75%</b></span></div>
   </header>
@@ -1094,7 +1099,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
     <div class="ephead">
       <div class="epmeta"><span class="badge">配信中</span><span>2026-08-19 / 35分</span><span class="part">後編</span></div>
       <h3>AIの恩恵を一番受けているのは40代ではないか【特別ゲスト回・後編】</h3>
-      <p class="guest">ゲスト: 荒井悠輔さん<span class="gtitle">税理士法人 経営企画 / 会計人向けAI実務活用を発信</span></p>
+      <p class="guest">ゲスト: <span class="gname"><span class="gav gav-arai" role="img" aria-label="荒井悠輔"></span><a href="#person-arai">荒井悠輔さん</a></span><span class="gtitle">税理士法人 経営企画 / 会計人向けAI実務活用を発信</span></p>
     </div>
     <div class="epstats" title="Spotify for Creators の累計（毎晩自動更新）。赤字は全エピソード中の上位3位"><span>再生<b>45回</b></span><span>視聴<b>13.4時間</b></span><span>維持率<b>65%</b></span></div>
   </header>
@@ -1110,7 +1115,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
     <div class="ephead">
       <div class="epmeta"><span class="badge">配信中</span><span>2026-08-24 / 約38分</span><span class="part">前編</span></div>
       <h3>28人の事務所に、15人のAI自動化チーム。千代田税理士法人の現場【特別ゲスト回・前編】</h3>
-      <p class="guest">ゲスト: 市邉隆志さん<span class="gtitle">千代田税理士法人 代表 / 税理士・社労士</span></p>
+      <p class="guest">ゲスト: <span class="gname"><span class="gav gav-ichibe" role="img" aria-label="市邉隆志"></span><a href="#person-ichibe">市邉隆志さん</a></span><span class="gtitle">千代田税理士法人 代表 / 税理士・社労士</span></p>
     </div>
     <div class="epstats" title="Spotify for Creators の累計（毎晩自動更新）。赤字は全エピソード中の上位3位"><span>再生<b>56回</b></span><span>視聴<b>15.5時間</b></span><span>維持率<b>61%</b></span></div>
   </header>
@@ -1126,7 +1131,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
     <div class="ephead">
       <div class="epmeta"><span class="badge">配信中</span><span>2026-08-26 / 約36分</span><span class="part">中編</span></div>
       <h3>年末調整の郵送地獄と、1枚10円のスキャン。紙が残る現場のリアル【特別ゲスト回・中編】</h3>
-      <p class="guest">ゲスト: 市邉隆志さん<span class="gtitle">千代田税理士法人 代表 / 税理士・社労士</span></p>
+      <p class="guest">ゲスト: <span class="gname"><span class="gav gav-ichibe" role="img" aria-label="市邉隆志"></span><a href="#person-ichibe">市邉隆志さん</a></span><span class="gtitle">千代田税理士法人 代表 / 税理士・社労士</span></p>
     </div>
     <div class="epstats" title="Spotify for Creators の累計（毎晩自動更新）。赤字は全エピソード中の上位3位"><span>再生<b>44回</b></span><span>視聴<b>13.0時間</b></span><span>維持率<b>67%</b></span></div>
   </header>
@@ -1142,7 +1147,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
     <div class="ephead">
       <div class="epmeta"><span class="badge">配信中</span><span>2026-08-28 / 約30分</span><span class="part">後編</span></div>
       <h3>「作れるやん」が一番の感動。ツールがないなら自分で作る【特別ゲスト回・後編】</h3>
-      <p class="guest">ゲスト: 市邉隆志さん<span class="gtitle">千代田税理士法人 代表 / 税理士・社労士</span></p>
+      <p class="guest">ゲスト: <span class="gname"><span class="gav gav-ichibe" role="img" aria-label="市邉隆志"></span><a href="#person-ichibe">市邉隆志さん</a></span><span class="gtitle">千代田税理士法人 代表 / 税理士・社労士</span></p>
     </div>
     <div class="epstats" title="Spotify for Creators の累計（毎晩自動更新）。赤字は全エピソード中の上位3位"><span>再生<b>31回</b></span><span>視聴<b>8.6時間</b></span><span>維持率<b class="top">77%</b></span></div>
   </header>
@@ -1190,7 +1195,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
     <div class="ephead">
       <div class="epmeta"><span class="badge">配信中</span><span>2026-09-06 / 約31分</span><span class="part">前編</span></div>
       <h3>会計システムをハックできる。freeeに資金繰り表タブを生やした</h3>
-      <p class="guest">ゲスト: 荒井悠輔さん<span class="gtitle">税理士法人 経営企画 / 会計人向けAI実務活用を発信</span></p>
+      <p class="guest">ゲスト: <span class="gname"><span class="gav gav-arai" role="img" aria-label="荒井悠輔"></span><a href="#person-arai">荒井悠輔さん</a></span><span class="gtitle">税理士法人 経営企画 / 会計人向けAI実務活用を発信</span></p>
     </div>
     <div class="epstats" title="Spotify for Creators の累計（毎晩自動更新）。赤字は全エピソード中の上位3位"><span>再生<b>17回</b></span><span>視聴<b>4.1時間</b></span><span>維持率<b>60%</b></span></div>
   </header>
@@ -1206,7 +1211,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
     <div class="ephead">
       <div class="epmeta"><span class="badge">配信中</span><span>2026-09-09 / 約33分</span><span class="part">中編</span></div>
       <h3>月5万5000円のダッシュボードを「同じもの作れる?」と聞いたら、作れてしまった</h3>
-      <p class="guest">ゲスト: 荒井悠輔さん<span class="gtitle">税理士法人 経営企画 / 会計人向けAI実務活用を発信</span></p>
+      <p class="guest">ゲスト: <span class="gname"><span class="gav gav-arai" role="img" aria-label="荒井悠輔"></span><a href="#person-arai">荒井悠輔さん</a></span><span class="gtitle">税理士法人 経営企画 / 会計人向けAI実務活用を発信</span></p>
     </div>
     <div class="epstats" title="Spotify for Creators の累計（毎晩自動更新）。赤字は全エピソード中の上位3位"><span>再生<b>12回</b></span><span>視聴<b>2.5時間</b></span><span>維持率<b>36%</b></span></div>
   </header>
@@ -1222,7 +1227,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
     <div class="ephead">
       <div class="epmeta"><span class="badge badge-soon">配信予定</span><span>近日公開 / 約26分</span><span class="part">後編</span></div>
       <h3>AIが上司になる日。もくもく型の税理士は仕事を奪われるのか</h3>
-      <p class="guest">ゲスト: 荒井悠輔さん<span class="gtitle">税理士法人 経営企画 / 会計人向けAI実務活用を発信</span></p>
+      <p class="guest">ゲスト: <span class="gname"><span class="gav gav-arai" role="img" aria-label="荒井悠輔"></span><a href="#person-arai">荒井悠輔さん</a></span><span class="gtitle">税理士法人 経営企画 / 会計人向けAI実務活用を発信</span></p>
     </div>
     
   </header>
@@ -1238,7 +1243,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
     <div class="ephead">
       <div class="epmeta"><span class="badge badge-soon">配信予定</span><span>近日公開 / 約33分</span><span class="part">前編</span></div>
       <h3>JPYCとAIエージェント決済。AIが勝手に払う時代の入り口</h3>
-      <p class="guest">ゲスト: 西村啓さん<span class="gtitle">弁護士</span> / mametaさん<span class="gtitle">エンジニア / JPYCマルシェ主催</span></p>
+      <p class="guest">ゲスト: <span class="gname"><span class="gav gav-nishimura" role="img" aria-label="西村啓"></span><a href="#person-nishimura">西村啓さん</a></span><span class="gtitle">弁護士</span> / <span class="gname"><span class="gav gav-mameta" role="img" aria-label="mameta"></span><a href="#person-mameta">mametaさん</a></span><span class="gtitle">エンジニア / JPYCマルシェ主催</span></p>
     </div>
     
   </header>
@@ -1254,7 +1259,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
     <div class="ephead">
       <div class="epmeta"><span class="badge badge-soon">配信予定</span><span>近日公開 / 約32分</span><span class="part">中編</span></div>
       <h3>1回0.01ドルの市場と、M&amp;Aで税理士が冷遇される話</h3>
-      <p class="guest">ゲスト: 西村啓さん<span class="gtitle">弁護士</span> / mametaさん<span class="gtitle">エンジニア / JPYCマルシェ主催</span></p>
+      <p class="guest">ゲスト: <span class="gname"><span class="gav gav-nishimura" role="img" aria-label="西村啓"></span><a href="#person-nishimura">西村啓さん</a></span><span class="gtitle">弁護士</span> / <span class="gname"><span class="gav gav-mameta" role="img" aria-label="mameta"></span><a href="#person-mameta">mametaさん</a></span><span class="gtitle">エンジニア / JPYCマルシェ主催</span></p>
     </div>
     
   </header>
@@ -1270,7 +1275,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
     <div class="ephead">
       <div class="epmeta"><span class="badge badge-soon">配信予定</span><span>近日公開 / 約42分</span><span class="part">後編</span></div>
       <h3>画面共有で見せ合うAI実務。Wordプラグインから税務調査ゲームまで</h3>
-      <p class="guest">ゲスト: 西村啓さん<span class="gtitle">弁護士</span> / mametaさん<span class="gtitle">エンジニア / JPYCマルシェ主催</span></p>
+      <p class="guest">ゲスト: <span class="gname"><span class="gav gav-nishimura" role="img" aria-label="西村啓"></span><a href="#person-nishimura">西村啓さん</a></span><span class="gtitle">弁護士</span> / <span class="gname"><span class="gav gav-mameta" role="img" aria-label="mameta"></span><a href="#person-mameta">mametaさん</a></span><span class="gtitle">エンジニア / JPYCマルシェ主催</span></p>
     </div>
     
   </header>
@@ -1286,7 +1291,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
     <div class="ephead">
       <div class="epmeta"><span class="badge badge-soon">配信予定</span><span>近日公開 / 約38分</span><span class="part">前編</span></div>
       <h3>AIが効くのは非構造化を構造化にするところ。登記簿はもう半分正規化されている</h3>
-      <p class="guest">ゲスト: 石本憲史さん<span class="gtitle">司法書士 / 大阪・北浜 / 商業登記専門</span> / 久松秀之さん<span class="gtitle">司法書士 / 静岡 / 日本司法書士会連合会でシステム開発を担当</span></p>
+      <p class="guest">ゲスト: <span class="gname"><span class="gav gav-ishimoto" role="img" aria-label="石本憲史"></span><a href="#person-ishimoto">石本憲史さん</a></span><span class="gtitle">司法書士 / 大阪・北浜 / 商業登記専門</span> / <span class="gname"><span class="gav gav-ph" aria-hidden="true">久</span><a href="#person-hisamatsu">久松秀之さん</a></span><span class="gtitle">司法書士 / 静岡 / 日本司法書士会連合会でシステム開発を担当</span></p>
     </div>
     
   </header>
@@ -1302,7 +1307,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
     <div class="ephead">
       <div class="epmeta"><span class="badge badge-soon">配信予定</span><span>近日公開 / 約38分</span><span class="part">中編</span></div>
       <h3>フォルダとエクセルシートでの管理は、もうきつい</h3>
-      <p class="guest">ゲスト: 石本憲史さん<span class="gtitle">司法書士 / 大阪・北浜 / 商業登記専門</span> / 久松秀之さん<span class="gtitle">司法書士 / 静岡 / 日本司法書士会連合会でシステム開発を担当</span></p>
+      <p class="guest">ゲスト: <span class="gname"><span class="gav gav-ishimoto" role="img" aria-label="石本憲史"></span><a href="#person-ishimoto">石本憲史さん</a></span><span class="gtitle">司法書士 / 大阪・北浜 / 商業登記専門</span> / <span class="gname"><span class="gav gav-ph" aria-hidden="true">久</span><a href="#person-hisamatsu">久松秀之さん</a></span><span class="gtitle">司法書士 / 静岡 / 日本司法書士会連合会でシステム開発を担当</span></p>
     </div>
     
   </header>
@@ -1318,7 +1323,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
     <div class="ephead">
       <div class="epmeta"><span class="badge badge-soon">配信予定</span><span>近日公開 / 約39分</span><span class="part">後編</span></div>
       <h3>「とりあえず動く」は全体工数の10%。攻めた先に残る、守りの設計</h3>
-      <p class="guest">ゲスト: 石本憲史さん<span class="gtitle">司法書士 / 大阪・北浜 / 商業登記専門</span> / 久松秀之さん<span class="gtitle">司法書士 / 静岡 / 日本司法書士会連合会でシステム開発を担当</span></p>
+      <p class="guest">ゲスト: <span class="gname"><span class="gav gav-ishimoto" role="img" aria-label="石本憲史"></span><a href="#person-ishimoto">石本憲史さん</a></span><span class="gtitle">司法書士 / 大阪・北浜 / 商業登記専門</span> / <span class="gname"><span class="gav gav-ph" aria-hidden="true">久</span><a href="#person-hisamatsu">久松秀之さん</a></span><span class="gtitle">司法書士 / 静岡 / 日本司法書士会連合会でシステム開発を担当</span></p>
     </div>
     
   </header>
