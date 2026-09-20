@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>「とりあえず動く」は、全体工数の10% | AI活用TIPS集 | AI税理士のふたりごと</title>
-<meta name="description" content="AIに作らせると、動くものはすぐできます。本番はそこから先。こう操作されたら壊れないか、壊れても自動で戻せるか。番組では、そこをシラミ潰しに確かめてから形を決める、という設計の話が出てきます。動いた時点を完成だと思わない。この前提を持ってお">
-<meta property="og:title" content="「とりあえず動く」は、全体工数の10% | AI活用TIPS集 | AI税理士のふたりごと">
-<meta property="og:description" content="AIに作らせると、動くものはすぐできます。本番はそこから先。こう操作されたら壊れないか、壊れても自動で戻せるか。番組では、そこをシラミ潰しに確かめてから形を決める、という設計の話が出てきます。動いた時点を完成だと思わない。この前提を持ってお">
+<title>AIが切った仕訳は、判断根拠をログに残す | AI活用TIPS集 | AI税理士のふたりごと</title>
+<meta name="description" content="税務調査でAIの判断根拠を聞かれたらどうするか。番組では、いまの仕組みでは「何を考えてこの伝票を切ったか」までは残っていない、という前提から話が始まります。結論は、判断が難しかったものだけでいいから、何をどう考えたかを書き留める簡単なリスト">
+<meta property="og:title" content="AIが切った仕訳は、判断根拠をログに残す | AI活用TIPS集 | AI税理士のふたりごと">
+<meta property="og:description" content="税務調査でAIの判断根拠を聞かれたらどうするか。番組では、いまの仕組みでは「何を考えてこの伝票を切ったか」までは残っていない、という前提から話が始まります。結論は、判断が難しかったものだけでいいから、何をどう考えたかを書き留める簡単なリスト">
 <meta property="og:type" content="website">
 <style>
 :root{
@@ -448,27 +448,27 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
 
 <section class="block tip-detail"><div class="wrap">
   <p class="crumb"><a href="../tips.html">← TIPS集にもどる</a></p>
-  <p class="tip-cat-badge">仕組み化・エージェント運用</p>
-  <h2>「とりあえず動く」は、全体工数の10%</h2>
-  <p class="tip-src">出典: <a class="chip" href="../index.html#ep-25">#25（配信予定）</a> <span class="tip-who">ゲスト回 貧弱軍曹さん（後編）</span></p>
-  <p class="tip-tags"><a class="tag" href="../tips.html?tag=%E6%A5%AD%E5%8B%99%E3%81%AE%E8%87%AA%E5%8B%95%E5%8C%96">業務の自動化</a></p>
+  <p class="tip-cat-badge">経理・税務の実務</p>
+  <h2>AIが切った仕訳は、判断根拠をログに残す</h2>
+  <p class="tip-src">出典: <a class="chip" href="../index.html#ep-26">#26（配信予定）</a> <span class="tip-who">特別編 京都公開収録（畠山パート・前編）</span></p>
+  <p class="tip-tags"><a class="tag" href="../tips.html?tag=%E4%BC%9A%E8%A8%88%E3%83%BB%E7%A8%8E%E5%8B%99%E3%81%AE%E8%87%AA%E5%8B%95%E5%8C%96">会計・税務の自動化</a></p>
   <h3>番組で語られたこと</h3>
-  <p>AIに作らせると、動くものはすぐできます。本番はそこから先。こう操作されたら壊れないか、壊れても自動で戻せるか。番組では、そこをシラミ潰しに確かめてから形を決める、という設計の話が出てきます。動いた時点を完成だと思わない。この前提を持っておくだけで、事故の数が変わります。</p>
+  <p>税務調査でAIの判断根拠を聞かれたらどうするか。番組では、いまの仕組みでは「何を考えてこの伝票を切ったか」までは残っていない、という前提から話が始まります。結論は、判断が難しかったものだけでいいから、何をどう考えたかを書き留める簡単なリストを持っておくこと。全部を記録するのではなく、迷ったところを残す。聞かれてから思い出すのは無理があります。</p>
   <h3>こんなシーンで使えます</h3>
-  <ul class="styles"><li>自作ツールを事務所で本格的に使い始めたい</li><li>スタッフや顧問先に配る前に、壊れ方を確かめたい</li><li>動いたのでそのまま運用に乗せてしまいそうになっている</li></ul>
+  <ul class="styles"><li>AIに仕訳を切らせているが、根拠が残っていない</li><li>グレーな論点をどう処理したか、後から説明できるようにしたい</li><li>調査対応に備えて記録の型を作りたい</li></ul>
   
   <h3>AIに投げるプロンプト例</h3>
   <p class="note">番組の内容をもとに、そのまま使える形に畠山のAI秘書が起こした例文です。◯◯や（　）はご自身の状況に置き換えてください。</p>
   <div class="kabe prompt-box">
-    <textarea id="tip-prompt" readonly rows="8">作ったツールを本番で使う前に、壊れ方を洗い出してください。
+    <textarea id="tip-prompt" readonly rows="8">迷った仕訳の判断根拠を残すための、簡単な記録リストを設計してください。
 
-- ツールの内容: （例: CSVを読み込んで一覧に整えるHTMLツール）
-- 使う人: （例: 事務所のスタッフ）
+- 使っている会計ソフト: （例: freee）
+- 残したい範囲: （例: 判断が分かれた取引だけ）
 
-「想定外の入力」「途中で中断された場合」「誤って実行した場合」の3観点で起こりうる事故を挙げ、それぞれ「防ぐ方法」と「起きたあと元に戻す方法」を書いてください。</textarea>
+「日付」「取引内容」「迷った点」「選んだ処理」「そう判断した理由」「根拠にした条文・通達」の列で、1件5行以内に収まる書式にしてください。記入例も2件つけてください。</textarea>
     <div class="diag-actions"><button class="btn" type="button" onclick="copyPrompt(this)">プロンプトをコピー</button></div>
   </div>
-  <div class="tip-nav"><a href="yaritori-wo-notion-ni.html">← 前 やり取りを、そのままNotionに貯める</a><a href="model-wo-4so-de-tsukaiwakeru.html">次 モデルを4層に分けて、下ごしらえと判断を切り分ける →</a></div>
+  <div class="tip-nav"><a href="tsuucho-gazou-de-keshikomi.html">← 前 通帳のコピー画像から、請求書を消し込む</a><a href="kaikei-soft-no-gamen-wo-jibun-de-sawaranai.html">次 会計ソフトの画面は、自分で触らない →</a></div>
   <div class="dm-cta">
     <h3>自分の現在地を知りたい方へ</h3>
     <p>14問に答えるだけで、AI活用の立ち位置が出演者と同じ6角形で分かる診断を用意しました。次の一歩のヒントも出ます。</p>

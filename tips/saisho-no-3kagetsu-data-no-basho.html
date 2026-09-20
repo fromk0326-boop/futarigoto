@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>「とりあえず動く」は、全体工数の10% | AI活用TIPS集 | AI税理士のふたりごと</title>
-<meta name="description" content="AIに作らせると、動くものはすぐできます。本番はそこから先。こう操作されたら壊れないか、壊れても自動で戻せるか。番組では、そこをシラミ潰しに確かめてから形を決める、という設計の話が出てきます。動いた時点を完成だと思わない。この前提を持ってお">
-<meta property="og:title" content="「とりあえず動く」は、全体工数の10% | AI活用TIPS集 | AI税理士のふたりごと">
-<meta property="og:description" content="AIに作らせると、動くものはすぐできます。本番はそこから先。こう操作されたら壊れないか、壊れても自動で戻せるか。番組では、そこをシラミ潰しに確かめてから形を決める、という設計の話が出てきます。動いた時点を完成だと思わない。この前提を持ってお">
+<title>最初の3ヶ月は、データがAIから触れる場所にあるかを整える | AI活用TIPS集 | AI税理士のふたりごと</title>
+<meta name="description" content="AI導入の最初の3ヶ月で何をすべきか、という会場からの質問への答えがこれでした。使うAIを選ぶ前に、データが全部AIから触れるところにあるかどうか。紙のままなら見に行けない、会計ソフトがクラウドでなければ見に行けない。まずスキャンする、クラ">
+<meta property="og:title" content="最初の3ヶ月は、データがAIから触れる場所にあるかを整える | AI活用TIPS集 | AI税理士のふたりごと">
+<meta property="og:description" content="AI導入の最初の3ヶ月で何をすべきか、という会場からの質問への答えがこれでした。使うAIを選ぶ前に、データが全部AIから触れるところにあるかどうか。紙のままなら見に行けない、会計ソフトがクラウドでなければ見に行けない。まずスキャンする、クラ">
 <meta property="og:type" content="website">
 <style>
 :root{
@@ -448,27 +448,27 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
 
 <section class="block tip-detail"><div class="wrap">
   <p class="crumb"><a href="../tips.html">← TIPS集にもどる</a></p>
-  <p class="tip-cat-badge">仕組み化・エージェント運用</p>
-  <h2>「とりあえず動く」は、全体工数の10%</h2>
-  <p class="tip-src">出典: <a class="chip" href="../index.html#ep-25">#25（配信予定）</a> <span class="tip-who">ゲスト回 貧弱軍曹さん（後編）</span></p>
-  <p class="tip-tags"><a class="tag" href="../tips.html?tag=%E6%A5%AD%E5%8B%99%E3%81%AE%E8%87%AA%E5%8B%95%E5%8C%96">業務の自動化</a></p>
+  <p class="tip-cat-badge">はじめの一歩</p>
+  <h2>最初の3ヶ月は、データがAIから触れる場所にあるかを整える</h2>
+  <p class="tip-src">出典: <a class="chip" href="../index.html#ep-26">#26（配信予定）</a> <span class="tip-who">特別編 京都公開収録（畠山パート・前編）</span></p>
+  <p class="tip-tags"><a class="tag" href="../tips.html?tag=%E7%92%B0%E5%A2%83%E6%95%B4%E5%82%99%E3%83%BB%E3%83%87%E3%83%BC%E3%82%BF%E5%8C%96">環境整備・データ化</a></p>
   <h3>番組で語られたこと</h3>
-  <p>AIに作らせると、動くものはすぐできます。本番はそこから先。こう操作されたら壊れないか、壊れても自動で戻せるか。番組では、そこをシラミ潰しに確かめてから形を決める、という設計の話が出てきます。動いた時点を完成だと思わない。この前提を持っておくだけで、事故の数が変わります。</p>
+  <p>AI導入の最初の3ヶ月で何をすべきか、という会場からの質問への答えがこれでした。使うAIを選ぶ前に、データが全部AIから触れるところにあるかどうか。紙のままなら見に行けない、会計ソフトがクラウドでなければ見に行けない。まずスキャンする、クラウドに寄せる。派手さはないけれど、ここが済んでいないと何を試しても止まります。</p>
   <h3>こんなシーンで使えます</h3>
-  <ul class="styles"><li>自作ツールを事務所で本格的に使い始めたい</li><li>スタッフや顧問先に配る前に、壊れ方を確かめたい</li><li>動いたのでそのまま運用に乗せてしまいそうになっている</li></ul>
+  <ul class="styles"><li>AIを入れたいが、何から手をつけるか決まっていない</li><li>紙の資料とPDFとクラウドが事務所の中で混在している</li><li>ツール選定の前に足元を整理したい</li></ul>
   
   <h3>AIに投げるプロンプト例</h3>
   <p class="note">番組の内容をもとに、そのまま使える形に畠山のAI秘書が起こした例文です。◯◯や（　）はご自身の状況に置き換えてください。</p>
   <div class="kabe prompt-box">
-    <textarea id="tip-prompt" readonly rows="8">作ったツールを本番で使う前に、壊れ方を洗い出してください。
+    <textarea id="tip-prompt" readonly rows="8">事務所のデータが「AIから触れる状態」になっているかを点検したいです。
 
-- ツールの内容: （例: CSVを読み込んで一覧に整えるHTMLツール）
-- 使う人: （例: 事務所のスタッフ）
+- 扱っている資料: （例: 顧問先からの請求書・領収書、会計ソフトのデータ、契約書）
+- いまの保管場所: （例: 紙のファイル、デスクトップ、共有サーバー、クラウド）
 
-「想定外の入力」「途中で中断された場合」「誤って実行した場合」の3観点で起こりうる事故を挙げ、それぞれ「防ぐ方法」と「起きたあと元に戻す方法」を書いてください。</textarea>
+資料ごとに「AIが読める形か」「置き場所は取りに行けるか」を判定し、直す優先順位と具体的な手順を表にしてください。</textarea>
     <div class="diag-actions"><button class="btn" type="button" onclick="copyPrompt(this)">プロンプトをコピー</button></div>
   </div>
-  <div class="tip-nav"><a href="yaritori-wo-notion-ni.html">← 前 やり取りを、そのままNotionに貯める</a><a href="model-wo-4so-de-tsukaiwakeru.html">次 モデルを4層に分けて、下ごしらえと判断を切り分ける →</a></div>
+  <div class="tip-nav"><a href="ichimai-mono-tool.html">← 前 HTML一枚もので、業務ツールを自作する</a><a href="shonin-gate.html">次 誤作動が怖い所に「承認ゲート」 →</a></div>
   <div class="dm-cta">
     <h3>自分の現在地を知りたい方へ</h3>
     <p>14問に答えるだけで、AI活用の立ち位置が出演者と同じ6角形で分かる診断を用意しました。次の一歩のヒントも出ます。</p>

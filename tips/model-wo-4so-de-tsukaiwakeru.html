@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>「とりあえず動く」は、全体工数の10% | AI活用TIPS集 | AI税理士のふたりごと</title>
-<meta name="description" content="AIに作らせると、動くものはすぐできます。本番はそこから先。こう操作されたら壊れないか、壊れても自動で戻せるか。番組では、そこをシラミ潰しに確かめてから形を決める、という設計の話が出てきます。動いた時点を完成だと思わない。この前提を持ってお">
-<meta property="og:title" content="「とりあえず動く」は、全体工数の10% | AI活用TIPS集 | AI税理士のふたりごと">
-<meta property="og:description" content="AIに作らせると、動くものはすぐできます。本番はそこから先。こう操作されたら壊れないか、壊れても自動で戻せるか。番組では、そこをシラミ潰しに確かめてから形を決める、という設計の話が出てきます。動いた時点を完成だと思わない。この前提を持ってお">
+<title>モデルを4層に分けて、下ごしらえと判断を切り分ける | AI活用TIPS集 | AI税理士のふたりごと</title>
+<meta name="description" content="トークンをどう管理しているか、という質問への答えです。全部を最上位のモデルにやらせない。ルールに当てはめれば答えが出る作業は下位のモデルに任せ、記事を書く・レビューするような判断が要るところだけ上位のモデルに回す。番組では4つの布陣として紹">
+<meta property="og:title" content="モデルを4層に分けて、下ごしらえと判断を切り分ける | AI活用TIPS集 | AI税理士のふたりごと">
+<meta property="og:description" content="トークンをどう管理しているか、という質問への答えです。全部を最上位のモデルにやらせない。ルールに当てはめれば答えが出る作業は下位のモデルに任せ、記事を書く・レビューするような判断が要るところだけ上位のモデルに回す。番組では4つの布陣として紹">
 <meta property="og:type" content="website">
 <style>
 :root{
@@ -449,26 +449,25 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
 <section class="block tip-detail"><div class="wrap">
   <p class="crumb"><a href="../tips.html">← TIPS集にもどる</a></p>
   <p class="tip-cat-badge">仕組み化・エージェント運用</p>
-  <h2>「とりあえず動く」は、全体工数の10%</h2>
-  <p class="tip-src">出典: <a class="chip" href="../index.html#ep-25">#25（配信予定）</a> <span class="tip-who">ゲスト回 貧弱軍曹さん（後編）</span></p>
+  <h2>モデルを4層に分けて、下ごしらえと判断を切り分ける</h2>
+  <p class="tip-src">出典: <a class="chip" href="../index.html#ep-27">#27（配信予定）</a> <span class="tip-who">特別編 京都公開収録（畠山パート・後編）</span></p>
   <p class="tip-tags"><a class="tag" href="../tips.html?tag=%E6%A5%AD%E5%8B%99%E3%81%AE%E8%87%AA%E5%8B%95%E5%8C%96">業務の自動化</a></p>
   <h3>番組で語られたこと</h3>
-  <p>AIに作らせると、動くものはすぐできます。本番はそこから先。こう操作されたら壊れないか、壊れても自動で戻せるか。番組では、そこをシラミ潰しに確かめてから形を決める、という設計の話が出てきます。動いた時点を完成だと思わない。この前提を持っておくだけで、事故の数が変わります。</p>
+  <p>トークンをどう管理しているか、という質問への答えです。全部を最上位のモデルにやらせない。ルールに当てはめれば答えが出る作業は下位のモデルに任せ、記事を書く・レビューするような判断が要るところだけ上位のモデルに回す。番組では4つの布陣として紹介されています。準備は下位、判断は上位。この切り分けだけで、使う量がかなり変わります。</p>
   <h3>こんなシーンで使えます</h3>
-  <ul class="styles"><li>自作ツールを事務所で本格的に使い始めたい</li><li>スタッフや顧問先に配る前に、壊れ方を確かめたい</li><li>動いたのでそのまま運用に乗せてしまいそうになっている</li></ul>
+  <ul class="styles"><li>AIの利用量が思ったより早く上限に達する</li><li>作業の種類がばらばらで、全部を同じ設定で回している</li><li>重い処理と軽い処理を分けたい</li></ul>
   
   <h3>AIに投げるプロンプト例</h3>
   <p class="note">番組の内容をもとに、そのまま使える形に畠山のAI秘書が起こした例文です。◯◯や（　）はご自身の状況に置き換えてください。</p>
   <div class="kabe prompt-box">
-    <textarea id="tip-prompt" readonly rows="8">作ったツールを本番で使う前に、壊れ方を洗い出してください。
+    <textarea id="tip-prompt" readonly rows="8">いまAIにやらせている作業を「下ごしらえ」と「判断」に仕分けてください。
 
-- ツールの内容: （例: CSVを読み込んで一覧に整えるHTMLツール）
-- 使う人: （例: 事務所のスタッフ）
+- やらせている作業: （例: 明細の分類、月次コメントの作成、顧問先への説明文、コードの修正）
 
-「想定外の入力」「途中で中断された場合」「誤って実行した場合」の3観点で起こりうる事故を挙げ、それぞれ「防ぐ方法」と「起きたあと元に戻す方法」を書いてください。</textarea>
+作業ごとに「ルールに当てはめれば答えが決まるか」「間違えたときの影響の大きさ」の2軸で判定し、下位モデルに任せてよいもの・上位モデルに残すものに振り分けた表を作ってください。</textarea>
     <div class="diag-actions"><button class="btn" type="button" onclick="copyPrompt(this)">プロンプトをコピー</button></div>
   </div>
-  <div class="tip-nav"><a href="yaritori-wo-notion-ni.html">← 前 やり取りを、そのままNotionに貯める</a><a href="model-wo-4so-de-tsukaiwakeru.html">次 モデルを4層に分けて、下ごしらえと判断を切り分ける →</a></div>
+  <div class="tip-nav"><a href="toriaezu-ugoku-wa-10percent.html">← 前 「とりあえず動く」は、全体工数の10%</a><a href="backup-wa-shikumi-dake-gaibu-ni.html">次 バックアップは「仕組み」だけ外に、顧問先の情報はローカルに正本を置かない →</a></div>
   <div class="dm-cta">
     <h3>自分の現在地を知りたい方へ</h3>
     <p>14問に答えるだけで、AI活用の立ち位置が出演者と同じ6角形で分かる診断を用意しました。次の一歩のヒントも出ます。</p>
