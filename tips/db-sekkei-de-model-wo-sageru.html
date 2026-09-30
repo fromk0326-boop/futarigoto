@@ -278,6 +278,22 @@ section.block+section.block{border-top:1px solid var(--line)}
 /* tip detail */
 .crumb{font-size:14px;margin:0 0 20px}
 .crumb a{text-decoration:none}
+/* transcript / search（2026-09-30） */
+.tr .guest{margin:6px 0 0;color:var(--fg2)}
+.tr .actions{margin:12px 0 0}
+.tr-body{max-width:780px;margin-top:18px}
+.tr-ch{font-size:19px;margin:30px 0 10px;padding-top:14px;border-top:1px solid var(--line)}
+.tr-p{margin:0 0 12px;display:grid;grid-template-columns:60px 1fr;gap:8px}
+.tr-ts{font-size:14px;color:var(--fg2);text-decoration:none;font-variant-numeric:tabular-nums;padding-top:2px}
+.tr-p,.tr-ch{scroll-margin-top:72px}
+.tr-p:target{background:var(--accent-soft);border-radius:8px}
+.sr-box input{width:100%;font:inherit;font-size:16px;padding:10px 14px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--fg)}
+.sr-ep{margin-top:24px}
+.sr-ep h3{font-size:17px;margin-bottom:6px}
+.sr-ep h3 a{text-decoration:none}
+.sr-ep ol{list-style:none;margin:0;padding:0}
+.sr-ep li a{display:block;padding:7px 0;border-bottom:1px solid var(--line);text-decoration:none;color:var(--fg);font-size:15px}
+.sr-ep .t{display:inline-block;min-width:60px;color:var(--fg2);font-size:14px;font-variant-numeric:tabular-nums}
 .tip-cat-badge{display:inline-block;font-size:14px;color:var(--accent);border:1px solid var(--accent);border-radius:6px;padding:0 8px;font-weight:700;margin:0 0 6px}
 .tip-detail h2{font-size:28px;margin:0 0 8px}
 .tip-detail h3{font-size:18px;color:var(--accent);margin:30px 0 10px}
@@ -440,6 +456,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
   <ul>
     <li><a href="../index.html">番組トップ</a></li>
     <li><a href="../tips.html">TIPS集</a></li>
+    
     <li><a href="../shindan.html">AI活用診断</a></li>
     <li><a href="../voice.html">お便り</a></li>
     <li><a class="btn" href="https://open.spotify.com/show/033MPcU5KieI6y73kwmaBw" target="_blank" rel="noopener">Spotifyでフォロー</a></li>
@@ -450,7 +467,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
   <p class="crumb"><a href="../tips.html">← TIPS集にもどる</a></p>
   <p class="tip-cat-badge">仕組み化・エージェント運用</p>
   <h2>精度は指示ではなく、情報の置き方で決まる</h2>
-  <p class="tip-src">出典: <a class="chip" href="../index.html#ep-24">#24（配信予定）</a> <span class="tip-who">ゲスト回 貧弱軍曹さん（中編）</span></p>
+  <p class="tip-src">出典: <a class="chip" href="../index.html#ep-24">#24</a> <span class="tip-who">ゲスト回 貧弱軍曹さん（中編）</span></p>
   <p class="tip-tags"><a class="tag" href="../tips.html?tag=%E7%92%B0%E5%A2%83%E6%95%B4%E5%82%99%E3%83%BB%E3%83%87%E3%83%BC%E3%82%BF%E5%8C%96">環境整備・データ化</a></p>
   <h3>番組で語られたこと</h3>
   <p>高いプランに変えれば精度が上がる、とは限りません。番組では、データベース側を綺麗に作ってあれば安いモデルでも同じ結果が出るはず、という仮説が語られました。重複が入らない、誤って消えない、顧問先とファイルが1対1でひもづく。フォルダとエクセルシートで管理したまま指示を工夫するより、土台を整えるほうが効きます。</p>
