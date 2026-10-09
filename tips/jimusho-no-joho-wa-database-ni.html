@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>利用ガイドラインを、AI自身に読ませる | AI活用TIPS集 | AI税理士のふたりごと</title>
-<meta name="description" content="生成AIの利用ルールを文書で配っても、読まれないまま終わります。番組で出てきたのは、ガイドラインをファイル1つにまとめてAIに読ませ、その範囲の中でしか動かないようにする形。人に守らせるのではなく、道具の側に守らせる。配るファイルが1つで済">
-<meta property="og:title" content="利用ガイドラインを、AI自身に読ませる | AI活用TIPS集 | AI税理士のふたりごと">
-<meta property="og:description" content="生成AIの利用ルールを文書で配っても、読まれないまま終わります。番組で出てきたのは、ガイドラインをファイル1つにまとめてAIに読ませ、その範囲の中でしか動かないようにする形。人に守らせるのではなく、道具の側に守らせる。配るファイルが1つで済">
+<title>事務所の情報はデータベースに置き、AIが探せる状態にする | AI活用TIPS集 | AI税理士のふたりごと</title>
+<meta name="description" content="梶原さんの事務所は創業時からGoogle Workspace、Slack、Notionを使い、顧客・契約・タスク・工数をNotionのデータベースで持っています。情報が決まった形で決まった場所にあるから、AIに頼んだときに探しにいける。フォ">
+<meta property="og:title" content="事務所の情報はデータベースに置き、AIが探せる状態にする | AI活用TIPS集 | AI税理士のふたりごと">
+<meta property="og:description" content="梶原さんの事務所は創業時からGoogle Workspace、Slack、Notionを使い、顧客・契約・タスク・工数をNotionのデータベースで持っています。情報が決まった形で決まった場所にあるから、AIに頼んだときに探しにいける。フォ">
 <meta property="og:type" content="website">
 <style>
 :root{
@@ -461,28 +461,26 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--fg2);fon
 
 <section class="block tip-detail"><div class="wrap">
   <p class="crumb"><a href="../tips.html">← TIPS集にもどる</a></p>
-  <p class="tip-cat-badge">組織・発信</p>
-  <h2>利用ガイドラインを、AI自身に読ませる</h2>
-  <p class="tip-src">出典: <a class="chip" href="../index.html#ep-25">#25</a> <span class="tip-who">ゲスト回 石本憲史さん（後編）</span></p>
-  <p class="tip-tags"><a class="tag" href="../tips.html?tag=%E7%B5%84%E7%B9%94%E3%81%B8%E3%81%AE%E5%B0%8E%E5%85%A5">組織への導入</a></p>
+  <p class="tip-cat-badge">仕組み化・エージェント運用</p>
+  <h2>事務所の情報はデータベースに置き、AIが探せる状態にする</h2>
+  <p class="tip-src">出典: <a class="chip" href="../index.html#ep-29">#29（配信予定）</a> <span class="tip-who">ゲスト回 梶原大樹さん（中編）</span></p>
+  <p class="tip-tags"><a class="tag" href="../tips.html?tag=%E7%92%B0%E5%A2%83%E6%95%B4%E5%82%99%E3%83%BB%E3%83%87%E3%83%BC%E3%82%BF%E5%8C%96">環境整備・データ化</a></p>
   <h3>番組で語られたこと</h3>
-  <p>生成AIの利用ルールを文書で配っても、読まれないまま終わります。番組で出てきたのは、ガイドラインをファイル1つにまとめてAIに読ませ、その範囲の中でしか動かないようにする形。人に守らせるのではなく、道具の側に守らせる。配るファイルが1つで済むのが、いちばん早い実装です。</p>
+  <p>梶原さんの事務所は創業時からGoogle Workspace、Slack、Notionを使い、顧客・契約・タスク・工数をNotionのデータベースで持っています。情報が決まった形で決まった場所にあるから、AIに頼んだときに探しにいける。フォルダに雑に入れている状態との違いは、AIを入れたときにはっきり出ます。</p>
   <h3>こんなシーンで使えます</h3>
-  <ul class="styles"><li>事務所として生成AIの利用ルールを決めたい</li><li>顧問先のデータをどこまで入れてよいかが曖昧なまま使われている</li><li>ルールを文書で配ったが、読まれている手応えがない</li></ul>
+  <ul class="styles"><li>顧問先の情報がフォルダやメールに散らばっている</li><li>AIに聞いても事務所の情報を見つけてくれない</li><li>契約や工数を一覧で見られない</li></ul>
   
   <h3>AIに投げるプロンプト例</h3>
   <p class="note">番組の内容をもとに、そのまま使える形に畠山のAI秘書が起こした例文です。◯◯や（　）はご自身の状況に置き換えてください。</p>
   <div class="kabe prompt-box">
-    <textarea id="tip-prompt" readonly rows="8">事務所の生成AI利用ガイドラインを、AIに読ませる前提のファイルとして作ってください。
+    <textarea id="tip-prompt" readonly rows="8">事務所の情報をAIが探せる形に整理する設計を考えてください。
 
-- 業種・体制: （例: 税理士事務所、スタッフ3名）
-- 絶対に入れてはいけない情報: （例: マイナンバー、口座番号、顧問先の実名）
-- 使ってよい場面: （例: 下書き作成、調べもの、チェック）
+- 今の置き場所: （例: 顧客情報はスプレッドシート、契約書はフォルダ、タスクは各自のメモ）
 
-禁止事項は「してはいけないこと」ではなく「代わりにこうする」まで書いてください。判断に迷う場合は人に確認する、というルールも入れてください。</textarea>
+「顧客」「契約」「タスク」「工数」の4つのデータベースに分けるとして、それぞれ持つべき項目と、データベース同士のつなぎ方を表にしてください。</textarea>
     <div class="diag-actions"><button class="btn" type="button" onclick="copyPrompt(this)">プロンプトをコピー</button></div>
   </div>
-  <div class="tip-nav"><a href="ai-dojo-level.html">← 前 若手の育成をレベル制にする</a><a href="ai-donyu-wa-top-kara.html">次 AIの導入はトップから。「こんなもんか」と思わせない →</a></div>
+  <div class="tip-nav"><a href="review-kekka-wa-shonin-horyu-shusei.html">← 前 AIのレビュー結果は、承認・保留・修正をつけて戻す</a><a href="jisaku-button.html">次 会計ソフトに自作ボタンを付ける →</a></div>
   <div class="dm-cta">
     <h3>自分の現在地を知りたい方へ</h3>
     <p>14問に答えるだけで、AI活用の立ち位置が出演者と同じ6角形で分かる診断を用意しました。次の一歩のヒントも出ます。</p>
